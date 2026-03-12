@@ -1,1 +1,42 @@
- 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+</head>
+<body>
+      <nav>
+    <ul>
+  <li> <a href="../shared/index.html">Home</a> </li>
+  <li><a href="dashboard.html">Admin Dashboard</a></li>
+  <li><a href="profile.html">Profile</a></li>
+  <li><a href="../shared/index.html">Log Out</a></li>
+</ul>
+   </nav> 
+   <section>
+    <h1>Add Task</h1>
+    <form >
+        <label >Task Id</label>
+        <input type="number" name="task-id" required>
+        <br><br>
+         <label >Task Title</label>
+        <input type="text" name="task-title" required>
+        <br><br>
+         <label >Priority</label>
+        <select>
+            <option value="Low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+        <br><br>
+     <label >Decription</label>
+     <textarea rows="4" cols="30"></textarea>
+     <br><br>
+   <input type="submit">
+    </form>
+   </section>
+  
+    
+</body>
+</html>
