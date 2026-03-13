@@ -1,11 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-        <iframe src="../navigation/admin_nav.html" style="width: 100%; height: 56px; border: none;"></iframe>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Teachers</title>
+  </head>
+  <body>
+    <iframe
+      src="../navigation/admin_nav.html"
+      style="width: 100%; height: 56px; border: none"
+    ></iframe>
+
+    <h1 align="center">Manage Teachers</h1>
+
+    <div align="center">
+      <a href="add-teacher.html">Add New Teacher</a>
+    </div>
+    <br />
+
+    <table border="1" width="80%" align="center" cellpadding="10">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Actions</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>John Doe</td>
+        <td>john@school.com</td>
+        <td>Math</td>
+        <td>
+          <a href="edit-teacher.html">Edit</a> |
+          <a href="#">Delete</a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Jane Smith</td>
+        <td>jane@school.com</td>
+        <td>English</td>
+        <td>
+          <a href="edit-teacher.html">Edit</a> |
+          <a href="#">Delete</a>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>
