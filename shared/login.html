@@ -7,7 +7,7 @@
   </head>
   <body>
     <iframe
-      src="../navigation/main_nav.html"
+      src="../shared/main_nav.html"
       style="width: 100%; height: 54px; border: none"
     ></iframe>
     <br /><br /><br /><br />
@@ -38,16 +38,7 @@
             />
           </td>
         </tr>
-        <tr>
-          <td><label for="role">Role</label></td>
-          <td>
-            <select id="role" required>
-              <option value="">Select your role</option>
-              <option value="teacher">Teacher</option>
-              <option value="admin">Admin</option>
-            </select>
-          </td>
-        </tr>
+
         <tr>
           <td colspan="2">
             <input type="checkbox" id="c" /> <label for="c">Remember me</label>
@@ -56,34 +47,26 @@
 
         <tr>
           <td colspan="2" align="center">
-            <input type="submit" value="Login" />
-          </td>
-        </tr>
-
-        <tr>
-          <td colspan="2" align="center">
-            <button
-            >
-              <a href="../admin/profile.html">Admin Profile</a>
+            <button type="submit" formaction="../admin/dashboard.html">
+              Login as Admin
             </button>
-            &nbsp;&nbsp;
-            <button
-            >
-                <a href="../teacher/profile.html">Teacher Profile</a>
+
+            <button type="submit" formaction="../teacher/dashboard.html">
+              Login as Teacher
             </button>
           </td>
         </tr>
 
         <tr>
           <td colspan="2" align="center">
-            <a href="forgot-password.html" target="_blank">Forgot Password</a>
+            <a href="forgot-password.html" target="_top">Forgot Password</a>
           </td>
         </tr>
 
         <tr>
           <td colspan="2" align="center">
             Don't have an account?
-            <a href="signup.html" target="_blank">Sign Up</a>
+            <a href="signup.html" target="_top">Sign Up</a>
           </td>
         </tr>
       </table>

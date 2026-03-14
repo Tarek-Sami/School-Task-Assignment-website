@@ -1,44 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Task</title>
-</head>
-<body>
-      <iframe
-      src="../navigation/admin_nav.html"
+  </head>
+  <body>
+    <iframe
+      src="../shared/admin_nav.html"
       style="width: 100%; height: 56px; border: none"
     ></iframe>
-      <!-- <nav align="center">
+    <!-- <nav align="center">
   <a href="../shared/index.html">Home</a>&nbsp&nbsp&nbsp
   <a href="dashboard.html">Admin Dashboard</a>&nbsp&nbsp&nbsp
   <a href="profile.html">Profile</a>&nbsp&nbsp&nbsp
   <a href="../shared/index.html">Log Out</a>&nbsp&nbsp&nbsp
    </nav>  -->
-   <section>
-    <br><br><br>
-    <h1 align="center">Add Task</h1>
-    <form align="center">
-        <label >Task Id:</label>
-        <input type="number" name="task-id" placeholder="Task Id" required>
-        <br><br>
-         <label >Task Title:</label>
-        <input type="text" name="task-title" placeholder="Task Title" required>
-        <br><br>
-         <label >Priority</label>
+    <section>
+      <br /><br /><br />
+      <h1 align="center">Add Task</h1>
+      <form align="center" action="../admin/dashboard.html">
+        <label>Task Id:</label>
+        <input type="number" name="task-id" placeholder="Task Id" required />
+        <br /><br />
+        <label>Task Title:</label>
+        <input
+          type="text"
+          name="task-title"
+          placeholder="Task Title"
+          required
+        />
+        <br /><br />
+        <label>Priority</label>
         <select>
           <option value="Low">Low</option>
           <option value="medium">Medium</option>
           <option value="high">High</option>
         </select>
-        <br><br>
-     <label>Decription:</label>
-     <br>
-     <textarea rows="8" cols="30"></textarea>
-     <br><br>
-   <input type="submit">
-    </form>
-   </section>
-</body>
+        <br /><br />
+        <label>Decription:</label>
+        <br />
+        <textarea rows="8" cols="30"></textarea>
+        <br /><br />
+        <input type="submit" />
+      </form>
+    </section>
+  </body>
 </html>
