@@ -1,0 +1,138 @@
+@import url(../global/global.css);
+
+.container {
+  padding: var(--spacing-4);
+}
+.header h1 {
+  font-size: var(--headline-md-size);
+  margin-bottom: 8px;
+}
+.header p {
+  color: var(--on-surface-variant);
+  margin-bottom: 30px;
+}
+.cards {
+  margin-bottom: 40px; 
+  display: flex;
+  justify-content: space-between;
+  
+}
+.card {
+  background: var(--surface-container-lowest);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  padding-right: 200px;
+  
+}
+.card h3 {
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  margin-bottom: 10px;
+}
+
+.card span {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Card Icons */
+.card-icon {
+  padding: 10px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.fa-circle-check { background: #3ADFFA; }
+.fa-clipboard-list { background: #DCC9FF; }
+.fa-clock { background: #F74B6D; }
+.fa-graduation-cap { background: #8FA7FE; }
+
+/* Tasks Header */
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.add-btn {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  font-weight: 600;
+}
+.add-btn:hover{
+  background: #7d40e6;
+}
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.task {
+  background: var(--surface-container-lowest);
+  padding: 15px 20px;
+  border-radius: var(--radius-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-ambient);
+}
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.task-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.task-check {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.task-info h4 {
+  margin: 0;
+}
+
+.task-info p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--on-surface-variant);
+}
+
+.date {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.priority {
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.priority.high {
+  background: var(--error-container);
+  color: var(--on-error-container);
+}
+
+.priority.medium {
+  background: var(--tertiary-container);
+  color: var(--on-tertiary-container);
+}
+
+.priority.low {
+  background: var(--surface-variant);
+  color: var(--on-surface);
+}
