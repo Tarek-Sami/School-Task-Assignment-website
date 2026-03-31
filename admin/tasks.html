@@ -4,58 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Tasks</title>
+    <!-- <link rel="stylesheet" href="../styles/global/global.css"> -->
+    <!-- <link rel="stylesheet" href="../styles/global/components.css"> -->
+    <link rel="stylesheet" href="../styles/admin/tasks.css">
   </head>
   <body>
-    <iframe
-      src="../shared/admin_nav.html"
-      style="width: 100%; height: 56px; border: none"
-    ></iframe>
+    <h1>Curriculum Tasks</h1>
+    <p>Manage and track departmental academic deliverables.</p>
 
-    <h1 align="center">All Tasks</h1>
-
-    <div align="center">
-      <a href="add-task.html">Add New Task</a>
+  <div class="container">
+    <div class="seachAndFilter">
+    <input type="text" placeholder=""Search curriculum, faculty, or status...> 
+    <div class="button btn btn-secondary   active">ALL</div>
+    <div class="button btn btn-secondary">HIGH</div>
+    <div class="button btn btn-secondary">MEDIUM</div>
+    <div class="button btn btn-secondary">LOW</div>
     </div>
-    <br />
-
-    <table border="1" width="80%" align="center" cellpadding="10">
-      <tr>
-        <th>Task ID</th>
-        <th>Title</th>
-        <th>Priority</th>
-        <th>Status</th>
-        <th>Actions</th>
-      </tr>
-      <tr>
-        <td>101</td>
-        <td>Math Homework</td>
-        <td>High</td>
-        <td>In Progress</td>
-        <td>
-          <a href="edit-task.html">Edit</a> |
-          <a href="#">Delete</a>
-        </td>
-      </tr>
-      <tr>
-        <td>102</td>
-        <td>Science Report</td>
-        <td>Medium</td>
-        <td>Pending</td>
-        <td>
-          <a href="edit-task.html">Edit</a> |
-          <a href="#">Delete</a>
-        </td>
-      </tr>
-      <tr>
-        <td>103</td>
-        <td>History Essay</td>
-        <td>Low</td>
-        <td>Completed</td>
-        <td>
-          <a href="edit-task.html">Edit</a> |
-          <a href="#">Delete</a>
-        </td>
-      </tr>
-    </table>
+    <div class="tasks-container">
+      <div class="task-card">
+        <div class="priority">
+          <p>high priority</p>
+          <div class="three-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        </div>
+        <h3 class="task-name">Modernist architecture Exhibit</h3>
+        <p class="teacher-name">Prof. Elena Vance</p>
+        <p>PROGRESS</p>
+        <div class="progress"></div>
+      </div>
+      <div class="task-card">
+        <div class="priority">
+          <p>high priority</p>
+          <div class="three-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        </div>
+        <h3 class="task-name">Quantum Physics</h3>
+        <p class="teacher-name">Prof. Ahmed Vance</p>
+        <p>PROGRESS</p>
+        <div class="progress"></div>
+      </div>
+      <div class="task-card">
+        <div class="priority">
+          <p>Medium priority</p>
+          <div class="three-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        </div>
+        <h3 class="task-name">Art History: Renaissance Finals</h3>
+        <p class="teacher-name">Dr. Elena Vance</p>
+        <p>PROGRESS</p>
+        <div class="progress"></div>
+      </div>
+      <div class="task-card">
+        <div class="priority">
+          <p>low priority</p>
+          <div class="three-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        </div>
+        <h3 class="task-name">Ethics of Automata Seminar</h3>
+        <p class="teacher-name">Prof. Marcus Thorne</p>
+        <p>PROGRESS</p>
+        <div class="progress"></div>
+      </div>
+    </div>
+  </div>
   </body>
 </html>

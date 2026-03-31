@@ -1,0 +1,34 @@
+@import url("../global/global.css");
+@import url("../global/components.css");
+
+body{
+    background-color: var(--surface);
+    background-image: none;
+    width: 100%;
+    height: 100%;
+}
+.container {
+    padding: var(--spacing-4);
+
+}
+.seachAndFilter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.seachAndFilter input {
+    width: 50%;
+    padding: 10px;
+    border-radius: var(--radius-sm);
+}
+.button {
+    margin-right:5px;
+    padding: 15px;
+    border-radius: var(--radius-sm);
+    background-color: var(--surface-container-low);
+    cursor: pointer;
+}
+.active {
+    
+}

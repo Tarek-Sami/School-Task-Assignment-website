@@ -4,13 +4,13 @@
 :root {
   /* Global design tokens used by all other stylesheets. */
   /* Core palette */
-  --color-primary: #1e3a8a;
+  --color-primary: #3D57A7;
   --color-primary-strong: #7c3aed;
   --color-secondary-accent: #22d3ee;
   --color-secondary-accent-strong: #3b82f6;
 
   /* Surface tiers replace hard borders to create depth. */
-  --surface: #f8fafc;
+  --surface: #f8fafcc9;
   --surface-container-low: #eef3fb;
   --surface-container-lowest: #fdfefe;
   --surface-container-highest: #e4ebfb;
@@ -36,6 +36,7 @@
   /* Font families and typographic scale. */
   --font-display: "Manrope", sans-serif;
   --font-body: "Inter", sans-serif;
+  --font-color:#595C5E;
 
   --display-lg-size: 3.5rem;
   --display-lg-track: -0.02em;
@@ -73,31 +74,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
-body {
-  /* Base page look: soft surface + gradient blobs + subtle noise grain. */
-  min-height: 100vh;
-  font-family: var(--font-body);
-  font-size: var(--body-md-size);
-  color: var(--on-surface);
-  background-color: var(--surface);
-  background-image:
-    radial-gradient(circle at 12% 18%, rgba(124, 58, 237, 0.18) 0, rgba(124, 58, 237, 0) 38%),
-    radial-gradient(circle at 86% 72%, rgba(34, 211, 238, 0.14) 0, rgba(34, 211, 238, 0) 42%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-}
-
-a {
-  /* Link color uses primary brand color by default. */
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-a:hover {
-  /* Stronger shade on hover for clear affordance. */
-  color: var(--color-primary-strong);
-}
-
 h1,
 h2,
 h3,
