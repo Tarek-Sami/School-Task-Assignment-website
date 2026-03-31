@@ -1,0 +1,70 @@
+.task-container {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.info-grid div {
+  background: var(--surface-container-low);
+  padding: 0.8rem;
+  border-radius: var(--radius-sm);
+}
+
+.subtasks {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.subtasks li {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface-container-low);
+}
+
+.subtasks strong {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.btn-custom {
+  padding: 0.8rem 1.6rem;
+  border-radius: 2rem;
+  letter-spacing: 0.5px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.25s ease;
+}
+
+.btn-custom:hover {
+  transform: translateY(-2px);
+}
+
+.btn-custom:active {
+  transform: scale(0.96);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
