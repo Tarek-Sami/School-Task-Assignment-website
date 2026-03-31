@@ -1,11 +1,92 @@
 @import url("./global.css");
 
+/* Reusable component classes built on top of global tokens. */
+
+.display-lg {
+  /* Hero/stat text. */
+  font-size: var(--display-lg-size);
+  font-weight: 800;
+  letter-spacing: var(--display-lg-track);
+  line-height: 1.05;
+}
+
+.headline-md {
+  /* Main section/page headline style. */
+  font-size: var(--headline-md-size);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.title-lg {
+  /* Card and content title style. */
+  font-family: var(--font-body);
+  font-size: var(--title-lg-size);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.body-md {
+  /* Default readable paragraph/body text. */
+  font-size: var(--body-md-size);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.label-sm {
+  /* Compact metadata labels (caps + tracking). */
+  font-size: var(--label-sm-size);
+  font-weight: 700;
+  letter-spacing: var(--label-sm-track);
+  text-transform: uppercase;
+}
+
+.text-muted {
+  /* Secondary text color utility. */
+  color: var(--on-surface-variant);
+}
+
+.surface {
+  /* Base layer utility. */
+  background: color-mix(in srgb, var(--surface) 94%, white 6%);
+}
+
+.surface-container-low {
+  /* Mid background layer utility. */
+  background: color-mix(in srgb, var(--surface-container-low) 96%, white 4%);
+}
+
+.surface-container-lowest {
+  /* Top floating layer utility (cards/panels). */
+  background: color-mix(in srgb, var(--surface-container-lowest) 95%, white 5%);
+}
 
 .glass {
   /* Default frosted-glass effect for floating surfaces. */
   background: rgba(248, 250, 252, 0.72);
   backdrop-filter: blur(var(--glass-blur-md));
   -webkit-backdrop-filter: blur(var(--glass-blur-md));
+}
+
+.glass-strong {
+  /* Stronger blur for modals and high-focus overlays. */
+  background: rgba(248, 250, 252, 0.6);
+  backdrop-filter: blur(var(--glass-blur-lg));
+  -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+}
+
+.ghost-border {
+  /* Very soft outline fallback when a visual boundary is needed. */
+  outline: 1px solid rgba(123, 137, 168, 0.15);
+}
+
+.layout-luxury {
+  /* Large page padding token from design spec. */
+  padding: var(--spacing-24);
+}
+
+.stack-gap-4 > * + * {
+  /* Vertical rhythm utility for list/card stacking. */
+  margin-top: var(--spacing-4);
 }
 
 /* Buttons */
@@ -45,16 +126,93 @@
   color: var(--color-primary);
 }
 
+.btn-tertiary {
+  background: transparent;
+  color: var(--on-surface);
+}
+
+.btn-tertiary:hover {
+  background: color-mix(in srgb, var(--surface-variant) 40%, transparent);
+}
+
+/* Floating task cards */
+.task-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  background: var(--surface-container-lowest);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-ambient);
+}
+
+.task-card::before {
+  /* Hidden priority orb edge by default; enabled on high priority. */
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 18%;
+  bottom: 18%;
+  width: 4px;
+  border-radius: 999px;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.task-card.priority-high::before {
+  background: var(--error);
+  box-shadow: 0 0 22px rgba(239, 68, 68, 0.58);
+  opacity: 1;
+}
+
+.task-list {
+  /* No dividers: spacing token creates separation. */
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.badge {
+  /* Shared pill badge base style. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.26rem 0.7rem;
+  font-size: var(--label-sm-size);
+  font-weight: 700;
+  letter-spacing: var(--label-sm-track);
+  text-transform: uppercase;
+}
+
+.badge-high {
+  /* High priority: error tint + pulse animation. */
+  background: var(--error-container);
+  color: var(--on-error-container);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.badge-medium {
+  /* Medium priority: tertiary (cyan) container style. */
+  background: var(--tertiary-container);
+  color: var(--on-tertiary-container);
+}
+
+.badge-low {
+  /* Low priority: neutral, low-emphasis badge. */
+  background: var(--surface-variant);
+  color: var(--on-surface-variant);
+}
+
 /* Inputs */
 .field,
 input,
 select,
 textarea {
-  width: 100%;
-  padding: 15px;
+  border: none;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--outline-variant);
-  margin-bottom: 10px;
+  background: var(--surface-container-low);
+  color: var(--on-surface);
+  font-family: var(--font-body);
+  font-size: var(--body-md-size);
+  padding: 0.7rem 0.8rem;
 }
 
 .field:focus,
@@ -66,3 +224,13 @@ textarea:focus {
   box-shadow: inset 0 0 14px rgba(30, 58, 138, 0.14);
 }
 
+@keyframes pulse {
+  /* Light pulse to keep high-priority badge noticeable without noise. */
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.06);
+  }
+}

@@ -3,81 +3,131 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Tasks</title>
-    <!-- <link rel="stylesheet" href="../styles/global/global.css"> -->
-    <!-- <link rel="stylesheet" href="../styles/global/components.css"> -->
-    <link rel="stylesheet" href="../styles/admin/tasks.css">
+    <title>Curriculum Tasks</title>
+    <link rel="stylesheet" href="../styles/global/global.css" />
+    <link rel="stylesheet" href="../styles/global/components.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/admin/tasks.css" />
   </head>
-  <body>
-    <h1>Curriculum Tasks</h1>
-    <p>Manage and track departmental academic deliverables.</p>
+  <body class="tasks-page">
+    <header class="page-header">
+        <h1>Curriculum Tasks</h1>
+        <p>Manage and track departmental academic deliverables.</p>
+    </header>
 
-  <div class="container">
-    <div class="seachAndFilter">
-    <input type="text" placeholder=""Search curriculum, faculty, or status...> 
-    <div class="button btn btn-secondary   active">ALL</div>
-    <div class="button btn btn-secondary">HIGH</div>
-    <div class="button btn btn-secondary">MEDIUM</div>
-    <div class="button btn btn-secondary">LOW</div>
+    <div class="container">
+      <div class="search-and-filter">
+        <div class="search-wrap">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="search"
+            placeholder="Search curriculum, faculty, or status..."
+            autocomplete="off"
+          />
+        </div>
+        <div class="filter-pills">
+          <button type="button" class="filter-pill active">ALL</button>
+          <button type="button" class="filter-pill">HIGH</button>
+          <button type="button" class="filter-pill">MEDIUM</button>
+          <button type="button" class="filter-pill">LOW</button>
+        </div>
+      </div>
+
+      <div class="tasks-grid">
+        <article class="task-card">
+          <div class="task-card-top">
+            <span class="priority-badge priority-badge-high">HIGH PRIORITY</span>
+            <button type="button" class="task-card-menu" aria-label="Task options">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+          </div>
+          <h2 class="task-card-title">Modernist Architecture Exhibit</h2>
+          <p class="task-card-assignee">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+            Prof. Elena Vance
+          </p>
+          <div class="task-card-progress">
+            <div class="progress-head">
+              <span class="progress-label">PROGRESS</span>
+              <span class="progress-value">84%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill progress-fill-primary" style="width: 84%"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="task-card">
+          <div class="task-card-top">
+            <span class="priority-badge priority-badge-high">HIGH PRIORITY</span>
+            <button type="button" class="task-card-menu" aria-label="Task options">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+          </div>
+          <h2 class="task-card-title">Quantum Physics Lab Peer Review</h2>
+          <p class="task-card-assignee">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+            Prof. Julian Thorne
+          </p>
+          <div class="task-card-progress">
+            <div class="progress-head">
+              <span class="progress-label">PROGRESS</span>
+              <span class="progress-value">45%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill progress-fill-purple" style="width: 45%"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="task-card">
+          <div class="task-card-top">
+            <span class="priority-badge priority-badge-medium">MEDIUM PRIORITY</span>
+            <button type="button" class="task-card-menu" aria-label="Task options">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+          </div>
+          <h2 class="task-card-title">Art History: Renaissance Finals</h2>
+          <p class="task-card-assignee">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+            Dr. Elena Vance
+          </p>
+          <div class="task-card-progress">
+            <div class="progress-head">
+              <span class="progress-label">PROGRESS</span>
+              <span class="progress-value">92%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill progress-fill-cyan" style="width: 92%"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="task-card">
+          <div class="task-card-top">
+            <span class="priority-badge priority-badge-low">LOW PRIORITY</span>
+            <button type="button" class="task-card-menu" aria-label="Task options">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+          </div>
+          <h2 class="task-card-title">Ethics of Automata Seminar</h2>
+          <p class="task-card-assignee">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+            Prof. Marcus Thorne
+          </p>
+          <div class="task-card-scheduled">
+            <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+            <span>Scheduled for Oct 24</span>
+          </div>
+        </article>
+      </div>
     </div>
-    <div class="tasks-container">
-      <div class="task-card">
-        <div class="priority">
-          <p>high priority</p>
-          <div class="three-dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        </div>
-        <h3 class="task-name">Modernist architecture Exhibit</h3>
-        <p class="teacher-name">Prof. Elena Vance</p>
-        <p>PROGRESS</p>
-        <div class="progress"></div>
-      </div>
-      <div class="task-card">
-        <div class="priority">
-          <p>high priority</p>
-          <div class="three-dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        </div>
-        <h3 class="task-name">Quantum Physics</h3>
-        <p class="teacher-name">Prof. Ahmed Vance</p>
-        <p>PROGRESS</p>
-        <div class="progress"></div>
-      </div>
-      <div class="task-card">
-        <div class="priority">
-          <p>Medium priority</p>
-          <div class="three-dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        </div>
-        <h3 class="task-name">Art History: Renaissance Finals</h3>
-        <p class="teacher-name">Dr. Elena Vance</p>
-        <p>PROGRESS</p>
-        <div class="progress"></div>
-      </div>
-      <div class="task-card">
-        <div class="priority">
-          <p>low priority</p>
-          <div class="three-dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        </div>
-        <h3 class="task-name">Ethics of Automata Seminar</h3>
-        <p class="teacher-name">Prof. Marcus Thorne</p>
-        <p>PROGRESS</p>
-        <div class="progress"></div>
-      </div>
-    </div>
-  </div>
+
+    <a href="add-task.html" class="fab" aria-label="Add new task">
+      <i class="fa-solid fa-plus"></i>
+    </a>
   </body>
 </html>
