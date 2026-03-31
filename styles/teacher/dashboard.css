@@ -26,3 +26,15 @@ h2.headline-md {
     color: var(--on-surface); 
     font-weight: 700;      
 }
+.card-icon {
+  padding: 10px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.fa-circle-check { background: #3ADFFA; }
+.fa-clipboard-list { background: #DCC9FF; }
+.fa-clock { background: #F74B6D; }
+.fa-graduation-cap { background: #8FA7FE; }

@@ -1,45 +1,102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Tasks</title>
-  </head>
-  <body>
-    <iframe
-      src="../shared/teacher_nav.html"
-      style="width: 100%; height: 56px; border: none"
-    ></iframe>
+<head>
+  <meta charset="UTF-8">
+  
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="components.css">
+  <link rel="stylesheet" href="my-tasks.css">
 
-    <h1 align="center">My Tasks</h1>
-    <table border="1" width="80%" align="center" cellpadding="10">
-      <tr>
-        <th>Task Title</th>
-        <th>Priority</th>
-        <th>Status</th>
-        <th>Task Details</th>
-      </tr>
+  <title>My Tasks</title>
+</head>
 
-      <tr>
-        <td>Prepare English Lesson</td>
-        <td>High</td>
-        <td>Pending</td>
-        <td><a href="task-details.html" target="_top">View Details</a></td>
-      </tr>
+<body class="surface">
 
-      <tr>
-        <td>Grade History Papers</td>
-        <td>Medium</td>
-        <td>In Progress</td>
-        <td><a href="task-details.html" target="_top">View Details</a></td>
-      </tr>
+<div class="dashboard">
 
-      <tr>
-        <td>Organize Science Fair</td>
-        <td>Low</td>
-        <td>Pending</td>
-        <td><a href="task-details.html" target="_top">View Details</a></td>
-      </tr>
-    </table>
-  </body>
+  <aside class="sidebar surface-container-low glass">
+    <h2 class="title-lg">The Curator</h2>
+
+    <div class="profile">
+      <img src="Profile.png">
+      <div>
+        <div class="body-md">Alex Rivers</div>
+        <div class="label-sm text-muted">Senior Curator</div>
+      </div>
+    </div>
+
+    <nav>
+      <div class="label-sm text-muted">Task Views</div>
+      <div class="nav-item active">All Tasks</div>
+      <div class="nav-item">High Priority</div>
+      <div class="nav-item">Completed</div>
+      <div class="nav-item">Archived</div>
+
+      <div class="label-sm text-muted">Workspace</div>
+      <div class="nav-item">Exhibits</div>
+      <div class="nav-item">Curriculum</div>
+      <div class="nav-item">Settings</div>
+    </nav>
+  </aside>
+
+  <main class="main layout-luxury">
+
+    <div class="topbar glass surface-container-low">
+      <input type="text" placeholder="Search your tasks...">
+
+      <div class="user">
+        🔔
+        <div class="avatar">ND</div>
+      </div>
+    </div>
+
+    <h1 class="headline-md">My Tasks</h1>
+
+    <div class="cards">
+
+      <div class="task-card priority-high">
+        <span class="badge badge-high">High Priority</span>
+        <h3 class="title-lg">Grade Mid-term Biology Exhibits</h3>
+        <p class="body-md text-muted">
+          Review and provide feedback on the 10th grade botanical dioramas
+        </p>
+        <div class="progress"><div></div></div>
+      </div>
+
+      <div class="task-card">
+        <span class="badge badge-medium">Medium Priority</span>
+        <h3 class="title-lg">Prepare Lecture: Renaissance Art</h3>
+        <p class="body-md text-muted">
+          Gather high-res digital scans for Monday seminar
+        </p>
+        <div class="progress"><div></div></div>
+      </div>
+
+      <div class="task-card">
+        <span class="badge badge-low">General Admin</span>
+        <h3 class="title-lg">Faculty Meeting Notes</h3>
+        <p class="body-md text-muted">
+          Summarize curriculum review committee meeting
+        </p>
+        <div class="progress"><div></div></div>
+      </div>
+
+    </div>
+
+    <div class="big-card">
+      <div class="overlay">
+        <span class="badge badge-medium">Major Project</span>
+        <h2 class="special-heading">Annual Science Fair Exhibition</h2>
+        <p class="body-md">
+          Coordinate with logistics team for setup and equipment
+        </p>
+        <div class="progress"><div></div></div>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+</body>
 </html>

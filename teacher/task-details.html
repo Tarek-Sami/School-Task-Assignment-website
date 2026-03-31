@@ -1,31 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Task Details</title>
-  </head>
-  <body>
-    <iframe
-      src="../shared/teacher_nav.html"
-      style="width: 100%; height: 54px; border: none"
-    ></iframe>
-    <!-- <nav>
-      <ul>
-        <li><a href="index.html" target="_top">Home</a></li>
-        <li><a href="dashboard.html" target="_top">Teacher Dashboard</a></li>
-        <li><a href="my-tasks.html" target="_top">My Tasks</a></li>
-        <li><a href="profile.html" target="_top">Profile</a></li>
-        <li><a href="#" target="_top">Log out</a></li>
+<head>
+  <meta charset="UTF-8">
+  <title>Task Details</title>
+
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="components.css">
+  <link rel="stylesheet" href="task-details.css">
+</head>
+
+<body class="surface layout-luxury">
+
+  <div class="task-container">
+
+    <div class="task-header">
+      <div>
+        <h1 class="headline-md">Prepare Math Exam</h1>
+        <p class="body-md text-muted">Task ID: #T1023 • Teacher ID: #TE45</p>
+      </div>
+      <span class="badge badge-high">High</span>
+    </div>
+
+    <div class="task-card">
+      <h3 class="title-lg">Task Overview</h3>
+      <p class="body-md">
+        This task requires preparing the final mathematics exam for grade 10 students.
+        The exam should include a mix of theoretical and practical questions to evaluate
+        students’ understanding of the syllabus.
+      </p>
+      <p class="body-md text-muted">
+        Make sure the questions are clear, balanced, and cover all key topics discussed
+        during the semester.
+      </p>
+    </div>
+
+    <div class="task-card info-section">
+      <h3 class="title-lg">Details</h3>
+
+      <div class="info-grid">
+        <div>
+          <span class="label-sm">Assigned To</span>
+          <p class="body-md">Mr. Ahmed</p>
+        </div>
+
+        <div>
+          <span class="label-sm">Status</span>
+          <p class="body-md">In Progress</p>
+        </div>
+
+        <div>
+          <span class="label-sm">Due Date</span>
+          <p class="body-md">25 May 2026</p>
+        </div>
+
+        <div>
+          <span class="label-sm">Priority</span>
+          <p class="body-md">High</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="task-card">
+      <h3 class="title-lg">Subtasks</h3>
+
+      <p class="body-md text-muted">
+        Break down the main task into smaller steps to ensure smooth completion.
+      </p>
+
+      <ul class="subtasks">
+        <li>
+          <strong>Create MCQ Questions</strong>
+          <p class="text-muted">Prepare at least 15 multiple-choice questions covering key topics.</p>
+        </li>
+
+        <li>
+          <strong>Add Problem Solving Section</strong>
+          <p class="text-muted">Include 5 long questions to test analytical skills.</p>
+        </li>
+
+        <li>
+          <strong>Review Answers</strong>
+          <p class="text-muted">Double-check all answers and formatting before submission.</p>
+        </li>
       </ul>
-    </nav> -->
-    <h1 align="center">Task Details</h1>
-    <p><b>Task ID: </b>1</p>
-    <p><b>Task Title: </b>Math Homework</p>
-    <p><b>Teacher: </b> Ahmed Ali</p>
-    <p><b>priority: </b> High</p>
-    <p><b>Description: </b>Solve exercises from page 20 to 25.</p>
-    <p><b>Created By: </b> Admin 1</p>
-    <p><b>Created Date: </b> 10/3/2026</p>
-    <button>Mark as Completed</button>
-  </body>
+    </div>
+
+    <div class="task-card">
+      <h3 class="title-lg">Additional Notes</h3>
+      <p class="body-md text-muted">
+        Coordinate with other teachers to ensure consistency in difficulty level.
+        The exam should not exceed 2 hours.
+      </p>
+    </div>
+
+    <div class="actions">
+       <button class="btn btn-primary btn-custom">Edit Task</button>
+       <button class="btn btn-secondary btn-custom">Back</button>
+    </div>
+
+  </div>
+
+</body>
 </html>
