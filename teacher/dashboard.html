@@ -4,24 +4,94 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="../styles/teacher/dashboard.css">
   </head>
   <body>
+
     <iframe
       src="../shared/teacher_nav.html"
       style="width: 100%; height: 56px; border: none"
     ></iframe>
-    <section>
-      <h2 align="center">Teacher Dashboard</h2>
-      <br /><br />
-      <h2>Teacher Actions</h2>
-      <ol>
-        <li><a href="my-tasks.html">My Tasks</a></li>
-        <br />
-        <li><a href="completed-tasks.html">Completed Tasks</a></li>
-        <br />
-        <li><a href="profile.html">Profile</a></li>
-        <br />
-      </ol>
-    </section>
+
+
+    <section class="dashboard">
+
+  <h1 class="display-lg">Welcome back, Teacher!</h1>
+  <p class="text-muted">Here's an overview of your academic operations.</p>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="task-card">
+      <p class="label-sm">Total Tasks</p>
+      <h2>5</h2>
+    </div>
+
+    <div class="task-card">
+      <p class="label-sm">Completed</p>
+      <h2>2</h2>
+    </div>
+
+    <div class="task-card">
+      <p class="label-sm">Pending</p>
+      <h2>3</h2>
+    </div>
+
+     <div class="task-card">
+      <p class="label-sm">Teachers</p>
+      <h2>5</h2>
+    </div>
+  </div>
+
+  <!-- Tasks -->
+  <h2 class="headline-md">All Tasks</h2>
+
+  <div class="task-list">
+
+    <div class="task-card priority-high">
+    <div class="task-info">
+        <div class="checkbox"></div>
+        <div class="task-texts">
+            <p class="title-lg">Prepare Math Exam</p>
+            <p class="label-sm text-muted">Assigned to Prof. Joseph</p>
+        </div>
+    </div>
+    <div class="task-meta">
+        <span class="badge badge-high">High Priority</span>
+        <span class="label-sm text-muted">Oct 12, 2026</span>
+    </div>
+</div>
+
+
+    <div class="task-card">
+    <div class="task-info">
+        <div class="checkbox"></div>
+        <div class="task-texts">
+            <p class="title-lg">Submit Grade Reports</p>
+            <p class="label-sm text-muted">Assigned to Ms. Caroline</p>
+        </div>
+    </div>
+    <div class="task-meta">
+        <span class="badge badge-medium">Medium Priority</span>
+        <span class="label-sm text-muted">Aug 10, 2026</span>
+    </div>
+</div>
+
+
+<div class="task-card">
+    <div class="task-info">
+        <div class="checkbox"></div>
+        <div class="task-texts">
+            <p class="title-lg">Review Curriculum Update</p>
+            <p class="label-sm text-muted">Assigned to Dr. Julian</p>
+        </div>
+    </div>
+    <div class="task-meta">
+        <span class="badge badge-low">Low Priority</span>
+        <span class="label-sm text-muted">Nov 15, 2026</span>
+    </div>
+</div>
+
+</section>
+
   </body>
 </html>
