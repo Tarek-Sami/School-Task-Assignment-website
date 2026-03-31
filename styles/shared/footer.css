@@ -3,7 +3,7 @@ footer .container {
   display: flex;             
   justify-content: space-between; 
   align-items: flex-start;   
-  padding: 60px 10%;
+  padding: 40px 10%;
   background-color: #E2E8F080;
 
 }
