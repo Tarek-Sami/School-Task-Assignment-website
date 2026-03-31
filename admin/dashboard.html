@@ -1,35 +1,127 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Dashboard</title>
-  </head>
-  <body>
-    <iframe
-      src="../shared/admin_nav.html"
-      style="width: 100%; height: 56px; border: none"
-    ></iframe>
-    <!-- <nav align="center">
-  <a href="../shared/index.html">Home</a>&nbsp&nbsp&nbsp
-  <a href="dashboard.html">Admin Dashboard</a>&nbsp&nbsp&nbsp
-  <a href="profile.html">Profile</a>&nbsp&nbsp&nbsp
-  <a href="../shared/index.html">Log Out</a>&nbsp&nbsp&nbsp
-   </nav>  -->
-    <section>
-      <h2 align="center">Admin Dashboard</h2>
-      <br /><br />
-      <h2>Admin Actions</h2>
-      <ol>
-        <li><a href="add-task.html">Add Task</a></li>
-        <br />
-        <li><a href="edit-task.html">Edit Task</a></li>
-        <br />
-        <li><a href="tasks.html">View Tasks</a></li>
-        <br />
-        <li><a href="manage-teachers.html">Manage Teachers</a></li>
-        <br />
-      </ol>
-    </section>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../styles/admin/dashboard.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+
+<body>
+
+  <iframe
+    src="../shared/admin_nav.html"
+    style="width: 100%; height: 56px; border: none"
+  ></iframe>
+
+  <div class="container">
+
+    <!-- Welcome -->
+    <div class="header">
+      <h1>Welcome back, admin!</h1>
+      <p>Here's an overview of your academic operations for today.</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+      <div class="card">
+        <i class="fa-solid fa-clipboard-list card-icon"></i>
+        <h3>Total Tasks</h3>
+        <span>5</span>
+      </div>
+
+      <div class="card">
+        <i class="fa-regular fa-circle-check card-icon"></i>
+        <h3>Completed</h3>
+        <span>2</span>
+      </div>
+
+      <div class="card">
+        <i class="fa-regular fa-clock card-icon"></i>
+        <h3>Pending</h3>
+        <span>3</span>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-graduation-cap card-icon"></i>
+        <h3>Teachers</h3>
+        <span>5</span>
+      </div>
+    </div>
+
+    <!-- Tasks Section -->
+    <div class="tasks-header">
+      <h2>All Tasks</h2>
+      <a href="add-task.html">
+        <button class="add-btn">+ Add Task</button>
+      </a>
+    </div>
+
+    <div class="task-list">
+
+      <!-- Task Item -->
+      <div class="task">
+        <div class="task-left">
+          <input type="checkbox" class="task-check" />
+          <div class="task-info">
+            <h4>Prepare Math Exam</h4>
+            <p>Assigned to Prof. Aris</p>
+          </div>
+        </div>
+
+        <div class="task-right">
+          <span class="priority high">High</span>
+          <span class="date">
+            <i class="fa-regular fa-calendar"></i> Oct 15,2025
+          </span>
+          <a href="edit-task.html"><i class="fa-solid fa-pen"></i></a>
+          <a href="dashboard.html"><i class="fa-solid fa-trash"></i></a>
+        </div>
+      </div>
+
+      <div class="task">
+        <div class="task-left">
+          <input type="checkbox" class="task-check" />
+          <div class="task-info">
+            <h4>Submit Grade Reports</h4>
+            <p>Assigned to Ms. Sarah</p>
+          </div>
+        </div>
+
+        <div class="task-right">
+          <span class="priority medium">Medium</span>
+          <span class="date">
+            <i class="fa-regular fa-calendar"></i> Oct 10,2025
+          </span>
+          <a href="edit-task.html"><i class="fa-solid fa-pen"></i></a>
+          <a href="dashboard.html"><i class="fa-solid fa-trash"></i></a>
+        </div>
+      </div>
+
+      <div class="task">
+        <div class="task-left">
+          <input type="checkbox" class="task-check" />
+          <div class="task-info">
+            <h4>Review Curriculum Update</h4>
+            <p>Assigned to Dr. Julian</p>
+          </div>
+        </div>
+
+        <div class="task-right">
+          <span class="priority low">Low</span>
+          <span class="date">
+            <i class="fa-regular fa-calendar"></i> Oct 13,2025
+          </span>
+          <a href="edit-task.html"><i class="fa-solid fa-pen"></i></a>
+          <a href="dashboard.html"><i class="fa-solid fa-trash"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
 </html>
