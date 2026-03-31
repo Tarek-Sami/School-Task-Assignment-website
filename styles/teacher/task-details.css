@@ -1,3 +1,5 @@
+@import url("../shared/global.css");
+@import url("../shared/components.css");
 .task-container {
   max-width: 800px;
   margin: auto;
