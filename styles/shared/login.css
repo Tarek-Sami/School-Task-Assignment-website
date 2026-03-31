@@ -19,7 +19,7 @@ body {
     -webkit-backdrop-filter: blur(var(--glass-blur-md));
 
     width: 350px;
-    height: 70vh;
+    height: 60vh;
     padding: 2rem;
     border-radius: var(--radius-md);
     text-align: center;
