@@ -1,70 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup</title>
-</head>
-<body>
-    <iframe src="../shared/main_nav.html" style="width: 100%; height: 54px; border: none;"></iframe>
-    <br><br><br><br>
-<h1 align="center">Create Account</h1>
-<form>
-<table align="center"  cellpadding="10" >
-<tr>
-<td><label for="name">Name</label></td>
-<td><input type="text" id="name"  placeholder="Enter your name" required minlength="3"></td>
-</tr>
-<tr>
-<td><label for="user">Username</label></td>
-<td><input type="text" id="user"  placeholder="Enter your username" required minlength="4"></td>
-</tr>
-<tr>
-<td><label for="email">Email</label></td>
-<td><input type="email" id="email"  placeholder="Enter your email" required></td>
-</tr>
-<tr>
-<td><label for="phone">Phone</label></td>
-<td><input type="tel" id="phone" placeholder="Enter your phone number" minlength="11" </td>
-</tr>
-<tr>
-<td><label for="password">Password</label></td>
-<td><input type="password" id="password"  placeholder="Enter your password" required minlength="6"></td>
-</tr>
-<tr>
-<td><label for="p">Confirm Password</label></td>
-<td><input type="password" id="p"  placeholder="Confirm password" required minlength="6"></td>
-</tr>
-<tr>
-<td><label for="role">Role</label></td>
-<td>
-<select id="role" required>
-<option value="">Select your role</option>
-<option value="teacher">Teacher</option>
-<option value="admin">Admin</option>
-</select>
-</td>
-</tr>
-<tr>
-<td>Gender</td>
-<td>
-<input type="radio" name="gender" id="m"> <label for="m">Male</label>
-<input type="radio" name="gender" id="f" ><label for="f"> Female</label>
-</td>
-</tr>
-<tr>
-<td colspan="2" align="center">
-<input type="submit" value="Sign Up">
-<input type="reset" value="Clear">
-</td>
-</tr>
-<tr>
-<td colspan="2" align="center">
-Already have an account? <a href="login.html" target="_top">Login</a>
-</td>
-</tr>
-</table>
-</form>
-</body>
-</html>
+    <link rel="stylesheet" href="../styles/shared/signup.css" />
+  </head>
+  <body>
+    <form novalidate>
+      <div class="center">
+        <div class="card">
+          <h1 class="headline">Create Account</h1>
+          <p class="textp">
+            Fill in your details to create an EduFlow account and start managing
+            tasks easily.
+          </p>
 
+          <label for="name">FULL NAME</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            required
+            minlength="3"
+          />
+
+          <label for="user">USERNAME</label>
+          <input
+            type="text"
+            id="user"
+            placeholder="Enter your username"
+            required
+            minlength="4"
+          />
+
+          <label for="email">EMAIL ADDRESS</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+
+          <label for="phone">PHONE NUMBER</label>
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Enter your phone number"
+            minlength="11"
+          />
+
+          <label for="password">PASSWORD</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+            minlength="6"
+          />
+
+          <label for="confirm-password">CONFIRM PASSWORD</label>
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Confirm password"
+            required
+            minlength="6"
+          />
+
+          <label for="role">ROLE</label>
+          <select id="role" required>
+            <option value="">Select your role</option>
+            <option value="teacher">Teacher</option>
+            <option value="admin">Admin</option>
+          </select>
+
+          <div class="gender-title">GENDER</div>
+          <div class="gender-group">
+            <label class="gender-option" for="m">
+              <input type="radio" name="gender" id="m" />
+              <span>Male</span>
+            </label>
+            <label class="gender-option" for="f">
+              <input type="radio" name="gender" id="f" />
+              <span>Female</span>
+            </label>
+          </div>
+
+          <button type="submit">Sign Up</button>
+        </div>
+
+        <div class="login-text">
+          Already have an account?
+          <a href="login.html">Login</a>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

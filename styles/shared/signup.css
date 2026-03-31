@@ -1,0 +1,114 @@
+@import url("../global/global.css");
+@import url("../global/components.css");
+
+body {
+  font-family: var(--font-body);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../assets/media/images/forget-pass.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.center {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 1rem;
+}
+
+.card {
+  background: var(--surface);
+  backdrop-filter: blur(var(--glass-blur-md));
+  -webkit-backdrop-filter: blur(var(--glass-blur-md));
+  width:  370px;
+  height: 81vh;
+  padding: 1.6rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.headline {
+  font-size: var(--headline-md-size);
+  color: var(--color-primary);
+}
+
+.textp {
+  font-size: var(--body-md-size);
+  color: var(--font-color);
+  margin: 10px 0 1.2rem;
+}
+
+label,
+.gender-title {
+  font-size: var(--label-sm-size);
+  color: var(--font-color);
+  font-weight: 700;
+  display: block;
+  text-align: left;
+  margin-top: 0.4rem;
+  margin-bottom: 0.35rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius-sm);
+  font-size: var(--body-md-size);
+  margin-bottom: 4px;
+}
+
+.gender-group {
+  display: flex;
+  gap: 1rem;
+  margin: 0.15rem 0 0.7rem;
+}
+
+.gender-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  font-size: var(--body-md-size);
+  font-weight: 500;
+}
+button[type="submit"] {
+  width: 100%;
+  background: var(--gradient-primary);
+  color: var(--on-primary);
+  border: none;
+  padding: 0.75rem;
+  border-radius: var(--radius-xl);
+  font-size: var(--body-md-size);
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-4px);
+}
+
+.login-text {
+  margin-top: 16px;
+  text-align: center;
+  font-size: var(--body-md-size);
+  color: #d1d5db;
+}
+
+.login-text a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 600;
+  margin-left: 4px;
+  transition: 0.3s;
+}
+
+.login-text a:hover {
+  color: #4da6ff;
+}
