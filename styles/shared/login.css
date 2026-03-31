@@ -17,9 +17,8 @@ body {
     background: rgba(248, 250, 252, 0.7);
     backdrop-filter: blur(var(--glass-blur-md));
     -webkit-backdrop-filter: blur(var(--glass-blur-md));
-
     width: 350px;
-    height: 60vh;
+    height: 55vh;
     padding: 2rem;
     border-radius: var(--radius-md);
     text-align: center;
@@ -96,7 +95,6 @@ button[type="submit"] {
 }
 button[type="submit"]:hover {
   transform: translateY(-5px);
-  box-shadow: 5px 5px 10px 0px rgba(59, 130, 246, 0.45);
 }
 
 .divider {

@@ -10,43 +10,56 @@ body {
   background-position: center;
 }
 
-.page-center {
+.center {
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
 }
+
 .card {
   background: var(--surface);
-  width:  380px;
-  height: 36vh;
+  width: 380px;
   padding: 2rem 1.6rem;
   border-radius: var(--radius-md);
   text-align: center;
 }
-.headline-md {
+
+.headline {
   font-size: var(--headline-md-size);
   color: var(--color-primary);
 }
-.text-muted {
+
+.textp {
   font-size: var(--body-md-size);
   color: var(--font-color);
+  margin: 10px 0 1.2rem;
 }
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin: 1.5rem 0;
+
+label {
+  font-size: var(--label-sm-size);
+  color: var(--font-color);
+  font-weight: 700;
+  display: block;
+  text-align: left;
+  margin-top: 0.4rem;
+  margin-bottom: 0.35rem;
 }
+
 input {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: var(--radius-sm);
   font-size: var(--body-md-size);
+  margin-bottom: 6px;
+  text-align: center;
+  letter-spacing: 0.2em;
 }
-.form .btn.btn-primary {
+
+button[type="submit"] {
   width: 100%;
   background: var(--gradient-primary);
   color: var(--on-primary);
@@ -56,23 +69,33 @@ input {
   font-size: var(--body-md-size);
   font-weight: 700;
   cursor: pointer;
-  margin-top: 0.3rem;
+  margin-top: 0.9rem;
   transition: 0.3s;
 }
 
-.form .btn.btn-primary:hover {
+button[type="submit"]:hover {
   transform: translateY(-4px);
 }
 
-.card > a.text-muted {
-  display: inline-block;
-  margin-top: 0.2rem;
-  color:black;
+.help-text {
+  margin-top: 16px;
+  text-align: center;
+  font-size: var(--body-md-size);
+  color: #d1d5db;
+}
+
+.help-text a {
+  color: #fff;
   text-decoration: underline;
   font-weight: 600;
+  margin-left: 4px;
   transition: 0.3s;
 }
 
-.card > a.text-muted:hover {
-  color: #4da6ff; 
+.help-text a:hover {
+  color: #4da6ff;
+}
+
+.help-text.secondary {
+  margin-top: 8px;
 }

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="../styles/shared/otp.css" />
+  </head>
+  <body>
+    <main class="center">
+      <section class="card" aria-labelledby="otp-title">
+        <h1 class="headline" id="otp-title">Verify OTP</h1>
+        <p class="textp">
+          Enter the 6-digit code sent to your email to continue.
+        </p>
+
+        <form novalidate>
+          <label for="otp">OTP CODE</label>
+          <input
+            type="text"
+            id="otp"
+            maxlength="6"
+            placeholder="Enter 6-digit OTP"
+            required
+          />
+          <button type="submit" formaction="change-password.html">
+            Verify OTP
+          </button>
+        </form>
+      </section>
+      <div class="help-text">
+        Didn't receive code?
+        <a href="otp.html">Resend OTP</a>
+      </div>
+      <div class="help-text secondary">
+        Back to
+        <a href="login.html">Login</a>
+      </div>
+    </main>
+  </body>
+</html>
