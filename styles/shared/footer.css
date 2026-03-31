@@ -1,0 +1,60 @@
+@import url(../global/global.css);
+footer .container {
+  display: flex;             
+  justify-content: space-between; 
+  align-items: flex-start;   
+  padding: 60px 10%;
+  background-color: #E2E8F080;
+
+}
+
+
+.left {
+  max-width: 300px;
+}
+
+.left h1 {
+  font-family: var(--font-display);
+  font-size: 2.5rem; 
+  color: var(--color-primary);
+  margin-bottom: 15px;
+}
+.right {
+  display: flex;     
+ gap: 80px;   
+}
+.right h3 {
+  font-size: var(--label-sm-size);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+   color: #1E3A8A;
+ display: block;
+}
+.right ul {
+  list-style: none;   
+  padding: 0;
+  margin: 0;
+  
+}
+
+.right ul li {
+  margin-bottom: 10px;
+}
+
+.right ul li a {
+  text-decoration: none;
+  color: var(--on-surface-variant);
+  font-size: var(--body-md-size);
+}
+.right ul li a:hover{
+    color: #1E3A8A;;
+}
+.icons {
+  display: flex;
+  gap: 20px;
+      color: var(--on-surface-variant);
+
+}
+.icons i:hover{
+  color: #1E3A8A;
+}
