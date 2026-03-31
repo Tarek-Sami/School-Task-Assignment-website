@@ -1,6 +1,5 @@
 /* Shared font families for display and body text tokens. */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@500;700;800&display=swap");
-
 :root {
   /* Global design tokens used by all other stylesheets. */
   /* Core palette */
@@ -10,7 +9,7 @@
   --color-secondary-accent-strong: #3b82f6;
 
   /* Surface tiers replace hard borders to create depth. */
-  --surface: #f8fafc;
+  --surface: #f8fafcc9;
   --surface-container-low: #eef3fb;
   --surface-container-lowest: #fdfefe;
   --surface-container-highest: #e4ebfb;
