@@ -4,8 +4,225 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manage Teachers</title>
+    <link rel="stylesheet" href="../styles/global/global.css" />
+    <link rel="stylesheet" href="../styles/global/components.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/admin/manage-teachers.css" />
   </head>
-  <body>
-    
+  <body class="manage-teachers-page">
+    <header class="page-header">
+      <p>Faculty Governance</p>
+      <h1>Teacher Management</h1>
+    </header>
+
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-tile">
+          <p class="stat-tile-label">Total Active Faculty</p>
+          <p class="stat-tile-value stat-tile-value-blue">124</p>
+          <p class="stat-tile-meta stat-tile-meta-positive">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            +4 this month
+          </p>
+        </div>
+        <div class="stat-tile">
+          <p class="stat-tile-label">Avg. Faculty Workload</p>
+          <p class="stat-tile-value stat-tile-value-teal">12.4</p>
+          <p class="stat-tile-meta">
+            <i class="fa-regular fa-clock"></i>
+            Tasks per teacher
+          </p>
+        </div>
+        <div class="stat-tile">
+          <p class="stat-tile-label">Presence Index</p>
+          <p class="stat-tile-value stat-tile-value-purple">92%</p>
+          <p class="stat-tile-meta stat-tile-meta-accent">
+            <i class="fa-solid fa-bolt"></i>
+            Above benchmark
+          </p>
+        </div>
+      </div>
+      <section class="roster-section">
+        <div class="roster-toolbar">
+          <h2 id="roster-heading" class="roster-heading">Teachers</h2>
+          <div class="roster-controls">
+            <div class="roster-search">
+              <div class="search-wrap">
+                <input
+                  id="teacher-search"
+                  type="search"
+                  placeholder="Search teachers by name or department…"
+                />
+                <button type="button" class="search-submit">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </div>
+            <button type="button" class="filter-btn">
+              <i class="fa-solid fa-filter"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="teacher-list">
+          <article class="teacher-row">
+            <div class="teacher-row-avatar">
+              <img
+                src="../assets/media/images/Profile.png"
+                alt="Dr. Sarah Jenkins"
+                width="56"
+                height="56"
+              />
+              <span
+                class="teacher-row-dot teacher-row-dot-online"
+                title="Online"
+              ></span>
+            </div>
+            <div class="teacher-row-info">
+              <h3 class="teacher-row-name">Dr. Sarah Jenkins</h3>
+              <p class="teacher-row-role">
+                Advanced Linguistics • Head of Dept.
+              </p>
+            </div>
+            <div class="teacher-row-workload">
+              <p class="teacher-row-workload-label">CURRENT WORKLOAD</p>
+              <div class="teacher-row-workload-bar">
+                <div class="progress">
+                  <div
+                    class="progress-bar progress-bar-blue"
+                    style="width: 80%"
+                  ></div>
+                </div>
+                <span class="teacher-row-tasks">18 Tasks</span>
+              </div>
+            </div>
+            <div class="teacher-row-status">
+              <p class="teacher-row-status-label">STATUS</p>
+              <div class="status-pill status-pill-online">
+                <span class="status-pill-dot"></span>
+                ONLINE
+              </div>
+            </div>
+          </article>
+
+          <article class="teacher-row">
+            <div class="teacher-row-avatar">
+              <img
+                src="../assets/media/images/Profile.png"
+                alt="Prof. Julian Thorne"
+                width="56"
+                height="56"
+              />
+              <span
+                class="teacher-row-dot teacher-row-dot-offline"
+                title="Offline"
+              ></span>
+            </div>
+            <div class="teacher-row-info">
+              <h3 class="teacher-row-name">Prof. Julian Thorne</h3>
+              <p class="teacher-row-role">Physics • Lab Coordinator</p>
+            </div>
+            <div class="teacher-row-workload">
+              <p class="teacher-row-workload-label">CURRENT WORKLOAD</p>
+              <div class="teacher-row-workload-bar">
+                <div class="progress">
+                  <div
+                    class="progress-bar progress-bar-teal"
+                    style="width: 55%"
+                  ></div>
+                </div>
+                <span class="teacher-row-tasks">11 Tasks</span>
+              </div>
+            </div>
+            <div class="teacher-row-status">
+              <p class="teacher-row-status-label">STATUS</p>
+              <div class="status-pill status-pill-offline">
+                <span class="status-pill-dot"></span>
+                OFFLINE
+              </div>
+            </div>
+          </article>
+
+          <article class="teacher-row">
+            <div class="teacher-row-avatar">
+              <img
+                src="../assets/media/images/Profile.png"
+                alt="Dr. Marcus Thorne"
+                width="56"
+                height="56"
+              />
+              <span
+                class="teacher-row-dot teacher-row-dot-online"
+                title="Online"
+              ></span>
+            </div>
+            <div class="teacher-row-info">
+              <h3 class="teacher-row-name">Dr. Marcus Thorne</h3>
+              <p class="teacher-row-role">Philosophy &amp; Ethics</p>
+            </div>
+            <div class="teacher-row-workload">
+              <p class="teacher-row-workload-label">CURRENT WORKLOAD</p>
+              <div class="teacher-row-workload-bar">
+                <div class="progress">
+                  <div
+                    class="progress-bar progress-bar-red"
+                    style="width: 40%"
+                  ></div>
+                </div>
+                <span class="teacher-row-tasks">8 Tasks</span>
+              </div>
+            </div>
+            <div class="teacher-row-status">
+              <p class="teacher-row-status-label">STATUS</p>
+              <div class="status-pill status-pill-online">
+                <span class="status-pill-dot"></span>
+                ONLINE
+              </div>
+            </div>
+          </article>
+
+          <article class="teacher-row">
+            <div class="teacher-row-avatar">
+              <img
+                src="../assets/media/images/Profile.png"
+                alt="Dr. Amira Hassan"
+                width="56"
+                height="56"
+              />
+              <span
+                class="teacher-row-dot teacher-row-dot-online"
+                title="Online"
+              ></span>
+            </div>
+            <div class="teacher-row-info">
+              <h3 class="teacher-row-name">Dr. Amira Hassan</h3>
+              <p class="teacher-row-role">Computer Science • Senior Lecturer</p>
+            </div>
+            <div class="teacher-row-workload">
+              <p class="teacher-row-workload-label">CURRENT WORKLOAD</p>
+              <div class="teacher-row-workload-bar">
+                <div class="progress">
+                  <div
+                    class="progress-bar progress-bar-navy"
+                    style="width: 88%"
+                  ></div>
+                </div>
+                <span class="teacher-row-tasks">19 Tasks</span>
+              </div>
+            </div>
+            <div class="teacher-row-status">
+              <p class="teacher-row-status-label">STATUS</p>
+              <div class="status-pill status-pill-online">
+                <span class="status-pill-dot"></span>
+                ONLINE
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
