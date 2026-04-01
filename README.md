@@ -66,4 +66,4 @@ School-Task-Assignment-website/
 
 1.  Clone or download the repository to your local machine.
 2.  Navigate to the project folder.
-3.  Open `shared/Index.html` in your web browser to start the application.
+3.  Open `index.html` in your web browser to start the application.

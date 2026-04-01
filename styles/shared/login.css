@@ -6,6 +6,7 @@ body {
     url("../../assets/media/images/forget-pass.png");
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 }
 .center {
   display: flex;
@@ -90,8 +91,8 @@ button[type="submit"] {
   font-size: var(--body-lg-size);
   cursor: pointer;
   margin-top: 1rem;
-  margin-bottom:1.5rem ;
-    transition: 0.3s ;
+  margin-bottom: 1.5rem;
+  transition: 0.3s;
 }
 button[type="submit"]:hover {
   transform: translateY(-5px);
@@ -118,7 +119,7 @@ button[type="submit"]:hover {
   top: 50%;
   width: 20%;
   height: 1px;
-  background:#888;
+  background: #888;
 }
 .divider::before {
   left: 0;
@@ -139,12 +140,12 @@ button[type="submit"]:hover {
   gap: 10px;
   padding: 12px 20px;
   background: rgba(255, 255, 255, 0.6);
-    border: 1px solid #ccc;
+  border: 1px solid #ccc;
   border-radius: var(--radius-md);
   cursor: pointer;
   font-weight: bold;
   color: #555;
-  transition: 0.3s ;
+  transition: 0.3s;
 }
 .btn img {
   width: 18px;
@@ -158,10 +159,10 @@ button[type="submit"]:hover {
 }
 
 .github:hover {
-  border-color:var(--color-primary);
+  border-color: var(--color-primary);
 }
 .google {
-    margin-left: 0.6rem;
+  margin-left: 0.6rem;
 }
 button a {
   text-decoration: none;
@@ -182,5 +183,5 @@ button a {
   transition: 0.3s;
 }
 .signup-text a:hover {
-  color: #4da6ff; 
+  color: #4da6ff;
 }

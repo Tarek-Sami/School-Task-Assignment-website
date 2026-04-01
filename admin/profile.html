@@ -1,180 +1,213 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Profile</title>
-  <link rel="stylesheet" href="../styles/admin/profile.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Profile</title>
+    <link rel="stylesheet" href="../styles/admin/profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/shared/main-nav.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-    <div id='navbar'></div>
-  <div class="container">
-    <div class="hero card">
-      <div class="hero-info-box">
-        <div class="avatar-ring">
-          <img src="https://ui-avatars.com/api/?name=Ahmed+Tolba&background=f0e6ff&color=6142db&size=150" alt="Profile photo" class="avatar-img" />
-        </div>
-        <div class="hero-details">
-          <h1>Ahmed Tolba</h1>
-          <div class="tags">
-            <span class="tag tag-purple">Admin</span>
+  <body>
+    <div id="navbar"></div>
+    <div class="container">
+      <div class="hero card">
+        <div class="hero-info-box">
+          <div class="avatar-ring">
+            <img
+              src="https://ui-avatars.com/api/?name=Ahmed+Tolba&background=f0e6ff&color=6142db&size=150"
+              alt="Profile photo"
+              class="avatar-img"
+            />
           </div>
-          <p class="email"><i class="fa-regular fa-envelope"></i> ahmed.tolba@email.com</p>
+          <div class="hero-details">
+            <h1>Ahmed Tolba</h1>
+            <div class="tags">
+              <span class="tag tag-purple">Admin</span>
+            </div>
+            <p class="email">
+              <i class="fa-regular fa-envelope"></i> ahmed.tolba@email.com
+            </p>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a href="edit-profile.html" class="btn btn-primary"
+            ><i class="fa-solid fa-pen"></i> Edit Profile</a
+          >
+          <a href="dashboard.html" class="btn btn-secondary"
+            ><i class="fa-solid fa-house"></i> Home</a
+          >
         </div>
       </div>
-      <div class="hero-actions">
-        <a href="edit-profile.html" class="btn btn-primary"><i class="fa-solid fa-pen"></i> Edit Profile</a>
-        <a href="dashboard.html" class="btn btn-secondary"><i class="fa-solid fa-house"></i> Home</a>
+
+      <div class="stats">
+        <div class="stat card">
+          <div class="icon-box bg-purple">
+            <i class="fa-solid fa-file-lines text-purple"></i>
+          </div>
+          <div class="stat-values">
+            <h3><a href="tasks.html">56 Tasks</a></h3>
+            <span class="stat-up">+6 today</span>
+          </div>
+        </div>
+        <div class="stat card">
+          <div class="icon-box bg-blue">
+            <i class="fa-solid fa-circle-check text-blue"></i>
+          </div>
+          <div class="stat-values">
+            <h3><a href="manage-teachers.html">22 Teachers</a></h3>
+            <span class="stat-up">+2 today</span>
+          </div>
+        </div>
+        <div class="stat card stat-prog">
+          <div class="icon-box bg-purple-light">
+            <i class="fa-solid fa-user text-purple"></i>
+          </div>
+          <div class="prog-data">
+            <div class="prog-head">
+              <span>Completed Tasks</span>
+              <strong>80%</strong>
+            </div>
+            <div class="prog-track">
+              <div class="prog-fill" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col">
+          <div class="card info">
+            <div class="card-header">
+              <i class="fa-solid fa-user"></i>
+              <h2>Personal Information</h2>
+            </div>
+            <div class="info-list">
+              <div class="info-row">
+                <span class="info-label">Full Name</span>
+                <div class="info-val">Ahmed Tolba</div>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Email</span>
+                <div class="info-val">ahmed.tolba@email.com</div>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Username</span>
+                <div class="info-val">ahmedtolba</div>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Role</span>
+                <div class="info-val val-flex">
+                  <span class="tag tag-admin">Admin</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card activity">
+            <div class="card-header">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+              <h2>Activity</h2>
+            </div>
+            <div class="act-list">
+              <div class="act-item">
+                <div class="act-icon bg-purple">
+                  <i class="fa-solid fa-file-lines text-purple"></i>
+                </div>
+                <div class="act-text">You created a task</div>
+                <div class="act-time">2h ago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card security">
+            <div class="card-header">
+              <i class="fa-solid fa-shield-halved"></i>
+              <h2>Security</h2>
+            </div>
+            <div class="sec-top">
+              <a
+                href="../shared/change-password.html"
+                class="btn btn-primary btn-sm"
+                >Change Password</a
+              >
+              <span class="sec-info"
+                >Last login: 2 hours ago <i class="fa-solid fa-circle-info"></i
+              ></span>
+            </div>
+          </div>
+
+          <div class="card my-tasks-card">
+            <div class="card-header header-split">
+              <div class="header-left">
+                <i class="fa-solid fa-list-check"></i>
+                <h2>My Tasks</h2>
+              </div>
+              <a href="add-task.html" class="add-task-btn" title="Add New Task">
+                <i class="fa-solid fa-plus"></i>
+              </a>
+            </div>
+            <div class="tasks-list">
+              <div class="task">
+                <div class="task-main">
+                  <i class="fa-solid fa-square-poll-horizontal text-red"></i>
+                  <div class="task-det">
+                    <h4>Modernist Architecture Exhibit</h4>
+                    <p>
+                      <i class="fa-solid fa-user task-user-ic"></i> Prof. Elena
+                      Vance
+                    </p>
+                  </div>
+                </div>
+                <div class="task-meta">
+                  <div class="tags">
+                    <span class="tag bg-red text-red">High</span>
+                    <span class="tag bg-purple text-purple">In Progress</span>
+                  </div>
+                  <div class="task-pct">36%</div>
+                </div>
+              </div>
+
+              <div class="task">
+                <div class="task-main">
+                  <i class="fa-solid fa-square-poll-horizontal text-blue"></i>
+                  <div class="task-det">
+                    <h4>Quantum Physics Lab Peer Review</h4>
+                    <p>
+                      <i class="fa-solid fa-user task-user-ic"></i> Prof. Julian
+                      Thorne
+                    </p>
+                  </div>
+                </div>
+                <div class="task-meta">
+                  <div class="tags">
+                    <span class="tag bg-orange text-orange">Medium</span>
+                    <span class="tag bg-cyan text-cyan">Completed</span>
+                  </div>
+                  <div class="task-pct">100%</div>
+                </div>
+              </div>
+            </div>
+            <a href="tasks.html" class="view-all"
+              >View All Tasks <i class="fa-solid fa-chevron-right"></i
+            ></a>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="stats">
-      <div class="stat card">
-        <div class="icon-box bg-purple">
-          <i class="fa-solid fa-file-lines text-purple"></i>
-        </div>
-        <div class="stat-values">
-          <h3><a href="tasks.html">56 Tasks</a></h3>
-          <span class="stat-up">+6 today</span>
-        </div>
-      </div>
-      <div class="stat card">
-        <div class="icon-box bg-blue">
-          <i class="fa-solid fa-circle-check text-blue"></i>
-        </div>
-        <div class="stat-values">
-          <h3><a href="manage-teachers.html">22 Teachers</a></h3>
-          <span class="stat-up">+2 today</span>
-        </div>
-      </div>
-      <div class="stat card stat-prog">
-        <div class="icon-box bg-purple-light">
-          <i class="fa-solid fa-user text-purple"></i>
-        </div>
-        <div class="prog-data">
-          <div class="prog-head">
-            <span>Completed Tasks</span>
-            <strong>80%</strong>
-          </div>
-          <div class="prog-track">
-            <div class="prog-fill" style="width: 80%;"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid">
-      <div class="col">
-        <div class="card info">
-          <div class="card-header">
-            <i class="fa-solid fa-user"></i>
-            <h2>Personal Information</h2>
-          </div>
-          <div class="info-list">
-            <div class="info-row">
-              <span class="info-label">Full Name</span>
-              <div class="info-val">Ahmed Tolba</div>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Email</span>
-              <div class="info-val">ahmed.tolba@email.com</div>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Username</span>
-              <div class="info-val">ahmedtolba</div>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Role</span>
-              <div class="info-val val-flex">
-                <span class="tag tag-admin">Admin</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card activity">
-          <div class="card-header">
-            <i class="fa-solid fa-clock-rotate-left"></i>
-            <h2>Activity</h2>
-          </div>
-          <div class="act-list">
-            <div class="act-item">
-              <div class="act-icon bg-purple">
-                <i class="fa-solid fa-file-lines text-purple"></i>
-              </div>
-              <div class="act-text">You created a task</div>
-              <div class="act-time">2h ago</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card security">
-          <div class="card-header">
-            <i class="fa-solid fa-shield-halved"></i>
-            <h2>Security</h2>
-          </div>
-          <div class="sec-top">
-            <a href="../shared/change-password.html" class="btn btn-primary btn-sm">Change Password</a>
-            <span class="sec-info">Last login: 2 hours ago <i class="fa-solid fa-circle-info"></i></span>
-          </div>
-        </div>
-
-        <div class="card my-tasks-card">
-          <div class="card-header header-split">
-            <div class="header-left">
-              <i class="fa-solid fa-list-check"></i>
-              <h2>My Tasks</h2>
-            </div>
-            <a href="add-task.html" class="add-task-btn" title="Add New Task">
-              <i class="fa-solid fa-plus"></i>
-            </a>
-          </div>
-          <div class="tasks-list">
-            <div class="task">
-              <div class="task-main">
-                <i class="fa-solid fa-square-poll-horizontal text-red"></i>
-                <div class="task-det">
-                  <h4>Modernist Architecture Exhibit</h4>
-                  <p><i class="fa-solid fa-user task-user-ic"></i> Prof. Elena Vance</p>
-                </div>
-              </div>
-              <div class="task-meta">
-                <div class="tags">
-                  <span class="tag bg-red text-red">High</span>
-                  <span class="tag bg-purple text-purple">In Progress</span>
-                </div>
-                <div class="task-pct">36%</div>
-              </div>
-            </div>
-
-            <div class="task">
-              <div class="task-main">
-                <i class="fa-solid fa-square-poll-horizontal text-blue"></i>
-                <div class="task-det">
-                  <h4>Quantum Physics Lab Peer Review</h4>
-                  <p><i class="fa-solid fa-user task-user-ic"></i> Prof. Julian Thorne</p>
-                </div>
-              </div>
-              <div class="task-meta">
-                <div class="tags">
-                  <span class="tag bg-orange text-orange">Medium</span>
-                  <span class="tag bg-cyan text-cyan">Completed</span>
-                </div>
-                <div class="task-pct">100%</div>
-              </div>
-            </div>
-          </div>
-          <a href="tasks.html" class="view-all">View All Tasks <i class="fa-solid fa-chevron-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-<script src="../scripts/shared/nav.js" defer></script>
-</body>
+    <script src="../scripts/shared/nav.js" defer></script>
+  </body>
 </html>
+
