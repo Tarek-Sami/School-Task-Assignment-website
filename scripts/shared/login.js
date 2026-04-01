@@ -1,11 +1,15 @@
 const form = document.querySelector("form");
 
 if (form) {
-  form.addEventListener("submit", () => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
     const role = localStorage.getItem("role");
 
     if (!role) {
-      localStorage.setItem("role", "teacher");
+      return (window.location.href = "/shared/signup.html");
     }
+
+    window.location.href = `/${role}/dashboard.html`;
   });
 }

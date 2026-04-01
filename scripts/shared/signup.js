@@ -12,6 +12,6 @@ if (signupForm && roleSelect) {
       return;
     }
     localStorage.setItem("role", selectedRole);
-    window.location.href = "../../shared/login.html";
+    window.location.href = "/shared/login.html";
   });
 }
