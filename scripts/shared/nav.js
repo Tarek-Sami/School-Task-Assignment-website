@@ -36,7 +36,18 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   }
 
-  if (role === "admin") {
+  if (
+    window.location.pathname.includes("/index.html") ||
+    window.location.pathname.includes("/login.html") ||
+    window.location.pathname.includes("/signup.html")
+  ) {
+    navLinks = `
+        <a href="/index.html" class="link">Home</a>
+        <a href="/shared/login.html" class="link">Log in</a>
+        <a href="/shared/signup.html" class="link">Sign up</a>
+    `;
+    profileContainer.innerHTML = "";
+  } else if (role === "admin") {
     navLinks = `
         <a href="/index.html" class="link">Home</a>
         <a href="/admin/dashboard.html" class="link">Dashboard</a>
@@ -62,19 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="/shared/login.html" class="link">Log in</a>
         <a href="/shared/signup.html" class="link">Sign up</a>
     `;
-  }
-
-  if (
-    windoow.location.pathname.includes("/index.html") ||
-    window.location.pathname === "/login.html" ||
-    window.location.pathname === "/signup.html "
-  ) {
-    navLinks = `
-        <a href="/index.html" class="link">Home</a>
-        <a href="/shared/login.html" class="link">Log in</a>
-        <a href="/shared/signup.html" class="link">Sign up</a>
-    `;
-    profileContainer.innerHTML = "";
   }
 
   sidebarLinks.innerHTML = navLinks;
