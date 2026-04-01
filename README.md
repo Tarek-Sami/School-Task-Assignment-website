@@ -61,7 +61,6 @@ School-Task-Assignment-website/
 
 - **HTML5**: For page structure and content.
 - **CSS**: For styling (inline and embedded styles).
-- **Iframes**: Used for including navigation bars across different pages.
 
 ## 📖 How to Run
 
