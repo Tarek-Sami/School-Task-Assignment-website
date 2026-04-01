@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Profile</title>
+  <link rel="stylesheet" href="../styles/admin/profile.css" />
+  <link rel="stylesheet" href="../styles/admin/edit-profile.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="back-btn-box">
+      <a href="profile.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Profile</a>
+    </div>
+
+    <div class="card edit-card">
+      <div class="card-header">
+        <i class="fa-solid fa-user-pen"></i>
+        <h2>Edit Profile Information</h2>
+      </div>
+
+      <form class="edit-form" action="profile.html">
+        <div class="edit-avatar-box">
+          <img src="https://ui-avatars.com/api/?name=Ahmed+Tolba&background=f0e6ff&color=6142db&size=100" alt="Avatar" class="edit-avatar">
+          <button type="button" class="btn btn-secondary btn-sm">Upload New Photo</button>
+        </div>
+
+        <div class="form-grp">
+          <label>Full Name</label>
+          <input type="text" class="form-inp" value="Ahmed Tolba" />
+        </div>
+        
+        <div class="form-grp">
+          <label>Username</label>
+          <input type="text" class="form-inp" value="ahmedtolba" />
+        </div>
+
+        <div class="form-grp">
+          <label>Email Address</label>
+          <input type="email" class="form-inp" value="ahmed.tolba@email.com" />
+        </div>
+        
+        <div class="form-acts">
+          <a href="profile.html" class="btn btn-secondary">Cancel</a>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
