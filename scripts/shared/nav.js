@@ -64,6 +64,19 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
+  if (
+    windoow.location.pathname.includes("/index.html") ||
+    window.location.pathname === "/login.html" ||
+    window.location.pathname === "/signup.html "
+  ) {
+    navLinks = `
+        <a href="/index.html" class="link">Home</a>
+        <a href="/shared/login.html" class="link">Log in</a>
+        <a href="/shared/signup.html" class="link">Sign up</a>
+    `;
+    profileContainer.innerHTML = "";
+  }
+
   sidebarLinks.innerHTML = navLinks;
 
   const icon = document.querySelector(".icon");
