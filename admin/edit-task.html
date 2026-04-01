@@ -4,43 +4,138 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit Task</title>
+    <link rel="stylesheet" href="../styles/global/global.css" />
+    <link rel="stylesheet" href="../styles/global/components.css" />
+    <link rel="stylesheet" href="../styles/admin/add-task.css" />
   </head>
   <body>
-    <section>
-      <br /><br /><br />
-      <h1 align="center">Edit Task</h1>
-      <form align="center" action="../admin/dashboard.html">
-        <label>Task Id:</label>
-        <input
-          type="number"
-          name="task-id"
-          placeholder="Task Id"
-          value="101"
-          readonly
-        />
-        <br /><br />
-        <label>Task Title:</label>
-        <input
-          type="text"
-          name="task-title"
-          placeholder="Task Title"
-          value="Math Homework"
-          required
-        />
-        <br /><br />
-        <label>Priority</label>
-        <select>
-          <option value="Low">Low</option>
-          <option value="medium">Medium</option>
-          <option value="high">High</option>
-        </select>
-        <br /><br />
-        <label>Decription:</label>
-        <br />
-        <textarea rows="8" cols="30">Complete chapter 5 exercises</textarea>
-        <br /><br />
-        <input type="submit" value="Update Task" />
-      </form>
-    </section>
+    <div class="task-page">
+      <main class="task-layout">
+        <section class="heading-row">
+          <div>
+            <h1>Edit Task</h1>
+            <p>Update details and keep your team aligned.</p>
+          </div>
+          <div class="actions">
+            <button class="btn-cancel" type="button">
+              <img src="../assets/media/icons/close.png" alt="" />
+              <span>Cancel</span>
+            </button>
+            <button class="btn-create" type="submit" form="task-form">
+              Update Task
+            </button>
+          </div>
+        </section>
+
+        <form id="task-form" class="content-grid" novalidate>
+          <section class="panel panel-main">
+            <label for="task-id">TASK ID</label>
+            <div class="id-row">
+              <span>#</span>
+              <input id="task-id" type="text" value="TSK-037" />
+            </div>
+
+            <label for="headline">HEADLINE</label>
+            <input
+              id="headline"
+              type="text"
+              value="Final Term Physics Revision"
+            />
+            <p class="small">
+              This will be the main title displayed to teachers
+            </p>
+
+            <label for="title">TASK TITLE</label>
+            <input
+              id="title"
+              type="text"
+              value="Prepare Grade 10 Revision Worksheets"
+            />
+
+            <label for="description">DESCRIPTION</label>
+            <div class="editor-shell">
+              <div class="toolbar">B I U • • •</div>
+              <textarea id="description" cols="50" rows="5">
+Create 3 worksheet sets covering motion, force, and energy. Include answer keys and submit as PDF before the weekly review meeting.</textarea
+              >
+            </div>
+
+            <div class="attach-head">
+              <span>ATTACH ASSETS &amp; LINKS</span>
+              <button class="inline-link" type="button">+ Add File</button>
+            </div>
+
+            <div class="attach-actions">
+              <button type="button" class="pill">lesson-outline.docx</button>
+              <button type="button" class="pill">1 Link</button>
+            </div>
+
+            <div class="empty-drop">
+              1 file and 1 link attached.<br />
+              Update or replace assets if needed.
+            </div>
+          </section>
+
+          <aside class="panel panel-side">
+            <label for="teacher">ASSIGN TO TEACHER</label>
+            <select id="teacher">
+              <option>Ahmed Ali</option>
+              <option selected>Sarah Nabil</option>
+              <option>Mohamed Adel</option>
+              <option>Tarek Hassan</option>
+            </select>
+            <div class="side-title">PRIORITY LEVEL</div>
+            <label class="priority high" for="priority-high">
+              <input
+                type="radio"
+                id="priority-high"
+                name="priority"
+                value="high"
+              />
+              <span>High Priority</span>
+            </label>
+            <label class="priority medium" for="priority-medium">
+              <input
+                type="radio"
+                id="priority-medium"
+                name="priority"
+                value="medium"
+                checked
+              />
+              <span>Medium Priority</span>
+            </label>
+            <label class="priority low" for="priority-low">
+              <input
+                type="radio"
+                id="priority-low"
+                name="priority"
+                value="low"
+              />
+              <span>Low Priority</span>
+            </label>
+
+            <label for="due-date">DUE DATE</label>
+            <input id="due-date" type="date" value="2026-04-18" />
+
+            <div class="side-title">CREATED BY</div>
+            <div class="creator">
+              <div class="creator-avatar">AB</div>
+              <div>
+                <strong>Alex Brown</strong>
+                <p>You (Admin)</p>
+              </div>
+            </div>
+          </aside>
+
+          <div class="tip-card">
+            <h3>Task Tip</h3>
+            <p>
+              After editing, confirm due date and teacher assignment before
+              saving.
+            </p>
+          </div>
+        </form>
+      </main>
+    </div>
   </body>
 </html>
