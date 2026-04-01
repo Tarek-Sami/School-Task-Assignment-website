@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (
-    window.location.pathname.includes("/index.html") ||
     window.location.pathname.includes("/login.html") ||
     window.location.pathname.includes("/signup.html")
   ) {
