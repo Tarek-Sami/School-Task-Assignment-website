@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="../styles/shared/main-nav.css" />
   </head>
   <body>
+    <div id='navbar'></div>
+    <div class="links-container">
+      <div class="links">
+        <a href="../shared/Index.html" class="link">Home</a>
+        <a href="../shared/login.html" class="link">Log in</a>
+        <a href="../shared/signup.html" class="link">Sign up</a>
+      </div>
+    </div>
+    <div class="overlay"></div>
     <div class="nav">
       <div class="container">
         <img
@@ -19,19 +28,14 @@
           src="../assets/media/logo/nav-logo-withoutBG.png"
           alt=""
         />
-        <span class="icon">
+        <div class="icon">
           <span></span>
           <span></span>
           <span></span>
-        </span>
+        </div>
       </div>
     </div>
-    <div class="links-container display-none">
-      <div class="links">
-        <a href="../shared/Index.html" class="link">Home</a>
-        <a href="../shared/login.html" class="link">Log in</a>
-        <a href="../shared/signup.html" class="link">Sign up</a>
-      </div>
-    </div>
+
+    <script src="../scripts/shared/nav.js" defer></script>
   </body>
 </html>

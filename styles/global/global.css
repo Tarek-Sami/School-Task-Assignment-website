@@ -3,7 +3,7 @@
 :root {
   /* Global design tokens used by all other stylesheets. */
   /* Core palette */
-  --color-primary: #3D57A7;
+  --color-primary: #3d57a7;
   --color-primary-strong: #7c3aed;
   --color-secondary-accent: #22d3ee;
   --color-secondary-accent-strong: #3b82f6;
@@ -30,12 +30,17 @@
 
   /* Signature gradients for hero and action elements. */
   --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
-  --gradient-accent: linear-gradient(180deg, #f4f7fd 0%, #f8fafc 45%, #eef2f9 100%);
+  --gradient-accent: linear-gradient(
+    180deg,
+    #f4f7fd 0%,
+    #f8fafc 45%,
+    #eef2f9 100%
+  );
 
   /* Font families and typographic scale. */
   --font-display: "Manrope", sans-serif;
   --font-body: "Inter", sans-serif;
-  --font-color:#595C5E;
+  --font-color: #595c5e;
 
   --display-lg-size: 3.5rem;
   --display-lg-track: -0.02em;
@@ -72,6 +77,7 @@ body {
   /* Remove default browser spacing so layout starts clean. */
   margin: 0;
   padding: 0;
+  padding-top: 50px;
 }
 h1,
 h2,
@@ -83,4 +89,12 @@ h6 {
   margin: 0;
   font-family: var(--font-display);
   color: var(--on-surface);
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
