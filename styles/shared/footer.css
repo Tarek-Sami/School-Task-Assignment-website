@@ -1,40 +1,44 @@
 @import url(../global/global.css);
+
 footer .container {
-  display: flex;             
-  justify-content: space-between; 
-  align-items: flex-start;   
-  padding: 40px 10%;
-  background-color: #E2E8F080;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 15%;
+  background-color: #e2e8f080;
 }
-
 
 .left {
   max-width: 300px;
 }
 
-.left h1 {
-  font-family: var(--font-display);
-  font-size: 2.5rem; 
-  color: var(--color-primary);
-  margin-bottom: 15px;
+.left img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+.left p {
+  margin-top: 20px;
+  margin-left: 20px;
+  color: var(--on-surface-variant);
+  font-size: var(--body-md-size);
 }
 .right {
-  display: flex;     
- gap: 80px;   
+  display: flex;
+  gap: 80px;
+  margin-right: 1rem;
 }
 .right h3 {
   font-size: var(--label-sm-size);
   text-transform: uppercase;
   margin-bottom: 20px;
-   color: #1E3A8A;
- display: block;
+  color: #1e3a8a;
+  display: block;
 }
 .right ul {
-  list-style: none;   
+  list-style: none;
   padding: 0;
   margin: 0;
-  
 }
 
 .right ul li {
@@ -42,23 +46,54 @@ footer .container {
 }
 
 .right ul li a {
+  display: inline-block;
+}
+.right ul li a,
+.right ul li {
   text-decoration: none;
   color: var(--on-surface-variant);
   font-size: var(--body-md-size);
+  transition: 0.3s ease;
 }
-.right ul li a:hover{
-    color: #1E3A8A;;
+.right ul li a:hover {
+  color: #1e3a8a;
+  transform: translateX(3px);
 }
 .icons {
   display: flex;
+  flex-direction: column;
+  width: fit-content;
+  gap: 10px;
+  color: var(--on-surface-variant);
+}
+.icons i:hover {
+  color: #1e3a8a;
+}
+
+.icons a {
+  color: inherit;
+  font-size: 1.5rem;
+}
+.contactAndIcons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contactAndIcons li {
+  text-decoration: none;
+  color: var(--on-surface-variant);
+  font-size: var(--body-md-size);
+  transition: 0.3s ease;
+}
+
+.contactAndIcons ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
   gap: 20px;
-      color: var(--on-surface-variant);
-
+  flex-direction: column;
 }
-.icons i:hover{
-  color: #1E3A8A;
-}
-
 @media (max-width: 768px) {
   footer .container {
     flex-direction: column;
