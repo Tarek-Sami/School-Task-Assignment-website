@@ -6,7 +6,6 @@ body {
     url("../../assets/media/images/forget-pass.png");
   background-size: cover;
   background-position: center;
-  overflow: hidden;
 }
 .center {
   display: flex;

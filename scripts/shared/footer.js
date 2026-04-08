@@ -77,9 +77,9 @@ footer.innerHTML = `
               </div>
         <div>
         <ul>
-            <li>EduFlow</li>
-            <li>test@gmail.com</li>
-            <li>EduFlow</li>
+            <li><a href="https://facebook.com">EduFlow</a></li>
+            <li><a href="mailto:test@gmail.com">test@gmail.com</a></li>
+            <li><a href="https://linkedin.com">EduFlow</a></li>
         </ul>
       
         </div>

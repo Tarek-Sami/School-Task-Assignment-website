@@ -5,7 +5,8 @@ footer .container {
   justify-content: space-between;
   align-items: flex-start;
   padding: 40px 15%;
-  background-color: #e2e8f080;
+  background-color: #e2e8f0;
+  opacity: 80%;
 }
 
 .left {
@@ -50,6 +51,12 @@ footer .container {
 }
 .right ul li a,
 .right ul li {
+  text-decoration: none;
+  color: var(--on-surface-variant);
+  font-size: var(--body-md-size);
+  transition: 0.3s ease;
+}
+a {
   text-decoration: none;
   color: var(--on-surface-variant);
   font-size: var(--body-md-size);
