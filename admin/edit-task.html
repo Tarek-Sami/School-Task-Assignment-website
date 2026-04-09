@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="../styles/admin/add-task.css" />
     <link rel="stylesheet" href="/styles/shared/main-nav.css" />
     <link rel="stylesheet" href="../styles/shared/footer.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
   <body>
     <div id="navbar"></div>
     <div class="task-page">
@@ -25,7 +28,12 @@
               <img src="../assets/media/icons/close.png" alt="" />
               <span>Cancel</span>
             </button>
-            <button class="btn-create" type="submit" form="task-form">
+            <button
+              class="btn-create"
+              id="save-btn"
+              type="button"
+              form="task-form"
+            >
               Update Task
             </button>
           </div>
@@ -33,35 +41,19 @@
 
         <form id="task-form" class="content-grid" novalidate>
           <section class="panel panel-main">
-            <label for="task-id">TASK ID</label>
-            <div class="id-row">
-              <span>#</span>
-              <input id="task-id" type="text" value="TSK-037" />
-            </div>
-
             <label for="headline">HEADLINE</label>
-            <input
-              id="headline"
-              type="text"
-              value="Final Term Physics Revision"
-            />
+            <input id="headline" type="text" value="" />
             <p class="small">
               This will be the main title displayed to teachers
             </p>
 
             <label for="title">TASK TITLE</label>
-            <input
-              id="title"
-              type="text"
-              value="Prepare Grade 10 Revision Worksheets"
-            />
+            <input id="title" type="text" value="" />
 
             <label for="description">DESCRIPTION</label>
             <div class="editor-shell">
               <div class="toolbar">B I U • • •</div>
-              <textarea id="description" cols="50" rows="5">
-Create 3 worksheet sets covering motion, force, and energy. Include answer keys and submit as PDF before the weekly review meeting.</textarea
-              >
+              <textarea id="description" cols="50" rows="5"></textarea>
             </div>
 
             <div class="attach-head">
@@ -83,10 +75,11 @@ Create 3 worksheet sets covering motion, force, and energy. Include answer keys 
           <aside class="panel panel-side">
             <label for="teacher">ASSIGN TO TEACHER</label>
             <select id="teacher">
-              <option>Ahmed Ali</option>
-              <option selected>Sarah Nabil</option>
-              <option>Mohamed Adel</option>
-              <option>Tarek Hassan</option>
+              <option value="">Select a teacher...</option>
+              <option value="Ahmed">Ahmed</option>
+              <option value="Sara">Sara</option>
+              <option value="Mohamed">Mohamed</option>
+              <option value="Tarek">Tarek</option>
             </select>
             <div class="side-title">PRIORITY LEVEL</div>
             <label class="priority high" for="priority-high">
@@ -104,7 +97,6 @@ Create 3 worksheet sets covering motion, force, and energy. Include answer keys 
                 id="priority-medium"
                 name="priority"
                 value="medium"
-                checked
               />
               <span>Medium Priority</span>
             </label>
@@ -125,7 +117,7 @@ Create 3 worksheet sets covering motion, force, and energy. Include answer keys 
             <div class="creator">
               <div class="creator-avatar">AB</div>
               <div>
-                <strong>Alex Brown</strong>
+                <strong id="creator-name">Alex Brown</strong>
                 <p>You (Admin)</p>
               </div>
             </div>
@@ -141,9 +133,25 @@ Create 3 worksheet sets covering motion, force, and energy. Include answer keys 
         </form>
       </main>
     </div>
+    <div id="errorModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="head-text">⚠️ Task Missing</h2>
+          <span id="close-btn" class="close-btn">&times;</span>
+        </div>
+
+        <div class="modal-body">
+          <p class="body-text">Task Not Found</p>
+        </div>
+
+        <div class="modal-footer">
+          <button id="modal-ok">OK</button>
+        </div>
+      </div>
+    </div>
     <div class="footer"></div>
     <script src="../scripts/shared/nav.js" defer></script>
     <script src="../scripts/shared/footer.js" defer></script>
+    <script src="../scripts/admin/edit-tasks.js" defer></script>
   </body>
 </html>
-
