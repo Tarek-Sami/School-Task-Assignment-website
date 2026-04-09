@@ -103,7 +103,11 @@ body {
   border-radius: 28px;
   background:
     linear-gradient(162deg, rgba(8, 20, 58, 0.95), rgba(15, 24, 54, 0.95)),
-    radial-gradient(circle at 20% 20%, rgba(69, 128, 255, 0.32), transparent 42%);
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(69, 128, 255, 0.32),
+      transparent 42%
+    );
   box-shadow:
     0 22px 40px rgba(14, 20, 52, 0.26),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
@@ -118,7 +122,11 @@ body {
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(80, 142, 255, 0.28), rgba(80, 142, 255, 0));
+  background: radial-gradient(
+    circle,
+    rgba(80, 142, 255, 0.28),
+    rgba(80, 142, 255, 0)
+  );
 }
 
 .screen-header {
@@ -143,7 +151,11 @@ body {
 .table span {
   height: 11px;
   border-radius: 8px;
-  background: linear-gradient(90deg, rgba(80, 122, 228, 0.72), rgba(53, 85, 165, 0.3));
+  background: linear-gradient(
+    90deg,
+    rgba(80, 122, 228, 0.72),
+    rgba(53, 85, 165, 0.3)
+  );
 }
 
 .line-group span:nth-child(1) {
@@ -247,7 +259,7 @@ body {
   box-shadow: 0 12px 28px rgba(15, 31, 74, 0.08);
 }
 
-.icon {
+.feature-card .icon {
   width: 42px;
   height: 42px;
   border-radius: 12px;
@@ -278,7 +290,11 @@ body {
   border-radius: 26px;
   background:
     linear-gradient(100deg, #2148af, #5336d4 62%, #6f3ff0),
-    radial-gradient(circle at 84% 30%, rgba(132, 168, 255, 0.42), rgba(132, 168, 255, 0));
+    radial-gradient(
+      circle at 84% 30%,
+      rgba(132, 168, 255, 0.42),
+      rgba(132, 168, 255, 0)
+    );
   color: #ffffff;
   padding: 42px;
   display: flex;
