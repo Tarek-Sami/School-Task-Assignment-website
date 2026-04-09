@@ -22,8 +22,8 @@
 
   /* Semantic colors for status and accessibility accents. */
   --outline-variant: #7b89a8;
-  --error: #ef4444;
-  --error-container: #ffe4e7;
+  --error: #e73333;
+  --error-container: #f5a0aa;
   --on-error-container: #7f1d1d;
   --tertiary-container: #cffafe;
   --on-tertiary-container: #155e75;
