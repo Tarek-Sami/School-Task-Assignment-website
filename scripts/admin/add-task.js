@@ -1,0 +1,94 @@
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+const createTaskBtn = document.getElementById("btn-create");
+const cancelBtn = document.getElementById("btn-cancel");
+const radios = document.querySelectorAll('input[name="priority"]');
+const modal = document.querySelector(".modal");
+// const form = document.getElementById("task-form");
+// variables for the form inputs
+const headlineInput = document.getElementById("headline");
+const titleInput = document.getElementById("title");
+const descriptionInput = document.getElementById("description");
+const teacherSelect = document.getElementById("teacher");
+const deadlineInput = document.getElementById("due-date");
+const madeBy = document.getElementById("creator-name");
+
+// 🔥 مسك الأزرار صح
+const closeBtn = document.getElementById("close-btn");
+const okBtn = document.getElementById("modal-ok");
+
+// 🎯 تغيير شكل الـ priority
+radios.forEach((radio) => {
+  radio.addEventListener("change", () => {
+    document.querySelectorAll(".priority").forEach((label) => {
+      label.classList.remove("checked");
+    });
+    radio.closest("label").classList.add("checked");
+  });
+});
+
+// ✅ validation صح من الفورم مش من object
+function validateForm() {
+  const headline = headlineInput.value.trim();
+  const title = titleInput.value.trim();
+  const description = descriptionInput.value.trim();
+  const teacher = teacherSelect.value;
+  const deadline = deadlineInput.value;
+  const priority = document.querySelector('input[name="priority"]:checked');
+
+  if (
+    !headline ||
+    !title ||
+    !description ||
+    !teacher ||
+    !deadline ||
+    !priority
+  ) {
+    modal.classList.add("show");
+    return false;
+  }
+
+  return true;
+}
+
+function closeModal() {
+  modal.classList.remove("show");
+}
+// closing the modal by clicking either the close button or the OK button
+closeBtn?.addEventListener("click", closeModal);
+okBtn?.addEventListener("click", closeModal);
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
+//creating the task event
+createTaskBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  console.log("hello world");
+
+  if (!validateForm()) return;
+
+  const newTask = {
+    id: crypto.randomUUID(),
+    headline: headlineInput.value,
+    title: titleInput.value,
+    description: descriptionInput.value,
+    teacher: teacherSelect.value,
+    deadline: deadlineInput.value,
+    priority: document.querySelector('input[name="priority"]:checked').value,
+    status: "pending",
+    madeby: madeBy.textContent,
+  };
+  console.log(newTask);
+  tasks.push(newTask);
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+  window.location.href = "/admin/tasks.html";
+});
+
+cancelBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.href = "/admin/tasks.html";
+});

@@ -1,12 +1,14 @@
 @import url(../global/global.css);
 
-footer .container {
+footer .footer-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 40px 15%;
   background-color: #e2e8f0;
-  opacity: 80%;
+  height: 200px;
+  max-width: 100% !important ;
+  opacity: 0.8;
 }
 
 .left {

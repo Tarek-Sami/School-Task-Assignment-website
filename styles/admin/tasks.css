@@ -1,11 +1,9 @@
 /* Page-specific layout; global + components are linked from HTML. */
 
 .tasks-page {
-  min-height: 100vh;
   font-family: var(--font-body);
   color: var(--on-surface);
   background: var(--gradient-accent);
-  padding-bottom: 5rem;
 }
 
 .page-header {
@@ -103,7 +101,10 @@
   cursor: pointer;
   background: var(--surface-container-highest);
   color: var(--on-surface);
-  transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .filter-pill:hover {
@@ -131,7 +132,9 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .task-card:hover {
@@ -255,7 +258,11 @@
 }
 
 .progress-fill-cyan {
-  background: linear-gradient(90deg, var(--color-secondary-accent) 0%, var(--color-secondary-accent-strong) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--color-secondary-accent) 0%,
+    var(--color-secondary-accent-strong) 100%
+  );
 }
 
 .task-card-scheduled {
@@ -289,7 +296,9 @@
   font-size: 1.35rem;
   text-decoration: none;
   box-shadow: 0 12px 32px rgba(124, 58, 237, 0.35);
-  transition: transform 160ms ease, box-shadow 180ms ease;
+  transition:
+    transform 160ms ease,
+    box-shadow 180ms ease;
   z-index: 10;
 }
 

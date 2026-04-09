@@ -20,7 +20,7 @@ if (role === "admin") {
 
 footer.innerHTML = `
 <footer>
-      <div class="container">
+      <div class="footer-container">
         <div class="left">
           <img
         class="logo"

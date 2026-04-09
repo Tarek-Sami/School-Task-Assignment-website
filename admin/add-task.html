@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="../styles/admin/add-task.css" />
     <link rel="stylesheet" href="/styles/shared/main-nav.css" />
     <link rel="stylesheet" href="../styles/shared/footer.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
   <body>
     <div id="navbar"></div>
     <div class="task-page">
@@ -21,23 +24,22 @@
             <p>Define and assign a new task for your team.</p>
           </div>
           <div class="actions">
-            <button class="btn-cancel" type="button">
+            <button id="btn-cancel" class="btn-cancel" type="button">
               <img src="../assets/media/icons/close.png" alt="" />
               <span>Cancel</span>
             </button>
-            <button class="btn-create" type="submit" form="task-form">
+            <button
+              id="btn-create"
+              class="btn-create"
+              type="submit"
+              form="task-form"
+            >
               Create Task
             </button>
           </div>
         </section>
         <form id="task-form" class="content-grid" novalidate>
           <section class="panel panel-main">
-            <label for="task-id">TASK ID</label>
-            <div class="id-row">
-              <span>#</span>
-              <input id="task-id" type="text" value="TSK-001" />
-            </div>
-
             <label for="headline">HEADLINE</label>
             <input
               id="headline"
@@ -80,12 +82,12 @@
 
           <aside class="panel panel-side">
             <label for="teacher">ASSIGN TO TEACHER</label>
-            <select id="teacher">
-              <option value="">Select teacher...</option>
-              <option value="">ahmed</option>
-              <option value="">sara</option>
-              <option value="">mohamed</option>
-              <option value="">Tarek</option>
+            <select id="teacher" required>
+              <option value="">Select a teacher...</option>
+              <option value="ahmed">Ahmed</option>
+              <option value="sara">Sara</option>
+              <option value="mohamed">Mohamed</option>
+              <option value="tarek">Tarek</option>
             </select>
 
             <div class="side-title">PRIORITY LEVEL</div>
@@ -124,8 +126,8 @@
             <div class="creator">
               <div class="creator-avatar">AB</div>
               <div>
-                <strong>Alex Brown</strong>
-                <p>You (Admin)</p>
+                <strong id="creator-name">Alex Brown</strong>
+                <p>You</p>
               </div>
             </div>
           </aside>
@@ -140,8 +142,25 @@
       </main>
     </div>
     <div class="footer"></div>
+
+    <div id="errorModal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>⚠️ Missing Information</h2>
+          <span id="close-btn" class="close-btn">&times;</span>
+        </div>
+
+        <div class="modal-body">
+          <p>Please fill in all required fields before creating the task.</p>
+        </div>
+
+        <div class="modal-footer">
+          <button id="modal-ok">OK</button>
+        </div>
+      </div>
+    </div>
     <script src="../scripts/shared/nav.js" defer></script>
     <script src="../scripts/shared/footer.js" defer></script>
+    <script src="../scripts/admin/add-task.js" defer></script>
   </body>
 </html>
-
