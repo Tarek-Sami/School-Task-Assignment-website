@@ -40,10 +40,7 @@ if (!localStorage.getItem("tasks")) {
 
 // start of the code
 
-// const headline = document.getElementById("task-headline");
-// const teacher = document.getElementById("task-teacher");
-// const priority = document.querySelector(".priority");
-// const date = document.querySelector(".date");
+
 const allTasks = document.querySelector(".task-list");
 
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
