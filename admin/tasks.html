@@ -21,21 +21,22 @@
       <p>Manage and track departmental academic deliverables.</p>
     </header>
 
-    <div class="container">
+    <div class="container1">
       <div class="search-and-filter">
         <div class="search-wrap">
           <i class="fa-solid fa-magnifying-glass"></i>
           <input
+            id="task-search"
             type="search"
             placeholder="Search curriculum, faculty, or status..."
             autocomplete="off"
           />
         </div>
         <div class="filter-pills">
-          <button type="button" class="filter-pill active">ALL</button>
-          <button type="button" class="filter-pill">HIGH</button>
-          <button type="button" class="filter-pill">MEDIUM</button>
-          <button type="button" class="filter-pill">LOW</button>
+          <button type="button" class="filter-pill active" data-priority="all" style="color: black;">ALL</button>
+          <button type="button" class="filter-pill" data-priority="high">HIGH</button>
+          <button type="button" class="filter-pill" data-priority="medium">MEDIUM</button>
+          <button type="button" class="filter-pill" data-priority="low">LOW</button>
         </div>
       </div>
 

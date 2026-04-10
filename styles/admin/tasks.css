@@ -30,10 +30,11 @@
   line-height: 1.5;
 }
 
-.container {
+.container1 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px;
+  min-height : 44vh;
 }
 
 .search-and-filter {
@@ -111,7 +112,7 @@
 
 .filter-pill.active {
   background: var(--color-primary);
-  color: var(--on-primary);
+  color: black;
   box-shadow: 0 6px 18px rgba(61, 87, 167, 0.25);
 }
 
