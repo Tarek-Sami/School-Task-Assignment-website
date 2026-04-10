@@ -280,9 +280,11 @@
 }
 
 .fab {
-  position: absolute;
-  right: clamp(1.25rem, 4vw, 2rem);
-  bottom: clamp(1.25rem, 4vw, 2rem);
+  position: sticky;
+  right: 100px;   
+  margin-left: auto; 
+  bottom: 35px;
+  margin-bottom: 30px;
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
