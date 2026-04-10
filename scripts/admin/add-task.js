@@ -4,6 +4,7 @@ const createTaskBtn = document.getElementById("btn-create");
 const cancelBtn = document.getElementById("btn-cancel");
 const radios = document.querySelectorAll('input[name="priority"]');
 const modal = document.querySelector(".modal");
+const currentUserName = localStorage.getItem("currentUserName") || "Unknown User";
 // const form = document.getElementById("task-form");
 // variables for the form inputs
 const headlineInput = document.getElementById("headline");
@@ -12,6 +13,8 @@ const descriptionInput = document.getElementById("description");
 const teacherSelect = document.getElementById("teacher");
 const deadlineInput = document.getElementById("due-date");
 const madeBy = document.getElementById("creator-name");
+const creatorAvatar = document.querySelector(".creator-avatar");
+
 
 // 🔥 مسك الأزرار صح
 const closeBtn = document.getElementById("close-btn");
@@ -67,8 +70,6 @@ modal.addEventListener("click", (e) => {
 createTaskBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  console.log("hello world");
-
   if (!validateForm()) return;
 
   const newTask = {
@@ -80,7 +81,7 @@ createTaskBtn.addEventListener("click", (e) => {
     deadline: deadlineInput.value,
     priority: document.querySelector('input[name="priority"]:checked').value,
     status: "pending",
-    madeby: madeBy.textContent,
+    madeBy: currentUserName,
   };
   console.log(newTask);
   tasks.push(newTask);

@@ -25,7 +25,7 @@ tasks.forEach((task) => {
           </p>
           
         <p class="task-card-created">
-            Created by: ${task.madeBy}
+            Created by: ${task.madeBy || task.madeby || "Unknown"}
           </p>
 
           <div class="task-card-progress">
