@@ -79,3 +79,13 @@ tasks.forEach((task) => {
 });
 
 allTasks.innerHTML = html;
+
+const total = tasks.length;
+const completed = tasks.filter(task => task.status === "completed").length;
+const pending = tasks.filter(task => task.status === "pending").length;
+const teachers = [...new Set(tasks.map(task => task.teacher))].length;
+
+document.getElementById("total-tasks").textContent = total;
+document.getElementById("completed-tasks").textContent = completed;
+document.getElementById("pending-tasks").textContent = pending;
+document.getElementById("teachers-count").textContent = teachers;
