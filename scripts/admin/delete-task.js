@@ -49,27 +49,38 @@ function animateDelete(id) {
   });
 
   const task = document.querySelector(`[data-id="${id}"]`);
+  if (!task) return;
   task.classList.add("removing");
 
   setTimeout(() => {
+    const scrollY = window.scrollY;
     task.remove();
-    const newItems = document.querySelectorAll(".task");
+    // When the list is short, removing a row can change scroll height / scrollbar
+    // and the browser may adjust scroll (anchoring), which looks like the whole page shifts down.
+    window.scrollTo(0, scrollY);
 
-    newItems.forEach((item) => {
-      const first = firstPositions.get(item);
-      const last = item.getBoundingClientRect();
-      if (!first) return;
+    requestAnimationFrame(() => {
+      const newItems = document.querySelectorAll(".task");
 
-      const deltaY = first.top - last.top;
+      newItems.forEach((item) => {
+        const first = firstPositions.get(item);
+        const last = item.getBoundingClientRect();
+        if (!first) return;
 
-      //  الـ transition تبقى none الأول عشان الـ jump يحصل فورًا
-      item.style.transition = "none";
-      item.style.transform = `translateY(${deltaY}px)`;
-      item.offsetHeight; // force reflow
+        const deltaY = first.top - last.top;
+        if (Math.abs(deltaY) < 0.5) return;
 
-      //  دلوقتي حط الـ transition وارجع للـ position الطبيعي
-      item.style.transition = "transform 0.3s ease";
-      item.style.transform = "";
+        item.style.transition = "none";
+        item.style.transform = `translateY(${deltaY}px)`;
+        item.offsetHeight;
+
+        item.style.transition = "transform 0.3s ease";
+        item.style.transform = "";
+      });
+
+      requestAnimationFrame(() => {
+        window.scrollTo(0, scrollY);
+      });
     });
   }, 300);
 }

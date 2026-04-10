@@ -9,7 +9,7 @@ body {
 .container1 {
   padding: 3rem;
   width: 100%;
-  min-height:68vh;
+  min-height: 68vh;
 }
 .header {
   margin-bottom: 40px;
@@ -139,6 +139,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  overflow-anchor: none;
 }
 .task {
   background: white;
