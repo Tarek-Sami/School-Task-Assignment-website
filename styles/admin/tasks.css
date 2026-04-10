@@ -1,5 +1,3 @@
-/* Page-specific layout; global + components are linked from HTML. */
-
 .tasks-page {
   font-family: var(--font-body);
   color: var(--on-surface);
@@ -282,7 +280,7 @@
 }
 
 .fab {
-  position: fixed;
+  position: absolute;
   right: clamp(1.25rem, 4vw, 2rem);
   bottom: clamp(1.25rem, 4vw, 2rem);
   width: 3.5rem;

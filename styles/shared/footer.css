@@ -58,7 +58,7 @@ footer .footer-container {
   font-size: var(--body-md-size);
   transition: 0.3s ease;
 }
-a {
+footer a {
   text-decoration: none;
   color: var(--on-surface-variant);
   font-size: var(--body-md-size);
