@@ -47,8 +47,9 @@ if (!localStorage.getItem("tasks")) {
 const allTasks = document.querySelector(".task-list");
 
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+html = "";
 tasks.forEach((task) => {
-  allTasks.innerHTML += `<div class="task">
+  html += `<div class="task" data-id="${task.id}">
           <div class="task-left">
             <div class="task-info">
               <h4 id="task-headline">${task.headline}</h4>
@@ -69,7 +70,9 @@ tasks.forEach((task) => {
             </span>
             <div class="actions">
               <a href="edit-task.html?id=${task.id}"><i class="fa-solid fa-pen"></i></a>
-              <a href="dashboard.html"><i class="fa-solid fa-trash"></i></a>
+              <button class="delete-btn" data-id="${task.id}">
+  <i class="fa-solid fa-trash"></i>
+</button>
             </div>
           </div>
         </div>`;
