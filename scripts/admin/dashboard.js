@@ -10,6 +10,7 @@ if (!localStorage.getItem("tasks")) {
       deadline: "2026-05-10",
       status: "pending",
       madeBy: "Ahmed Ali",
+      proggress: 0,
     },
     {
       id: crypto.randomUUID(),
@@ -21,6 +22,7 @@ if (!localStorage.getItem("tasks")) {
       deadline: "2026-04-20",
       status: "pending",
       madeBy: "Alex Johnson",
+      proggress: 0,
     },
     {
       id: crypto.randomUUID(),
@@ -32,6 +34,7 @@ if (!localStorage.getItem("tasks")) {
       priority: "low",
       status: "pending",
       madeBy: "Alex Johnson",
+      proggress: 0,
     },
   ];
 
@@ -39,7 +42,6 @@ if (!localStorage.getItem("tasks")) {
 }
 
 // start of the code
-
 
 const allTasks = document.querySelector(".task-list");
 
@@ -66,7 +68,7 @@ tasks
     return (firstTask.headline || "").localeCompare(secondTask.headline || "");
   })
   .forEach((task) => {
-  html += `<div class="task" data-id="${task.id}">
+    html += `<div class="task" data-id="${task.id}">
           <div class="task-left">
             <div class="task-info">
               <h4 id="task-headline">${task.headline}</h4>
@@ -98,9 +100,9 @@ tasks
 allTasks.innerHTML = html;
 
 const total = tasks.length;
-const completed = tasks.filter(task => task.status === "completed").length;
-const pending = tasks.filter(task => task.status === "pending").length;
-const teachers = [...new Set(tasks.map(task => task.teacher))].length;
+const completed = tasks.filter((task) => task.status === "completed").length;
+const pending = tasks.filter((task) => task.status === "pending").length;
+const teachers = [...new Set(tasks.map((task) => task.teacher))].length;
 
 document.getElementById("total-tasks").textContent = total;
 document.getElementById("completed-tasks").textContent = completed;

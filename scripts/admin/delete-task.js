@@ -17,23 +17,23 @@ const closeDeleteBtn = document.getElementById("delete-close");
 
 let selectedTaskId = null;
 
-// 🔥 open modal
+//  open modal
 function openDeleteModal(id) {
   selectedTaskId = id;
   deleteModal.classList.add("show");
 }
 
-// 🔥 close modal
+//  close modal
 function closeDeleteModal() {
   deleteModal.classList.remove("show");
   selectedTaskId = null;
 }
 
-// 🔥 buttons
+//  buttons
 cancelDeleteBtn?.addEventListener("click", closeDeleteModal);
 closeDeleteBtn?.addEventListener("click", closeDeleteModal);
 
-// 🔥 click outside
+//  click outside
 deleteModal.addEventListener("click", (e) => {
   if (e.target === deleteModal) {
     closeDeleteModal();
@@ -62,19 +62,19 @@ function animateDelete(id) {
 
       const deltaY = first.top - last.top;
 
-      // ✅ الـ transition تبقى none الأول عشان الـ jump يحصل فورًا
+      //  الـ transition تبقى none الأول عشان الـ jump يحصل فورًا
       item.style.transition = "none";
       item.style.transform = `translateY(${deltaY}px)`;
       item.offsetHeight; // force reflow
 
-      // ✅ دلوقتي حط الـ transition وارجع للـ position الطبيعي
+      //  دلوقتي حط الـ transition وارجع للـ position الطبيعي
       item.style.transition = "transform 0.3s ease";
       item.style.transform = "";
     });
-  }, 350);
+  }, 300);
 }
 
-// 🔥 confirm delete
+//  confirm delete
 confirmDeleteBtn?.addEventListener("click", () => {
   if (!selectedTaskId) return;
 

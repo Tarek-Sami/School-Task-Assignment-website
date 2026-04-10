@@ -4,7 +4,8 @@ const createTaskBtn = document.getElementById("btn-create");
 const cancelBtn = document.getElementById("btn-cancel");
 const radios = document.querySelectorAll('input[name="priority"]');
 const modal = document.querySelector(".modal");
-const currentUserName = localStorage.getItem("currentUserName") || "Unknown User";
+const currentUserName =
+  localStorage.getItem("currentUserName") || "Unknown User";
 // const form = document.getElementById("task-form");
 // variables for the form inputs
 const headlineInput = document.getElementById("headline");
@@ -15,12 +16,9 @@ const deadlineInput = document.getElementById("due-date");
 const madeBy = document.getElementById("creator-name");
 const creatorAvatar = document.querySelector(".creator-avatar");
 
-
-// 🔥 مسك الأزرار صح
 const closeBtn = document.getElementById("close-btn");
 const okBtn = document.getElementById("modal-ok");
 
-// 🎯 تغيير شكل الـ priority
 radios.forEach((radio) => {
   radio.addEventListener("change", () => {
     document.querySelectorAll(".priority").forEach((label) => {
@@ -30,7 +28,6 @@ radios.forEach((radio) => {
   });
 });
 
-// ✅ validation صح من الفورم مش من object
 function validateForm() {
   const headline = headlineInput.value.trim();
   const title = titleInput.value.trim();
@@ -57,7 +54,7 @@ function validateForm() {
 function closeModal() {
   modal.classList.remove("show");
 }
-// closing the modal by clicking either the close button or the OK button
+
 closeBtn?.addEventListener("click", closeModal);
 okBtn?.addEventListener("click", closeModal);
 modal.addEventListener("click", (e) => {
@@ -66,7 +63,6 @@ modal.addEventListener("click", (e) => {
   }
 });
 
-//creating the task event
 createTaskBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -82,6 +78,7 @@ createTaskBtn.addEventListener("click", (e) => {
     priority: document.querySelector('input[name="priority"]:checked').value,
     status: "pending",
     madeBy: currentUserName,
+    proggress: 0,
   };
   console.log(newTask);
   tasks.push(newTask);
