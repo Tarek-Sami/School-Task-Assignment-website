@@ -101,16 +101,14 @@ function renderTasks() {
             Created by: ${task.madeBy || task.madeby || "Unknown"}
           </p>
 
-          <div class="task-card-progress">
-            <div class="progress-head">
-              <span class="progress-label">PROGRESS</span>
-              <span class="progress-value">84%</span>
-            </div>
-            <div class="progress-track">
-              <div
-                class="progress-fill progress-fill-cyan"
-                style="width: 84%"
-              ></div>
+        <div class="task-card-progress">
+          <div class="progress-head">
+            <span class="progress-label">PROGRESS</span>
+            <span class="progress-value">${task.progress || 0}%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill progress-fill-cyan"
+              style="width: ${task.progress || 0}%">
             </div>
           </div>
         </article>
