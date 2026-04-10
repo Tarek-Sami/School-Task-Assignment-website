@@ -34,7 +34,7 @@ input {
 .textp {
   font-size: var(--body-md-size);
   color: #595c5e;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   margin-top: 10px;
 }
 .password {
@@ -89,8 +89,8 @@ button[type="submit"] {
   border-radius: var(--radius-xl);
   font-size: var(--body-lg-size);
   cursor: pointer;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
   transition: 0.3s;
 }
 button[type="submit"]:hover {
