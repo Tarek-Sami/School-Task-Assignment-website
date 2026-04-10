@@ -47,8 +47,28 @@ if (!localStorage.getItem("tasks")) {
 const allTasks = document.querySelector(".task-list");
 
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-html = "";
-tasks.forEach((task) => {
+const priorityOrder = {
+  high: 0,
+  medium: 1,
+  low: 2,
+};
+
+let html = "";
+
+tasks
+  .slice()
+  .sort((firstTask, secondTask) => {
+    const priorityDifference =
+      (priorityOrder[firstTask.priority] ?? 3) -
+      (priorityOrder[secondTask.priority] ?? 3);
+
+    if (priorityDifference !== 0) {
+      return priorityDifference;
+    }
+
+    return (firstTask.headline || "").localeCompare(secondTask.headline || "");
+  })
+  .forEach((task) => {
   html += `<div class="task" data-id="${task.id}">
           <div class="task-left">
             <div class="task-info">
@@ -76,7 +96,7 @@ tasks.forEach((task) => {
             </div>
           </div>
         </div>`;
-});
+  });
 
 allTasks.innerHTML = html;
 
