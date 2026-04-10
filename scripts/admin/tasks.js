@@ -23,6 +23,11 @@ tasks.forEach((task) => {
             <i class="fa-regular fa-user" aria-hidden="true"></i>
             Prof. ${task.teacher}
           </p>
+          
+        <p class="task-card-created">
+            Created by: ${task.madeBy}
+          </p>
+
           <div class="task-card-progress">
             <div class="progress-head">
               <span class="progress-label">PROGRESS</span>
