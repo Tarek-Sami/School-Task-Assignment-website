@@ -141,8 +141,7 @@ label,
   background: transparent;
 }
 input,
-select,
-textarea {
+select {
   width: 100%;
   margin: 0;
   padding: 0.78rem;
@@ -151,6 +150,7 @@ textarea {
   background: var(--surface-container-lowest);
   color: var(--on-surface);
   font-size: 0.92rem;
+  resize: none;
 }
 
 .editor-shell {
@@ -166,15 +166,71 @@ textarea {
   color: var(--on-surface-variant);
   font-size: 0.85rem;
   letter-spacing: 0.15em;
+  display: flex;
+  gap: 1rem;
 }
-
-textarea {
+.toolbar button {
   border: none;
-  min-height: 120px;
-  resize: vertical;
+  background: transparent;
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 2px;
+  &:hover {
+    background-color: var(--surface-container-low);
+    color: var(--color-primary);
+    transition: all 0.3s ease;
+  }
+}
+.toolbar button.active {
+  background: var(--gradient-primary);
+  color: var(--on-primary);
 }
 
-textarea:focus,
+#description {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 7.5rem;
+  max-height: min(40vh, 20rem);
+  margin: 0;
+  padding: 0.78rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--on-surface);
+  font-family: inherit;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+#description:empty::before {
+  content: attr(placeholder);
+  color: var(--outline-variant);
+  pointer-events: none;
+}
+
+#description ul,
+#description ol {
+  margin: 0.35em 0;
+  padding-left: 1.35em;
+}
+
+#description li {
+  margin: 0.15em 0;
+}
+
+.editor-shell:focus-within {
+  box-shadow: 0 0 0 2px rgba(97, 66, 219, 0.35);
+}
+
+#description:focus,
 .id-row input:focus,
 .search-box input:focus {
   outline: none;

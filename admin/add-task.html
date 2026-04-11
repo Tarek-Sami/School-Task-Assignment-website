@@ -55,13 +55,31 @@
 
             <label for="description">DESCRIPTION</label>
             <div class="editor-shell">
-              <div class="toolbar">B I U • • •</div>
-              <textarea
+              <div class="toolbar">
+                <button type="button" class="toolbar-btn bold-btn">
+                  <i class="fa-solid fa-bold"></i>
+                </button>
+                <button type="button" class="toolbar-btn italic-btn">
+                  <i class="fa-solid fa-italic"></i>
+                </button>
+                <button type="button" class="toolbar-btn underline-btn">
+                  <i class="fa-solid fa-underline"></i>
+                </button>
+                <button type="button" class="toolbar-btn list-btn">
+                  <i class="fa-solid fa-list-ul"></i>
+                </button>
+                <button type="button" class="toolbar-btn numbered-list-btn">
+                  <i class="fa-solid fa-list-ol"></i>
+                </button>
+              </div>
+
+              <div
+                contenteditable="true"
                 id="description"
+                role="textbox"
+                aria-multiline="true"
                 placeholder="Describe the task in detail..."
-                cols="50"
-                rows="5"
-              ></textarea>
+              ></div>
             </div>
 
             <div class="attach-head">
