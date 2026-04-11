@@ -74,7 +74,6 @@ const teachersPerPage = 4;
 function renderTeachers(teacherArray = teachers) {
   const teacherList = document.querySelector(".teacher-list");
 
-  // 🟣 pagination logic
   const start = (currentPage - 1) * teachersPerPage;
   const end = start + teachersPerPage;
   const paginatedTeachers = teacherArray.slice(start, end);
@@ -126,7 +125,7 @@ function renderTeachers(teacherArray = teachers) {
 
   teacherList.innerHTML = html;
 
-  renderPagination(teacherArray); // 👈 مهم
+  renderPagination(teacherArray);
 }
 
 function renderPagination(teacherArray) {

@@ -275,6 +275,7 @@ input[type="range"] {
   accent-color: #069adf;
   outline: none;
   transition: filter 0.2s ease;
+  padding: 0 !important;
 }
 input:focus {
   outline: none;
@@ -376,7 +377,8 @@ input[type="range"]:hover {
   margin-top: 2rem;
 }
 
-.complete-btn {
+.complete-btn,
+.edit-btn {
   border: none;
   border-radius: var(--radius-xl);
   background: var(--gradient-primary);

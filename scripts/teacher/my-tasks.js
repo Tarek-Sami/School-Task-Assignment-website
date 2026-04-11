@@ -1,6 +1,8 @@
 const allTasks = document.querySelector(".tasks-grid");
 const searchInput = document.getElementById("task-search");
-const priorityFilterButtons = document.querySelectorAll(".filter-pill[data-priority]");
+const priorityFilterButtons = document.querySelectorAll(
+  ".filter-pill[data-priority]",
+);
 const completedFilterButtons = document.querySelectorAll(
   ".filter-pill[data-completed]",
 );
@@ -57,11 +59,14 @@ function getFilteredTasks() {
         (activeCompleted === "completed" && isTaskCompleted(task)) ||
         (activeCompleted === "pending" && !isTaskCompleted(task));
 
-      return priorityMatches && completedMatches && matchesSearch(task, searchQuery);
+      return (
+        priorityMatches && completedMatches && matchesSearch(task, searchQuery)
+      );
     })
     .sort((firstTask, secondTask) => {
       const priorityDifference =
-        getPriorityRank(firstTask.priority) - getPriorityRank(secondTask.priority);
+        getPriorityRank(firstTask.priority) -
+        getPriorityRank(secondTask.priority);
 
       if (priorityDifference !== 0) {
         return priorityDifference;
@@ -102,11 +107,8 @@ function renderTasks() {
                 <i class="fa-solid fa-ellipsis-vertical"></i>
               </summary>
               <div class="task-card-dropdown">
-                <a href="/teacher/task-details.html?id=${task.id}" class="task-menu-item">
+                <a href="/shared/task-details.html?id=${task.id}" class="task-menu-item">
                   View Task Details
-                </a>
-                <a href="/admin/edit-task.html?id=${task.id}" class="task-menu-item">
-                  Edit Task
                 </a>
                 <button type="button" class="task-menu-item">
                   Mark As Completed
@@ -148,12 +150,12 @@ priorityFilterButtons.forEach((button) =>
     priorityFilterButtons.forEach((btn) =>
       btn.classList.toggle(
         "active",
-        btn.getAttribute("data-priority") === activePriority
-      )
+        btn.getAttribute("data-priority") === activePriority,
+      ),
     );
 
     renderTasks();
-  })
+  }),
 );
 completedFilterButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -162,7 +164,7 @@ completedFilterButtons.forEach((button) => {
     completedFilterButtons.forEach((filterButton) => {
       filterButton.classList.toggle(
         "active",
-        filterButton.getAttribute("data-completed") === activeCompleted
+        filterButton.getAttribute("data-completed") === activeCompleted,
       );
     });
 

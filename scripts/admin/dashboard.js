@@ -10,7 +10,7 @@ if (!localStorage.getItem("tasks")) {
       deadline: "2026-05-10",
       status: "pending",
       madeBy: "Ahmed Ali",
-      proggress: 0,
+      progress: 0,
     },
     {
       id: crypto.randomUUID(),
@@ -22,7 +22,7 @@ if (!localStorage.getItem("tasks")) {
       deadline: "2026-04-20",
       status: "pending",
       madeBy: "Alex Johnson",
-      proggress: 0,
+      progress: 0,
     },
     {
       id: crypto.randomUUID(),
@@ -30,11 +30,11 @@ if (!localStorage.getItem("tasks")) {
       title: "AI Project",
       description: "Review student submissions",
       teacher: "Mohamed",
-      deadline: "2026-04-25",
+      deadline: "2026-04-05",
       priority: "low",
       status: "pending",
       madeBy: "Alex Johnson",
-      proggress: 0,
+      progress: 0,
     },
   ];
 
@@ -71,7 +71,7 @@ tasks
     html += `<div class="task" data-id="${task.id}">
           <div class="task-left">
             <div class="task-info">
-<h4 id="task-headline"><a href="../teacher/task-details.html?id=${task.id}" class="task-headline-link">${task.headline}</a></h4>
+<h4 id="task-headline"><a href="../shared/task-details.html?id=${task.id}" class="task-headline-link">${task.headline}</a></h4>
               <p id="task-teacher">
                 <img
                   src="https://ui-avatars.com/api/?name=Aris&background=E5E7EB&color=374151&size=24&rounded=true"
