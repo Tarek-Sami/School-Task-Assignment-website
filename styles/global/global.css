@@ -98,3 +98,14 @@ h6 {
   right: 0;
   z-index: 1000;
 }
+::-webkit-scrollbar {
+  width: 11px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface);
+  border-radius: 2rem;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-primary);
+  border-radius: 2rem;
+}
