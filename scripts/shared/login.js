@@ -1,31 +1,68 @@
-const loginButton = document.getElementById("loginButton");
+const loginForm = document.getElementById("loginForm");
+const loginError = document.getElementById("loginError");
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
 
-loginButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-  // let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+function setLoginError(message) {
+  loginError.textContent = message;
+}
 
-  // Validation
-  // if (!email.match(emailPattern)) {
-  //   e.preventDefault();
-  //   return;
-  // }
+function clearLoginError() {
+  loginError.textContent = "";
+}
 
-  // if (password.length < 6) {
-  //   e.preventDefault();
-  //   return;
-  // }
+function clearLoginFieldState() {
+  emailInput.classList.remove("input-error");
+  passwordInput.classList.remove("input-error");
+}
 
-  // setTimeout(() => {
-  const role = localStorage.getItem("role");
+if (loginForm) {
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  if (!role) {
-    window.location.href = "/shared/signup.html";
-  } else {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+
+    clearLoginError();
+    clearLoginFieldState();
+
+    if (!email) {
+      setLoginError("Email address is required.");
+      emailInput.classList.add("input-error");
+      emailInput.focus();
+      return;
+    }
+
+    if (!emailPattern.test(email)) {
+      setLoginError("Enter a valid email address.");
+      emailInput.classList.add("input-error");
+      emailInput.focus();
+      return;
+    }
+
+    if (!password) {
+      setLoginError("Password is required.");
+      passwordInput.classList.add("input-error");
+      passwordInput.focus();
+      return;
+    }
+
+    if (password.length < 6) {
+      setLoginError("Password must be at least 6 characters.");
+      passwordInput.classList.add("input-error");
+      passwordInput.focus();
+      return;
+    }
+
+    const role = localStorage.getItem("role");
+
+    if (!role) {
+      window.location.href = "/shared/signup.html";
+      return;
+    }
+
     window.location.href = `/${role}/dashboard.html`;
-  }
-});
-//   }, 1000);
-// });
+  });
+}

@@ -14,6 +14,12 @@
   </head>
   <body>
     <div id="navbar"></div>
+    <div
+      id="loginError"
+      class="error-alert"
+      role="alert"
+      aria-live="polite"
+    ></div>
     <form id="loginForm" novalidate>
       <div class="center">
         <div class="card">
@@ -29,7 +35,7 @@
             placeholder="Enter your email"
             required
           />
-            <label for="password">PASSWORD</label>
+          <label for="password">PASSWORD</label>
           <!-- <p id="loginError" style="color:red; text-align:center;"></p> -->
 
           <input
@@ -39,22 +45,23 @@
             required
             minlength="6"
           />
-                    <div class="password">
-                                <div class="checkbox">
-            <input type="checkbox" id="c" /> <label for="c">Remember me</label>
+          <div class="password">
+            <div class="checkbox">
+              <input type="checkbox" id="c" />
+              <label for="c">Remember me</label>
+            </div>
+            <a href="forgot-password.html" target="_top">Forgot Password?</a>
           </div>
-                                            <a href="forgot-password.html" target="_top">Forgot Password?</a>
-                    </div>
           <button type="submit" id="loginButton">Sign In</button>
           <div class="divider">
             <span>OR CONTINUE WITH</span>
           </div>
           <div class="social-buttons">
-            <button class="btn google">
+            <button class="btn google" type="button">
               <img src="../assets/media/icons/google.png" alt="Google" />
               <a href="https://www.google.com/">GOOGLE</a>
             </button>
-            <button class="btn github">
+            <button class="btn github" type="button">
               <img src="../assets/media/icons/social.png" alt="GitHub" />
               <a href="https://github.com/">GITHUB</a>
             </button>
