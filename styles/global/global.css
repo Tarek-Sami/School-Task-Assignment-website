@@ -99,13 +99,16 @@ h6 {
   z-index: 1000;
 }
 ::-webkit-scrollbar {
-  width: 11px;
+  width: 12px;
 }
+
 ::-webkit-scrollbar-track {
-  background: var(--surface);
-  border-radius: 2rem;
+  background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--gradient-primary);
   border-radius: 2rem;
+  border: 3px solid transparent;
+  background-clip: content-box;
 }

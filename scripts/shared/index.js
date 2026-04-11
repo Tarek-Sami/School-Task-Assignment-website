@@ -49,6 +49,6 @@ const observer = new IntersectionObserver(
 );
 
 reveals.forEach((el, index) => {
-  el.style.transitionDelay = `${(index % 5) * 0.1}s`;
+  el.style.transitionDelay = `${(index % 3) * 0.1}s`;
   observer.observe(el);
 });
