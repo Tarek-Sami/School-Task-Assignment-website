@@ -174,16 +174,20 @@ body {
   align-items: center;
   gap: 20px;
 }
-.task-info {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
 .task-info h4 {
   font-size: 1.05rem;
   font-weight: 700;
   color: #333941;
   margin: 0;
+}
+.task-headline-link {
+  color: #333941;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.task-headline-link:hover {
+  color: #6142db;
 }
 .task-info p {
   display: flex;
