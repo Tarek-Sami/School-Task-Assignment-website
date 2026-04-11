@@ -6,15 +6,15 @@
     <title>Manage Teachers</title>
     <link rel="stylesheet" href="../styles/global/global.css" />
     <link rel="stylesheet" href="../styles/global/components.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+
     <link rel="stylesheet" href="../styles/admin/manage-teachers.css" />
     <link rel="stylesheet" href="/styles/shared/main-nav.css" />
     <link rel="stylesheet" href="../styles/shared/footer.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
   <body class="manage-teachers-page">
     <div id="navbar"></div>
     <header class="page-header">
@@ -70,166 +70,83 @@
           </div>
         </div>
 
-        <div class="teacher-list">
-          <article class="teacher-row">
-            <div class="teacher-row-avatar">
-              <img
-                src="../assets/media/images/image.jpg"
-                alt="Dr. Sarah Jenkins"
-                width="56"
-                height="56"
-              />
-              <span
-                class="teacher-row-dot teacher-row-dot-online"
-                title="Online"
-              ></span>
-            </div>
-            <div class="teacher-row-info">
-              <h3 class="teacher-row-name">Dr. Sarah Jenkins</h3>
-              <p class="teacher-row-role">
-                Advanced Linguistics • Head of Dept.
-              </p>
-            </div>
-            <div class="teacher-row-workload">
-              <p class="teacher-row-workload-label">CURRENT WORKLOAD</p>
-              <div class="teacher-row-workload-bar">
-                <div class="progress">
-                  <div
-                    class="progress-bar progress-bar-blue"
-                    style="width: 80%"
-                  ></div>
-                </div>
-                <span class="teacher-row-tasks">18 Tasks</span>
-              </div>
-            </div>
-            <div class="teacher-row-status">
-              <p class="teacher-row-status-label">STATUS</p>
-              <div class="status-pill status-pill-online">
-                <span class="status-pill-dot"></span>
-                ONLINE
-              </div>
-            </div>
-          </article>
-
-          <article class="teacher-row">
-            <div class="teacher-row-avatar">
-              <img
-                src="../assets/media/images/image.jpg"
-                alt="Prof. Julian Thorne"
-                width="56"
-                height="56"
-              />
-              <span
-                class="teacher-row-dot teacher-row-dot-offline"
-                title="Offline"
-              ></span>
-            </div>
-            <div class="teacher-row-info">
-              <h3 class="teacher-row-name">Prof. Julian Thorne</h3>
-              <p class="teacher-row-role">Physics • Lab Coordinator</p>
-            </div>
-            <div class="teacher-row-workload">
-              <p class="teacher-row-workload-label">CURRENT WORKLOAD</p>
-              <div class="teacher-row-workload-bar">
-                <div class="progress">
-                  <div
-                    class="progress-bar progress-bar-teal"
-                    style="width: 55%"
-                  ></div>
-                </div>
-                <span class="teacher-row-tasks">11 Tasks</span>
-              </div>
-            </div>
-            <div class="teacher-row-status">
-              <p class="teacher-row-status-label">STATUS</p>
-              <div class="status-pill status-pill-offline">
-                <span class="status-pill-dot"></span>
-                OFFLINE
-              </div>
-            </div>
-          </article>
-
-          <article class="teacher-row">
-            <div class="teacher-row-avatar">
-              <img
-                src="../assets/media/images/image.jpg"
-                alt="Dr. Marcus Thorne"
-                width="56"
-                height="56"
-              />
-              <span
-                class="teacher-row-dot teacher-row-dot-online"
-                title="Online"
-              ></span>
-            </div>
-            <div class="teacher-row-info">
-              <h3 class="teacher-row-name">Dr. Marcus Thorne</h3>
-              <p class="teacher-row-role">Philosophy &amp; Ethics</p>
-            </div>
-            <div class="teacher-row-workload">
-              <p class="teacher-row-workload-label">CURRENT WORKLOAD</p>
-              <div class="teacher-row-workload-bar">
-                <div class="progress">
-                  <div
-                    class="progress-bar progress-bar-red"
-                    style="width: 40%"
-                  ></div>
-                </div>
-                <span class="teacher-row-tasks">8 Tasks</span>
-              </div>
-            </div>
-            <div class="teacher-row-status">
-              <p class="teacher-row-status-label">STATUS</p>
-              <div class="status-pill status-pill-online">
-                <span class="status-pill-dot"></span>
-                ONLINE
-              </div>
-            </div>
-          </article>
-
-          <article class="teacher-row">
-            <div class="teacher-row-avatar">
-              <img
-                src="../assets/media/images/image.jpg"
-                alt="Dr. Amira Hassan"
-                width="56"
-                height="56"
-              />
-              <span
-                class="teacher-row-dot teacher-row-dot-online"
-                title="Online"
-              ></span>
-            </div>
-            <div class="teacher-row-info">
-              <h3 class="teacher-row-name">Dr. Amira Hassan</h3>
-              <p class="teacher-row-role">Computer Science • Senior Lecturer</p>
-            </div>
-            <div class="teacher-row-workload">
-              <p class="teacher-row-workload-label">CURRENT WORKLOAD</p>
-              <div class="teacher-row-workload-bar">
-                <div class="progress">
-                  <div
-                    class="progress-bar progress-bar-navy"
-                    style="width: 88%"
-                  ></div>
-                </div>
-                <span class="teacher-row-tasks">19 Tasks</span>
-              </div>
-            </div>
-            <div class="teacher-row-status">
-              <p class="teacher-row-status-label">STATUS</p>
-              <div class="status-pill status-pill-online">
-                <span class="status-pill-dot"></span>
-                ONLINE
-              </div>
-            </div>
-          </article>
-        </div>
+        <div class="teacher-list"></div>
       </section>
     </div>
+    <div class="modal" id="filterModal" aria-hidden="true" role="presentation">
+      <div
+        class="modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="filterModalTitle"
+        tabindex="-1"
+      >
+        <header class="modal-header">
+          <div class="modal-header-text">
+            <h2 id="filterModalTitle">Filters</h2>
+            <p class="modal-subtitle">Refine the teacher list</p>
+          </div>
+          <button type="button" class="modal-close" aria-label="Close filters">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </header>
+
+        <div class="modal-body">
+          <label class="field-label" for="filter-modal-search">Search</label>
+          <input
+            id="filter-modal-search"
+            type="text"
+            placeholder="Search by name or department…"
+            autocomplete="off"
+          />
+
+          <label class="field-label" for="filter-modal-department"
+            >Department</label
+          >
+          <select id="filter-modal-department">
+            <option value="All">All departments</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Physics">Physics</option>
+            <option value="Chemistry">Chemistry</option>
+            <option value="Biology">Biology</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="English">English</option>
+          </select>
+
+          <span class="field-label" id="filter-gender-legend">Gender</span>
+          <div
+            class="radio-group"
+            role="group"
+            aria-labelledby="filter-gender-legend"
+          >
+            <label class="radio-chip">
+              <input type="radio" name="filter-gender" value="all" checked />
+              <span>All</span>
+            </label>
+            <label class="radio-chip">
+              <input type="radio" name="filter-gender" value="male" />
+              <span>Male</span>
+            </label>
+            <label class="radio-chip">
+              <input type="radio" name="filter-gender" value="female" />
+              <span>Female</span>
+            </label>
+          </div>
+        </div>
+
+        <footer class="modal-actions">
+          <button type="button" class="modal-btn modal-btn-reset">Reset</button>
+          <button type="button" class="modal-btn modal-btn-apply">
+            Apply filters
+          </button>
+        </footer>
+      </div>
+    </div>
+
+    <div class="pagination" id="pagination"></div>
     <div class="footer"></div>
-    <script src="../scripts/shared/nav.js" defer></script>
-    <script src="../scripts/shared/footer.js" defer></script>
+    <script src="/scripts/shared/nav.js" defer></script>
+    <script src="/scripts/shared/footer.js" defer></script>
+    <script src="/scripts/admin/manage-teacher.js"></script>
   </body>
 </html>
-

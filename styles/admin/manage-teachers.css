@@ -4,7 +4,6 @@
   font-family: var(--font-body);
   color: var(--on-surface);
   background: linear-gradient(180deg, #eef2f7 0%, #f5f7fb 50%, #eef1f8 100%);
-
 }
 
 .page-header {
@@ -37,7 +36,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: clamp(1rem, 3vw, 1.75rem) clamp(1rem, 4vw, 2.5rem);
-  min-height: 90vh;
+  min-height: 60vh;
 }
 
 .stats-grid {
@@ -473,4 +472,253 @@
 
 .status-pill-offline .status-pill-dot {
   background: #94a3b8;
+}
+
+.no-results {
+  margin: 2rem auto;
+  font-size: 1rem;
+  color: var(--on-surface-variant);
+  text-align: center;
+  background-color: var(--surface-container-highest);
+  padding: 50px;
+  border-radius: var(--radius-md);
+}
+
+/* Filter modal: hidden by default; matches page tokens (cards, primary purple) */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.25s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ========================= */
+
+.modal-content {
+  width: min(100%, 26rem);
+  max-height: min(90vh, 36rem);
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  background: var(--surface-container-lowest);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+
+  transform: translateY(20px);
+  opacity: 0;
+
+  transition: all 0.25s ease;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ========================= */
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 1rem 1.25rem;
+
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.modal-header h2 {
+  color: white;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.modal-subtitle {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+/* ========================= */
+
+.modal-close {
+  width: 2.2rem;
+  height: 2.2rem;
+
+  display: grid;
+  place-items: center;
+
+  border: none;
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ========================= */
+
+.modal-body {
+  padding: 1rem 1.25rem;
+  overflow-y: auto;
+}
+
+/* ========================= */
+
+.field-label {
+  display: block;
+  margin-bottom: 0.4rem;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  color: #666;
+}
+
+.modal-body .field-label:not(:first-child) {
+  margin-top: 1rem;
+}
+
+/* ========================= */
+
+.modal-body input,
+.modal-body select {
+  width: 100%;
+  padding: 0.6rem;
+
+  border-radius: 8px;
+  border: 1px solid #ddd;
+
+  font-size: 0.9rem;
+  outline: none;
+
+  transition: 0.2s;
+}
+
+.modal-body input:focus,
+.modal-body select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(108, 71, 255, 0.15);
+}
+
+/* ========================= */
+
+.radio-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.radio-chip {
+  cursor: pointer;
+}
+
+.radio-chip input {
+  display: none;
+}
+
+.radio-chip span {
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+
+  font-size: 0.8rem;
+  background: #f3f3f3;
+
+  transition: 0.2s;
+}
+
+.radio-chip input:checked + span {
+  background: rgba(108, 71, 255, 0.15);
+  color: var(--color-primary);
+}
+
+/* ========================= */
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 1rem 1.25rem;
+  border-top: 1px solid #eee;
+}
+
+/* ========================= */
+
+.modal-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Reset */
+.modal-btn-reset {
+  background: transparent;
+  border: 1px solid #ddd;
+  color: #555;
+}
+
+.modal-btn-reset:hover {
+  background: #f5f5f5;
+}
+
+/* Apply */
+.modal-btn-apply {
+  border: none;
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.modal-btn-apply:hover {
+  filter: brightness(1.05);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #eee;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #6c47ff;
+  color: white;
 }
