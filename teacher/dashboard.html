@@ -4,8 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="../styles/global/global.css" />
     <link rel="stylesheet" href="../styles/teacher/dashboard.css" />
-    <link rel="stylesheet" href="../styles/shared/main-nav.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/shared/main-nav.css" />
     <link rel="stylesheet" href="../styles/shared/footer.css" />
     <link
       rel="stylesheet"
@@ -15,93 +26,55 @@
   <body>
     <div id="navbar"></div>
 
-    <section class="dashboard">
-      <h1 class="display-lg">Welcome back, Teacher!</h1>
-      <p class="text-muted">Here's an overview of your academic operations.</p>
+    <div class="container1">
+      <div class="header">
+        <h1>Welcome back, teacher!</h1>
+        <p>Here's an overview of your academic operations for today.</p>
+      </div>
 
-      <!-- Stats -->
-      <div class="stats">
-        <div class="task-card">
-          <i class="fa-solid fa-clipboard-list card-icon"></i>
-          <p class="label-sm">Total Tasks</p>
-          <h2>5</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon-wrapper bg-purple">
+            <i class="fa-solid fa-clipboard-list card-icon text-purple"></i>
+          </div>
+          <h3>TOTAL TASKS</h3>
+          <span id="total-tasks">5</span>
         </div>
 
-        <div class="task-card">
-          <i class="fa-regular fa-circle-check card-icon"></i>
-          <p class="label-sm">Completed</p>
-          <h2>2</h2>
+        <div class="card">
+          <div class="card-icon-wrapper bg-cyan">
+            <i class="fa-solid fa-circle-check card-icon text-cyan"></i>
+          </div>
+          <h3>COMPLETED</h3>
+          <span id="completed-tasks">2</span>
         </div>
 
-        <div class="task-card">
-          <i class="fa-regular fa-clock card-icon"></i>
-          <p class="label-sm">Pending</p>
-          <h2>3</h2>
+        <div class="card">
+          <div class="card-icon-wrapper bg-red">
+            <i class="fa-solid fa-clipboard-list card-icon text-red"></i>
+          </div>
+          <h3>PENDING</h3>
+          <span id="pending-tasks">3</span>
         </div>
 
-        <div class="task-card">
-          <i class="fa-solid fa-graduation-cap card-icon"></i>
-          <p class="label-sm">Teachers</p>
-          <h2>5</h2>
+        <div class="card">
+          <div class="card-icon-wrapper bg-blue">
+            <i class="fa-solid fa-graduation-cap card-icon text-blue"></i>
+          </div>
+          <h3>ASSIGNED BY</h3>
+          <span id="assigned-by-count">5</span>
         </div>
       </div>
 
-      <!-- Tasks -->
-      <h2 class="headline-md">All Tasks</h2>
-
-      <div class="task-list">
-        <div class="task-card priority-high">
-          <div class="task-info">
-            <div class="checkbox"></div>
-            <div class="task-texts">
-              <p class="title-lg">Prepare Math Exam</p>
-              <p class="label-sm text-muted">Assigned to Prof. Joseph</p>
-            </div>
-          </div>
-          <div class="task-meta">
-            <span class="badge badge-high">High Priority</span>
-            <span class="label-sm text-muted"
-              ><i class="fa-regular fa-calendar"></i> Oct 12, 2026</span
-            >
-          </div>
-        </div>
-
-        <div class="task-card">
-          <div class="task-info">
-            <div class="checkbox"></div>
-            <div class="task-texts">
-              <p class="title-lg">Submit Grade Reports</p>
-              <p class="label-sm text-muted">Assigned to Ms. Caroline</p>
-            </div>
-          </div>
-          <div class="task-meta">
-            <span class="badge badge-medium">Medium Priority</span>
-            <span class="label-sm text-muted"
-              ><i class="fa-regular fa-calendar"></i> Aug 10, 2026</span
-            >
-          </div>
-        </div>
-
-        <div class="task-card">
-          <div class="task-info">
-            <div class="checkbox"></div>
-            <div class="task-texts">
-              <p class="title-lg">Review Curriculum Update</p>
-              <p class="label-sm text-muted">Assigned to Dr. Julian</p>
-            </div>
-          </div>
-          <div class="task-meta">
-            <span class="badge badge-low">Low Priority</span>
-            <span class="label-sm text-muted"
-              ><i class="fa-regular fa-calendar"></i> Nov 15, 2026</span
-            >
-          </div>
-        </div>
+      <div class="tasks-header">
+        <h2>All Tasks</h2>
       </div>
-    </section>
 
+      <div class="task-list"></div>
+    </div>
     <div class="footer"></div>
     <script src="../scripts/shared/nav.js" defer></script>
     <script src="../scripts/shared/footer.js" defer></script>
+    <script src="../scripts/teacher/dashboard.js" defer></script>
   </body>
 </html>

@@ -61,9 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="/index.html" class="link">Home</a>
         <a href="/teacher/dashboard.html" class="link">Dashboard</a>
         <a href="/teacher/my-tasks.html" class="link">My Tasks</a>
-        <a href="/teacher/completed-tasks.html" class="link"
-          >Completed Tasks</a
-        >
         <a href="#" class="link logout">Log out</a>
     `;
   } else {
