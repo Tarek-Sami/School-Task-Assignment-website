@@ -11,7 +11,7 @@ body {
 }
 
 .center {
-  min-height: 100vh;
+  min-height: 110vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +24,7 @@ body {
   backdrop-filter: blur(var(--glass-blur-md));
   -webkit-backdrop-filter: blur(var(--glass-blur-md));
   width:  370px;
-  height: 81vh;
+  height: 85vh;
   padding: 1.6rem;
   border-radius: var(--radius-md);
   text-align: center;
@@ -92,6 +92,46 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   transform: translateY(-4px);
+}
+
+.error-alert {
+  position: absolute;
+  top: -75px;
+  left: 190px;
+  width: 350px;
+  padding: 1rem 1rem;
+  background: linear-gradient(135deg, #ffe4e6 0%, #fee2e2 100%);
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+  font-size: var(--body-md-size);
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.5;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 24px rgba(127, 29, 29, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-10px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.error-alert:not(:empty) {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.input-error {
+  border: 1px solid #ef4444;
+  background-color: #fff7f7;
+  color: #7f1d1d;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.16);
+  transition: all 0.2s ease;
 }
 
 .login-text {
