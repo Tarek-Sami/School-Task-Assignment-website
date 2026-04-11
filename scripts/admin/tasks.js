@@ -1,9 +1,13 @@
 const allTasks = document.querySelector(".tasks-grid");
 const searchInput = document.getElementById("task-search");
-const filterButtons = document.querySelectorAll(".filter-pill");
+const priorityFilterButtons = document.querySelectorAll(".filter-pill[data-priority]");
+const completedFilterButtons = document.querySelectorAll(
+  ".filter-pill[data-completed]",
+);
 
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let activePriority = "all";
+let activeCompleted = "all";
 let searchQuery = "";
 
 function getPriorityRank(priority) {
@@ -36,18 +40,28 @@ function matchesSearch(task, query) {
   return searchableText.includes(query);
 }
 
+function isTaskCompleted(task) {
+  const status = task.status;
+  const progress = Number(task.progress);
+
+  return status === "completed" || progress >= 100;
+}
+
 function getFilteredTasks() {
   return tasks
     .filter((task) => {
       const priorityMatches =
         activePriority === "all" || task.priority === activePriority;
+      const completedMatches =
+        activeCompleted === "all" ||
+        (activeCompleted === "completed" && isTaskCompleted(task)) ||
+        (activeCompleted === "pending" && !isTaskCompleted(task));
 
-      return priorityMatches && matchesSearch(task, searchQuery);
+      return priorityMatches && completedMatches && matchesSearch(task, searchQuery);
     })
     .sort((firstTask, secondTask) => {
       const priorityDifference =
-        getPriorityRank(firstTask.priority) -
-        getPriorityRank(secondTask.priority);
+        getPriorityRank(firstTask.priority) - getPriorityRank(secondTask.priority);
 
       if (priorityDifference !== 0) {
         return priorityDifference;
@@ -66,7 +80,7 @@ function renderTasks() {
     allTasks.innerHTML = `
       <div class="task-card task-card-empty">
         <h2 class="task-card-title">No tasks found</h2>
-        <p class="task-card-assignee">Try another priority filter or search term.</p>
+        <p class="task-card-assignee">Try another priority/status filter or search term.</p>
       </div>
     `;
     return;
@@ -127,21 +141,34 @@ function renderTasks() {
   allTasks.innerHTML = html;
 }
 
-filterButtons.forEach((button) => {
+priorityFilterButtons.forEach((button) =>
   button.addEventListener("click", () => {
-    activePriority = button.dataset.priority || "all";
+    activePriority = button.getAttribute("data-priority") || "all";
 
-    filterButtons.forEach((filterButton) => {
+    priorityFilterButtons.forEach((btn) =>
+      btn.classList.toggle(
+        "active",
+        btn.getAttribute("data-priority") === activePriority
+      )
+    );
+
+    renderTasks();
+  })
+);
+completedFilterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    activeCompleted = button.getAttribute("data-completed") || "all";
+
+    completedFilterButtons.forEach((filterButton) => {
       filterButton.classList.toggle(
         "active",
-        filterButton.dataset.priority === activePriority,
+        filterButton.getAttribute("data-completed") === activeCompleted
       );
     });
 
     renderTasks();
   });
 });
-
 searchInput?.addEventListener("input", () => {
   searchQuery = searchInput.value.trim().toLowerCase();
   renderTasks();

@@ -34,19 +34,48 @@
             autocomplete="off"
           />
         </div>
-        <div class="filter-pills">
-          <button type="button" class="filter-pill active" data-priority="all">
-            ALL
-          </button>
-          <button type="button" class="filter-pill" data-priority="high">
-            HIGH
-          </button>
-          <button type="button" class="filter-pill" data-priority="medium">
-            MEDIUM
-          </button>
-          <button type="button" class="filter-pill" data-priority="low">
-            LOW
-          </button>
+        <div class="filter-group">
+          <span class="filter-label">PRIORITY</span>
+          <div class="filter-pills">
+            <button
+              type="button"
+              class="filter-pill active"
+              data-priority="all"
+            >
+              ALL
+            </button>
+            <button type="button" class="filter-pill" data-priority="high">
+              HIGH
+            </button>
+            <button type="button" class="filter-pill" data-priority="medium">
+              MEDIUM
+            </button>
+            <button type="button" class="filter-pill" data-priority="low">
+              LOW
+            </button>
+          </div>
+        </div>
+        <div class="filter-group filter-group-inline">
+          <span class="filter-label">STATUS</span>
+          <div class="filter-pills filter-pills-status">
+            <button
+              type="button"
+              class="filter-pill active"
+              data-completed="all"
+            >
+              ALL
+            </button>
+            <button
+              type="button"
+              class="filter-pill"
+              data-completed="completed"
+            >
+              COMPLETED
+            </button>
+            <button type="button" class="filter-pill" data-completed="pending">
+              PENDING
+            </button>
+          </div>
         </div>
       </div>
 

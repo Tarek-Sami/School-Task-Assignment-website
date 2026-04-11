@@ -87,6 +87,32 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  justify-content: center;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.filter-group-inline {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.filter-label {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--on-surface-variant);
+  text-align: center;
+}
+
+.filter-pills-status {
+  margin-left: 0;
 }
 
 .filter-pill {
