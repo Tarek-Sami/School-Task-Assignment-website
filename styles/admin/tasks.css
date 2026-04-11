@@ -34,7 +34,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px;
-  min-height : 46vh;
+  min-height: 46vh;
 }
 
 .search-and-filter {
@@ -112,7 +112,7 @@
 
 .filter-pill.active {
   background: var(--color-primary);
-  color: black;
+  color: white;
   box-shadow: 0 6px 18px rgba(61, 87, 167, 0.25);
 }
 
@@ -155,7 +155,6 @@
 .task-card-menu-wrap > summary {
   list-style: none;
 }
-
 
 .priority-badge {
   font-size: var(--label-sm-size);
@@ -322,8 +321,8 @@
 
 .fab {
   position: sticky;
-  right: 100px;   
-  margin-left: auto; 
+  right: 100px;
+  margin-left: auto;
   bottom: 35px;
   margin-bottom: 30px;
   width: 3.5rem;

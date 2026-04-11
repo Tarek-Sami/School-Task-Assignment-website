@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="container">
       <img
         class="logo"
-        src="/assets/media/logo/nav-logo-withoutBG.png"
+        src="/assets/media/logo/purpleLogo.png"
         alt=""
       />
       <div class="profile-and-burger">

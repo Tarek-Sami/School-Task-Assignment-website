@@ -27,7 +27,7 @@ body.main {
 .task-hero {
   background: linear-gradient(
     90deg,
-    rgba(239, 68, 68, 0.3) 0%,
+    rgba(97, 66, 219, 0.3) 0%,
     rgba(255, 255, 255, 0.5) 15%
   );
   display: flex;

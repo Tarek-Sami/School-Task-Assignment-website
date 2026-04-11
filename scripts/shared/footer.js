@@ -15,6 +15,7 @@ if (role === "admin") {
   dashboardLink = `
     <li><a href="/shared/login.html">Login</a></li>
     <li><a href="/shared/signup.html">Sign Up</a></li>
+
   `;
 }
 
@@ -24,7 +25,7 @@ footer.innerHTML = `
         <div class="left">
           <img
         class="logo"
-        src="/assets/media/logo/nav-logo-withoutBG.png"
+        src="/assets/media/logo/purpleLogo.png"
         alt=""
       />
           <p>
@@ -43,6 +44,7 @@ footer.innerHTML = `
             <h3>Resources</h3>
             <ul>
                 <li><a href="/shared/privacy.html">Privacy Policy</a></li>
+                   <li><a href="/shared/about.html">About Us</a></li>
             </ul>
           </div>
 

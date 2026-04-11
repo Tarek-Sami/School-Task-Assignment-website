@@ -5,10 +5,9 @@ footer .footer-container {
   justify-content: space-between;
   align-items: flex-start;
   padding: 40px 15%;
-  background-color: #e2e8f0;
+  background-color: rgba(226, 232, 240, 0.8);
   height: 200px;
   max-width: 100% !important ;
-  opacity: 0.8;
 }
 
 .left {
