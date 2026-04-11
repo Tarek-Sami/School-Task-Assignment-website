@@ -83,13 +83,22 @@ function renderTasks() {
             <span class="priority-badge priority-badge-${priority}"
               >${priority.toUpperCase()} PRIORITY</span
             >
-            <button
-              type="button"
-              class="task-card-menu"
-              aria-label="Task options"
-            >
-              <i class="fa-solid fa-ellipsis-vertical"></i>
-            </button>
+            <details class="task-card-menu-wrap">
+              <summary class="task-card-menu" aria-label="Task options">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </summary>
+              <div class="task-card-dropdown">
+                <a href="/teacher/task-details.html?id=${task.id}" class="task-menu-item">
+                  View Task Details
+                </a>
+                <a href="/admin/edit-task.html?id=${task.id}" class="task-menu-item">
+                  Edit Task
+                </a>
+                <button type="button" class="task-menu-item">
+                  Mark As Completed
+                </button>
+              </div>
+            </details>
           </div>
           <h2 class="task-card-title">${task.headline}</h2>
           <p class="task-card-assignee">
