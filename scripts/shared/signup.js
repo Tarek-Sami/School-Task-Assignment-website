@@ -52,15 +52,15 @@ if (signupForm && roleSelect) {
     clearSignupError();
     clearSignupFieldState();
 
-    if (name.trim().length < 3) {
-      setSignupError("Full name must be at least 3 characters.");
+    if (name.trim().length < 7) {
+      setSignupError("Full name must be at least 7 characters.");
       nameInput.classList.add("input-error");
       nameInput.focus();
       return;
     }
 
-    if (user.trim().length < 4) {
-      setSignupError("Username must be at least 4 characters.");
+    if (user.trim().length < 5) {
+      setSignupError("Username must be at least 5 characters.");
       userInput.classList.add("input-error");
       userInput.focus();
       return;
