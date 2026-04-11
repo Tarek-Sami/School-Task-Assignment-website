@@ -1,104 +1,276 @@
-@import url("../shared/global.css");
-@import url("../shared/components.css");
-body, html {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  box-sizing: border-box;
+.tasks-page {
+  font-family: var(--font-body);
+  color: var(--on-surface);
+  background: var(--gradient-accent);
 }
 
-.dashboard {
-  display: grid;
-  grid-template-columns: 16rem 1fr; 
-  min-height: 100vh;
-}
-
-.sidebar {
-  padding: 1.5rem 1rem;
-}
-
-.profile {
+.page-header {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 1rem 0;
-}
-
-.profile img {
-  width: 3rem; 
-  height: 3rem;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.nav-item {
-  padding: 0.5rem 0.7rem;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-}
-
-.nav-item:hover {
-  background: var(--surface-container-highest);
-}
-
-.topbar {
-  display: flex;
+  align-items: flex-start;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding: clamp(1.25rem, 4vw, 2rem) clamp(1rem, 4vw, 2.5rem) 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.cards {
+.page-header h1 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: var(--display-lg-track);
+  margin-bottom: 0.35rem;
+}
+
+.page-header p {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--on-surface-variant);
+  max-width: 28rem;
+  line-height: 1.5;
+}
+
+.container1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  min-height: 54vh;
+}
+
+.search-and-filter {
   display: flex;
-  gap: var(--spacing-4);
-  overflow-x: hidden; 
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.search-wrap {
+  flex: 1 1 280px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1.1rem;
+  background: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  border: 1px solid color-mix(in srgb, var(--outline-variant) 35%, transparent);
+  box-shadow: 0 2px 12px rgba(18, 32, 66, 0.04);
+}
+
+.search-wrap i {
+  color: var(--on-surface-variant);
+  font-size: 0.95rem;
+}
+
+.search-wrap input {
+  flex: 1;
+  margin: 0;
+  padding: 0.35rem 0;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--on-surface);
+  box-shadow: none;
+}
+
+.search-wrap input::placeholder {
+  color: var(--outline-variant);
+}
+
+.search-wrap input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-pill {
+  border: none;
+  border-radius: var(--radius-xl);
+  padding: 0.65rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  background: var(--surface-container-highest);
+  color: var(--on-surface);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.filter-pill:hover {
+  background: var(--surface-container-low);
+}
+
+.filter-pill.active {
+  background: var(--color-primary);
+  color: var(--on-primary);
+  box-shadow: 0 6px 18px rgba(61, 87, 167, 0.25);
+}
+
+.tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
 }
 
 .task-card {
-  min-width: 16rem; 
-  flex: 1 1 16rem; 
-}
-
-.big-card {
-  height: 14.5rem; 
-  margin-top: 1.5rem;
+  background: var(--surface-container-lowest);
   border-radius: var(--radius-md);
-  background: url("../../assets/media/images/Classroom.png") center/cover no-repeat;
-  position: relative;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  padding: 1rem;
+  padding: 1.25rem 1.35rem 1.35rem;
+  box-shadow: var(--shadow-ambient);
+  border: 1px solid color-mix(in srgb, var(--outline-variant) 18%, transparent);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
-  color: white;
+  gap: 0.75rem;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
-.special-heading{
-    color: rgb(250, 236, 236);
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 48px rgba(61, 87, 167, 0.1);
 }
 
-nav .label-sm.text-muted:last-of-type {
-  margin-top: 15px;
+.task-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
-.task-card:nth-of-type(1) .progress div {
-  width: 85%;
+.priority-badge {
+  font-size: var(--label-sm-size);
+  font-weight: 700;
+  letter-spacing: var(--label-sm-track);
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
 }
 
-.task-card:nth-of-type(2) .progress div {
-  width: 20%;
+.priority-badge-high {
+  background: #fce7f3;
+  color: #be185d;
 }
 
-.task-card:nth-of-type(3) .progress div {
-  width: 90%;
+.priority-badge-medium {
+  background: var(--tertiary-container);
+  color: var(--on-tertiary-container);
 }
 
-.big-card .progress div {
-  width: 45%;
+.priority-badge-low {
+  background: var(--surface-container-highest);
+  color: var(--on-surface-variant);
+}
+
+.task-card-menu {
+  border: none;
+  background: transparent;
+  color: var(--on-surface-variant);
+  padding: 0.35rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.task-card-menu:hover {
+  background: var(--surface-container-low);
+  color: var(--on-surface);
+}
+
+.task-card-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.task-card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.task-card-title a:hover {
+  color: var(--color-primary);
+}
+
+.task-card-assignee {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8125rem;
+  color: var(--on-surface-variant);
+}
+
+.task-card-assignee i {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.task-card-created {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--on-surface-variant);
+}
+
+.task-card-progress {
+  margin-top: auto;
+  padding-top: 0.25rem;
+}
+
+.progress-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+}
+
+.progress-label {
+  font-size: var(--label-sm-size);
+  font-weight: 700;
+  letter-spacing: var(--label-sm-track);
+  color: var(--on-surface-variant);
+}
+
+.progress-value {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--on-surface);
+}
+
+.progress-track {
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--surface-container-highest);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.4s ease;
+}
+
+.progress-fill-cyan {
+  background: linear-gradient(
+    90deg,
+    var(--color-secondary-accent) 0%,
+    var(--color-secondary-accent-strong) 100%
+  );
+}
+
+.task-card-empty {
+  grid-column: 1 / -1;
 }
