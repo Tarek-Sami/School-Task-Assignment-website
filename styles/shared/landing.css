@@ -81,7 +81,24 @@ h3 {
   align-items: center;
   gap: 60px;
   margin-bottom: 120px;
+  opacity: 0;
+  transition: opacity 1.5s ease;
 }
+.words {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 1.5s ease,
+    transform 1.5s ease;
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hidden {
+  opacity: 0;
+}
+
 .hero-text h1 {
   font-size: clamp(3rem, 5vw, 4.2rem);
   letter-spacing: -0.03em;
@@ -296,4 +313,17 @@ h3 {
   margin: 0 auto 40px;
   max-width: 540px;
   line-height: 1.6;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
