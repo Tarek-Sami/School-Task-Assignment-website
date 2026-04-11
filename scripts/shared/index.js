@@ -26,13 +26,6 @@ if (!role) {
   `;
 }
 
-window.onload = () => {
-  hero.classList.add("show");
-  p.classList.add("show");
-  hero.classList.remove("hidden");
-  p.classList.remove("hidden");
-};
-
 const reveals = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver(
@@ -51,4 +44,11 @@ const observer = new IntersectionObserver(
 reveals.forEach((el, index) => {
   el.style.transitionDelay = `${(index % 3) * 0.1}s`;
   observer.observe(el);
+});
+
+window.addEventListener("load", () => {
+  hero.classList.add("show");
+  p.classList.add("show");
+  hero.classList.remove("hidden");
+  p.classList.remove("hidden");
 });

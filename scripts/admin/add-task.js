@@ -6,7 +6,6 @@ const radios = document.querySelectorAll('input[name="priority"]');
 const modal = document.querySelector(".modal");
 const currentUserName =
   localStorage.getItem("currentUserName") || "Unknown User";
-// const form = document.getElementById("task-form");
 // variables for the form inputs
 const headlineInput = document.getElementById("headline");
 const titleInput = document.getElementById("title");
@@ -15,9 +14,42 @@ const teacherSelect = document.getElementById("teacher");
 const deadlineInput = document.getElementById("due-date");
 const madeBy = document.getElementById("creator-name");
 const creatorAvatar = document.querySelector(".creator-avatar");
-
 const closeBtn = document.getElementById("close-btn");
 const okBtn = document.getElementById("modal-ok");
+
+// button to edit the style of the description
+const boldBtn = document.querySelector(".bold-btn");
+const italicBtn = document.querySelector(".italic-btn");
+const underlineBtn = document.querySelector(".underline-btn");
+const listBtn = document.querySelector(".list-btn");
+const numberedListBtn = document.querySelector(".numbered-list-btn");
+
+function execOnDescription(command, value = null) {
+  descriptionInput.focus();
+  document.execCommand(command, false, value);
+}
+
+function bindToolbar(btn, command, value = null) {
+  btn?.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    if (btn === listBtn) {
+      numberedListBtn.classList.remove("active");
+      btn.classList.toggle("active");
+    } else if (btn === numberedListBtn) {
+      listBtn.classList.remove("active");
+      btn.classList.toggle("active");
+    } else {
+      btn.classList.toggle("active");
+    }
+    execOnDescription(command, value);
+  });
+}
+
+bindToolbar(boldBtn, "bold");
+bindToolbar(italicBtn, "italic");
+bindToolbar(underlineBtn, "underline");
+bindToolbar(listBtn, "insertUnorderedList");
+bindToolbar(numberedListBtn, "insertOrderedList");
 
 radios.forEach((radio) => {
   radio.addEventListener("change", () => {
@@ -31,7 +63,7 @@ radios.forEach((radio) => {
 function validateForm() {
   const headline = headlineInput.value.trim();
   const title = titleInput.value.trim();
-  const description = descriptionInput.value.trim();
+  const description = (descriptionInput.innerText || "").trim();
   const teacher = teacherSelect.value;
   const deadline = deadlineInput.value;
   const priority = document.querySelector('input[name="priority"]:checked');
@@ -72,7 +104,7 @@ createTaskBtn.addEventListener("click", (e) => {
     id: crypto.randomUUID(),
     headline: headlineInput.value,
     title: titleInput.value,
-    description: descriptionInput.value,
+    description: descriptionInput.innerHTML,
     teacher: teacherSelect.value,
     deadline: deadlineInput.value,
     priority: document.querySelector('input[name="priority"]:checked').value,
