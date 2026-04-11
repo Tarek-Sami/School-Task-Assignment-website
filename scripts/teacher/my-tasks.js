@@ -46,16 +46,13 @@ function getFilteredTasks() {
     })
     .sort((firstTask, secondTask) => {
       const priorityDifference =
-        getPriorityRank(firstTask.priority) -
-        getPriorityRank(secondTask.priority);
+        getPriorityRank(firstTask.priority) - getPriorityRank(secondTask.priority);
 
       if (priorityDifference !== 0) {
         return priorityDifference;
       }
 
-      return (firstTask.headline || "").localeCompare(
-        secondTask.headline || "",
-      );
+      return (firstTask.headline || "").localeCompare(secondTask.headline || "");
     });
 }
 
@@ -78,37 +75,35 @@ function renderTasks() {
     const priority = task.priority || "low";
 
     html += `
-        <article class="task-card">
-          <div class="task-card-top">
-            <span class="priority-badge priority-badge-${priority}"
-              >${priority.toUpperCase()} PRIORITY</span
-            >
-            <details class="task-card-menu-wrap">
-              <summary class="task-card-menu" aria-label="Task options">
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </summary>
-              <div class="task-card-dropdown">
-                <a href="/teacher/task-details.html?id=${task.id}" class="task-menu-item">
-                  View Task Details
-                </a>
-                <a href="/admin/edit-task.html?id=${task.id}" class="task-menu-item">
-                  Edit Task
-                </a>
-                <button type="button" class="task-menu-item">
-                  Mark As Completed
-                </button>
-              </div>
-            </details>
-          </div>
-          <h2 class="task-card-title">${task.headline}</h2>
-          <p class="task-card-assignee">
-            <i class="fa-regular fa-user" aria-hidden="true"></i>
-            Prof. ${task.teacher}
-          </p>
-          
+      <article class="task-card">
+        <div class="task-card-top">
+          <span class="priority-badge priority-badge-${priority}">
+            ${priority.toUpperCase()} PRIORITY
+          </span>
+          <details class="task-card-menu-wrap">
+            <summary class="task-card-menu" aria-label="Task options">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </summary>
+            <div class="task-card-dropdown">
+              <a href="/teacher/task-details.html?id=${task.id}" class="task-menu-item" >
+                View Task Details
+              </a>
+              <button type="button" class="task-menu-item" >
+                Mark As Completed
+              </button>
+            </div>
+          </details>
+        </div>
+        <h2 class="task-card-title">
+          <a href="/teacher/task-details.html?id=${task.id}">${task.headline}</a>
+        </h2>
+        <p class="task-card-assignee">
+          <i class="fa-regular fa-user" aria-hidden="true"></i>
+          Prof. ${task.teacher}
+        </p>
         <p class="task-card-created">
-            Created by: ${task.madeBy || task.madeby || "Unknown"}
-          </p>
+          Created by: ${task.madeBy || task.madeby || "Unknown"}
+        </p>
 
         <div class="task-card-progress">
           <div class="progress-head">
@@ -116,11 +111,13 @@ function renderTasks() {
             <span class="progress-value">${task.progress || 0}%</span>
           </div>
           <div class="progress-track">
-            <div class="progress-fill progress-fill-cyan"
-              style="width: ${task.progress || 0}%">
-            </div>
+            <div
+              class="progress-fill progress-fill-cyan"
+              style="width: ${task.progress || 0}%"
+            ></div>
           </div>
-        </article>
+        </div>
+      </article>
     `;
   });
 

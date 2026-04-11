@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>School Task Assignment</title>
+    <title>Simplify Your School Tasks - EduFlow</title>
     <link rel="stylesheet" href="/styles/global/global.css" />
     <link rel="stylesheet" href="/styles/shared/landing.css" />
     <link rel="stylesheet" href="/styles/shared/main-nav.css" />
-    <link rel="stylesheet" href="../styles/shared/footer.css" />
+    <link rel="stylesheet" href="/styles/shared/footer.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -15,100 +15,117 @@
   </head>
   <body>
     <div id="navbar"></div>
-    <main class="landing-page">
+    <main class="main">
       <section class="hero">
-        <div class="hero-content">
-          <span class="tag">The Future of Academic Curation</span>
-          <h1>School Task Assignment<br />Made Simple</h1>
+        <div class="hero-text">
+          <h1>Simplify Your<br /><span class="text-primary">School Tasks</span></h1>
           <p>
-            Experience an editorial approach to education management. We
-            transform mundane school logistics into a curated gallery of
-            academic excellence.
+            EduFlow helps teachers and administrators streamline task
+            management with intuitive tools designed for modern education.
           </p>
-          <div class="hero-actions">
-            <a href="/signup.html" class="btn btn-primary">Get Started</a>
-            <a href="/login.html" class="btn btn-secondary">Sign In</a>
+          <div class="hero-btns">
+            <a href="/shared/login.html" class="btn btn-primary">Login</a>
+            <a href="/shared/signup.html" class="btn btn-outline text-primary">Sign Up</a>
           </div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="screen">
-            <div class="screen-header">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="line-group">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="table">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+        <div class="hero-img-box" aria-hidden="true">
+          <div class="blob top-blob"></div>
+          <div class="blob bottom-blob"></div>
+          <img src="/assets/media/images/landing page.png" alt="EduFlow Dashboard" class="img" />
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Everything You Need</h2>
+        <p class="subtitle">
+          Powerful features designed to make school task management effortless for everyone.
+        </p>
+        <div class="grid">
+          <div class="card">
+            <div class="icon bg-blue-light"><i class="fa-solid fa-list-check text-blue"></i></div>
+            <h3>Task Management</h3>
+            <p>Create, assign, and track tasks with deadlines, priorities, and progress indicators.</p>
           </div>
-          <div class="floating-card">
-            <div class="dot"></div>
-            <div>
-              <small>Active Exhibit</small>
-              <p>Quantum Physics 101</p>
-            </div>
+          <div class="card">
+            <div class="icon bg-green-light"><i class="fa-solid fa-users text-green"></i></div>
+            <h3>Team Collaboration</h3>
+            <p>Work together seamlessly with real-time updates and shared workspaces.</p>
+          </div>
+          <div class="card">
+            <div class="icon bg-purple-light"><i class="fa-solid fa-chart-line text-purple"></i></div>
+            <h3>Progress Tracking</h3>
+            <p>Monitor task progress with detailed analytics and performance insights.</p>
+          </div>
+          <div class="card">
+            <div class="icon bg-orange-light"><i class="fa-solid fa-calendar-alt text-orange"></i></div>
+            <h3>Smart Scheduling</h3>
+            <p>Intelligent calendar integration with automated reminders and notifications.</p>
+          </div>
+          <div class="card">
+            <div class="icon bg-red-light"><i class="fa-solid fa-file-alt text-red"></i></div>
+            <h3>Document Management</h3>
+            <p>Store, share, and organize all your educational materials in one place.</p>
+          </div>
+          <div class="card">
+            <div class="icon bg-indigo-light"><i class="fa-solid fa-mobile-alt text-indigo"></i></div>
+            <h3>Mobile Ready</h3>
+            <p>Access your tasks and collaborate from anywhere with our mobile app.</p>
           </div>
         </div>
       </section>
 
-      <section class="features">
-        <h2>Designed for the Modern Academic</h2>
-        <p class="features-intro">
-          Elevate the standard of school management with tools that feel less
-          like software and more like a premium workspace.
+      <section class="section">
+        <h2>Loved by Educators</h2>
+        <p class="subtitle">
+          See what educators and administrators are saying about EduFlow.
         </p>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <div class="icon">▣</div>
-            <h3>Task Management</h3>
-            <p>
-              Curate your workflow with fluid drag-and-drop assignments and
-              beautiful visual timelines.
-            </p>
-          </article>
-          <article class="feature-card">
-            <div class="icon">◍</div>
-            <h3>Role-Based Access</h3>
-            <p>
-              Precision permissions for educators, students, and administrators
-              with elegant security layers.
-            </p>
-          </article>
-          <article class="feature-card">
-            <div class="icon">◴</div>
-            <h3>Progress Tracking</h3>
-            <p>
-              Experience high-fidelity analytics that turn student data into the
-              respect of a masterpiece.
-            </p>
-          </article>
+        <div class="grid">
+          <div class="card">
+            <div class="user-info">
+              <img src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=random" alt="Sarah Johnson" />
+              <div>
+                <strong>Sarah Johnson</strong>
+                <span>Math Teacher</span>
+              </div>
+            </div>
+            <p>"EduFlow has transformed how I manage assignments. My workflow is more organized and I can track task progress effortlessly."</p>
+          </div>
+          <div class="card">
+            <div class="user-info">
+              <img src="https://ui-avatars.com/api/?name=Michael+Chen&background=random" alt="Michael Chen" />
+              <div>
+                <strong>Michael Chen</strong>
+                <span>Administrator</span>
+              </div>
+            </div>
+            <p>"Managing school tasks has never been easier. The interface is so clean and easy to use. Best management software for our staff!"</p>
+          </div>
+          <div class="card">
+            <div class="user-info">
+              <img src="https://ui-avatars.com/api/?name=Emily+Rodriguez&background=random" alt="Emily Rodriguez" />
+              <div>
+                <strong>Emily Rodriguez</strong>
+                <span>Principal</span>
+              </div>
+            </div>
+            <p>"EduFlow streamlined our entire school's task management. Teachers and staff are more productive than ever."</p>
+          </div>
         </div>
       </section>
 
       <section class="cta">
-        <div>
-          <h2>Ready to curate your school's success?</h2>
-          <p>
-            Join over 500 leading institutions redefining the academic
-            experience.
-          </p>
+        <div class="cta-text">
+          <h2>Ready to Transform Your School?</h2>
+          <p>Join thousands of educators who are already using EduFlow to streamline their task management.</p>
         </div>
-        <div class="cta-actions">
-          <a href="signup.html" class="btn btn-light">Start Your Archive</a>
-          <a href="login.html" class="btn btn-outline">Talk to a Curator</a>
+        <div class="cta-btns">
+          <a href="/shared/signup.html" class="btn btn-primary">Sign Up</a>
+          <a href="/shared/login.html" class="btn btn-outline text-primary">Login</a>
         </div>
       </section>
     </main>
     <div class="footer"></div>
-    <script src="../scripts/shared/nav.js" defer></script>
-    <script src="../scripts/shared/footer.js" defer></script>
+    <script src="/scripts/shared/nav.js" defer></script>
+    <script src="/scripts/shared/footer.js" defer></script>
   </body>
 </html>
