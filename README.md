@@ -2,6 +2,10 @@
 
 A web-based application designed to help school administrators manage tasks and assign them to teachers. This system streamlines the process of task delegation, tracking, and management within an educational institution.
 
+## Live demo
+
+Deployed build: [EduFlow on Netlify](https://eduflowfci.netlify.app/)
+
 ## 🚀 Features
 
 ### For Administrators
