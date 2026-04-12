@@ -69,14 +69,25 @@ const saveBtn = document.querySelector(".save-btn");
 const emailInput = document.querySelector(".form-inp.email");
 const userNameInput = document.querySelector(".form-inp.username");
 saveBtn.addEventListener("click", (e) => {
+  emailInput.classList.remove("input-error");
+  userNameInput.classList.remove("input-error");
   e.preventDefault();
-  if (Allusers.find((u) => u.email === emailInput.value)) {
+  if (
+    Allusers.find(
+      (u) => u.email === emailInput.value && u.email !== profile.email,
+    )
+  ) {
     document.querySelector(".error-alert").textContent =
       "An account with this email already exists.";
     emailInput.classList.add("input-error");
     emailInput.focus();
     return;
-  } else if (Allusers.find((u) => u.username === userNameInput.value)) {
+  } else if (
+    Allusers.find(
+      (u) =>
+        u.username === userNameInput.value && u.username !== profile.username,
+    )
+  ) {
     document.querySelector(".error-alert").textContent =
       "An account with this username already exists.";
     userNameInput.classList.add("input-error");
