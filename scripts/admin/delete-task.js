@@ -94,8 +94,6 @@ confirmDeleteBtn?.addEventListener("click", () => {
 
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-  tasks = tasks.filter((task) => task.id !== selectedTaskId);
-
   localStorage.setItem("tasks", JSON.stringify(tasks));
 
   totalTasks.textContent = parseInt(totalTasks.textContent) - 1;
@@ -104,6 +102,7 @@ confirmDeleteBtn?.addEventListener("click", () => {
   } else {
     pendingTasks.textContent = parseInt(pendingTasks.textContent) - 1;
   }
+  tasks = tasks.filter((task) => task.id !== selectedTaskId);
 
   animateDelete(selectedTaskId);
   closeDeleteModal();
