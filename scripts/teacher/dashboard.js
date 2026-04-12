@@ -3,7 +3,7 @@ const profile = JSON.parse(localStorage.getItem("profile"));
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 const teacherTasks = [];
 tasks.forEach((task) => {
-  if (task.teacher === profile.name) {
+  if (task.teacher === profile.username) {
     teacherTasks.push(task);
   }
 });

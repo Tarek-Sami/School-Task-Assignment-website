@@ -81,13 +81,13 @@ let tasksHtmlForAdmin =
         .join("")
     : "<p>No tasks available.</p>";
 let html = ``;
-
+let imageName = profile.name.split(" ");
 if (profile) {
   html = `<div class="hero card">
         <div class="hero-info-box">
           <div class="avatar-ring">
             <img
-              src="https://ui-avatars.com/api/?name=Ahmed+Tolba&background=f0e6ff&color=6142db&size=150"
+              src="https://ui-avatars.com/api/?name=${imageName[1]}+${imageName[2] || ""}&background=f0e6ff&color=6142db&size=150"
               alt="Profile photo"
               class="avatar-img"
             />
@@ -95,7 +95,7 @@ if (profile) {
           <div class="hero-details">
             <h1>${profile.username}</h1>
             <div class="tags">
-              <span class="tag tag-purple">Admin</span>
+              <span class="tag tag-purple">${profile.role}</span>
             </div>
             <p class="email">
               <i class="fa-regular fa-envelope"></i> ${profile.email}
@@ -216,12 +216,13 @@ if (profile) {
             <div class="tasks-list">
               ${profile.role === "admin" ? tasksHtmlForAdmin : tasksHtmlForTeacher}
             </div>
-            <a href="/admin/tasks.html" class="view-all"
+            <a href="/${profile.role}/${profile.role === "admin" ? "tasks" : "my-tasks"}.html" class="view-all"
               >View All Tasks <i class="fa-solid fa-chevron-right"></i
             ></a>
           </div>
         </div>
 `;
 }
+console.log(teacherTasks);
 
 container.innerHTML = html;
