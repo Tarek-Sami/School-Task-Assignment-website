@@ -58,11 +58,12 @@ bindToolbar(underlineBtn, "underline");
 bindToolbar(listBtn, "insertUnorderedList");
 bindToolbar(numberedListBtn, "insertOrderedList");
 
-const uniqueTeachers = [...new Set(teachers.map((t) => t.name))];
-uniqueTeachers.forEach((teacher) => {
+teachers.forEach((t) => {
+  const value = t.username || t.user;
+  if (!value) return;
   const option = document.createElement("option");
-  option.value = teacher;
-  option.textContent = teacher;
+  option.value = value;
+  option.textContent = t.name;
   chooseTeacherSelect.appendChild(option);
 });
 

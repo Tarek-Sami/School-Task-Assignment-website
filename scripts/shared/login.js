@@ -2,9 +2,7 @@ const loginForm = document.getElementById("loginForm");
 const loginError = document.getElementById("loginError");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
-const hashedPassword = CryptoJS.SHA256(password).toString();
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-const users = JSON.parse(localStorage.getItem("users")) || [];
 function setLoginError(message) {
   loginError.textContent = message;
 }
@@ -23,7 +21,9 @@ if (loginForm) {
     e.preventDefault();
 
     const email = emailInput.value.trim();
-    const password = passwordInput.value;
+    const password = passwordInput.value.trim();
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const passwordHash = CryptoJS.SHA256(password).toString();
 
     clearLoginError();
     clearLoginFieldState();
@@ -50,7 +50,7 @@ if (loginForm) {
     }
 
     const user = users.find(
-      (u) => u.email === email && u.password === hashedPassword,
+      (u) => u.email === email && u.password === passwordHash,
     );
     if (!user) {
       setLoginError("Invalid email or password.");

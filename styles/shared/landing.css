@@ -50,8 +50,11 @@ h3 {
 
 /* Layout & Typography */
 .main {
-  width: min(1150px, 92vw);
+  max-width: 1150px;
+  width: 100%;
   margin: 60px auto 100px;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  box-sizing: border-box;
 }
 .section {
   text-align: center;
@@ -326,4 +329,82 @@ h3 {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .main {
+    margin: 48px auto 72px;
+  }
+
+  .hero {
+    gap: 40px;
+    margin-bottom: 80px;
+  }
+
+  .section {
+    margin-bottom: 88px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    margin: 32px auto 64px;
+    padding: 0 0.75rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 56px;
+  }
+
+  .hero-img-box {
+    height: min(360px, 50vh);
+    order: -1;
+  }
+
+  .hero-text p {
+    max-width: none;
+  }
+
+  .section {
+    margin-bottom: 56px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 36px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 28px 22px;
+  }
+
+  .cta {
+    padding: 44px 22px;
+    border-radius: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: clamp(2rem, 9vw, 2.75rem);
+  }
+
+  .hero-btns,
+  .cta-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-btns .btn,
+  .cta-btns .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }

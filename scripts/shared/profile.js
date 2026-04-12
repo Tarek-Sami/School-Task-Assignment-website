@@ -1,6 +1,14 @@
 const profile = JSON.parse(localStorage.getItem("profile"));
 const teachers = JSON.parse(localStorage.getItem("teachers")) || [];
 const container = document.querySelector(".container");
+
+function teacherDisplayName(teacherField) {
+  const t = teachers.find(
+    (x) =>
+      (x.username || x.user) === teacherField || x.name === teacherField,
+  );
+  return t ? t.name : teacherField;
+}
 const title = document.querySelector("title");
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 const adminTasks = tasks.filter((task) => task.madeBy === profile.username);
@@ -36,7 +44,7 @@ let tasksHtmlForTeacher =
               <div class="task-det">
                 <h4>${task.title}</h4>
                 <p>
-                  <i class="fa-solid fa-user task-user-ic"></i> ${task.teacher}
+                  <i class="fa-solid fa-user task-user-ic"></i> ${teacherDisplayName(task.teacher)}
                 </p>
               </div>
             </div>
@@ -70,7 +78,7 @@ let tasksHtmlForAdmin =
               <div class="task-det">
                 <h4>${task.title}</h4>
                 <p>
-                  <i class="fa-solid fa-user task-user-ic"></i> ${task.teacher}
+                  <i class="fa-solid fa-user task-user-ic"></i> ${teacherDisplayName(task.teacher)}
                 </p>
               </div>
             </div>

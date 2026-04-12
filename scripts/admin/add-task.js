@@ -18,11 +18,12 @@ const closeBtn = document.getElementById("close-btn");
 const okBtn = document.getElementById("modal-ok");
 const chooseTeacherSelect = document.getElementById("teacher");
 function populateTeacherSelect() {
-  const uniqueTeachers = [...new Set(teachers.map((t) => t.name))];
-  uniqueTeachers.forEach((teacher) => {
+  teachers.forEach((t) => {
+    const value = t.username || t.user;
+    if (!value) return;
     const option = document.createElement("option");
-    option.value = teacher;
-    option.textContent = teacher;
+    option.value = value;
+    option.textContent = t.name;
     chooseTeacherSelect.appendChild(option);
   });
 }
@@ -125,13 +126,14 @@ createTaskBtn.addEventListener("click", (e) => {
     madeBy: currentUserName,
     progress: 0,
   };
-  teachers.forEach((teacher) => {
-    if (teacher.name === newTask.teacher) {
-      teacher.tasks = teacher.tasks + 1;
-    }
-  });
+  const assignee = teachers.find(
+    (t) => (t.username || t.user) === newTask.teacher,
+  );
+  if (assignee) {
+    assignee.numberOfTasks = (assignee.numberOfTasks || 0) + 1;
+    localStorage.setItem("teachers", JSON.stringify(teachers));
+  }
 
-  console.log(newTask);
   tasks.push(newTask);
   localStorage.setItem("tasks", JSON.stringify(tasks));
   window.location.href = "/admin/tasks.html";

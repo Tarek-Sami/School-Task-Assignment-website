@@ -1,6 +1,15 @@
 const allTasks = document.querySelector(".task-list");
 const profile = JSON.parse(localStorage.getItem("profile"));
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+function teacherDisplayName(teacherField) {
+  const list = JSON.parse(localStorage.getItem("teachers")) || [];
+  const t = list.find(
+    (x) =>
+      (x.username || x.user) === teacherField || x.name === teacherField,
+  );
+  return t ? t.name : teacherField;
+}
 const adminTasks = tasks.filter((task) => task.madeBy === profile.username);
 const priorityOrder = {
   high: 0,
@@ -33,7 +42,7 @@ adminTasks
                   class="avatar"
                   alt="Avatar"
                 />
-                Assigned to Prof. ${task.teacher}
+                Assigned to Prof. ${teacherDisplayName(task.teacher)}
               </p>
             </div>
           </div>

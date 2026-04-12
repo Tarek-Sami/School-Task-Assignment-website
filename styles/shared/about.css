@@ -5,8 +5,11 @@ body {
 }
 
 .about-main {
-  width: min(1080px, 92vw);
+  max-width: 1080px;
+  width: 100%;
   margin: 70px auto 100px;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  box-sizing: border-box;
   display: grid;
   gap: 56px;
 }
@@ -180,5 +183,20 @@ body {
 
   .values {
     padding: 26px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-main {
+    margin: 32px auto 64px;
+    gap: 22px;
+  }
+
+  .about-hero {
+    padding: 22px 18px;
+  }
+
+  .about-card {
+    padding: 22px 18px;
   }
 }

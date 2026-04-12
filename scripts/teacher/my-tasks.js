@@ -8,6 +8,15 @@ const completedFilterButtons = document.querySelectorAll(
 );
 const profile = JSON.parse(localStorage.getItem("profile"));
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+function teacherDisplayName(teacherField) {
+  const list = JSON.parse(localStorage.getItem("teachers")) || [];
+  const t = list.find(
+    (x) =>
+      (x.username || x.user) === teacherField || x.name === teacherField,
+  );
+  return t ? t.name : teacherField;
+}
 let teacherTasks = [];
 tasks.forEach((task) => {
   if (task.teacher === profile.username) {
@@ -115,7 +124,7 @@ function renderTasks() {
           </h2>
           <p class="task-card-assignee">
             <i class="fa-regular fa-user" aria-hidden="true"></i>
-            Prof. ${task.teacher}
+            Prof. ${teacherDisplayName(task.teacher)}
           </p>
           
         <p class="task-card-created">

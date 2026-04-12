@@ -234,3 +234,9 @@ textarea:focus {
     box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.06);
   }
 }
+
+@media (max-width: 768px) {
+  .layout-luxury {
+    padding: clamp(1.25rem, 5vw, 3rem);
+  }
+}

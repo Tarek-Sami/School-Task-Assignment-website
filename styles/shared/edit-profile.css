@@ -165,3 +165,35 @@ i {
   opacity: 1;
   pointer-events: auto;
 }
+
+@media (max-width: 768px) {
+  .edit-profile-container {
+    padding: 0 1rem;
+  }
+
+  .edit-card {
+    margin: 1.25rem auto;
+    padding: 1.25rem 1rem;
+  }
+
+  .error-alert {
+    width: 100%;
+    max-width: 24rem;
+    box-sizing: border-box;
+  }
+
+  .form-acts {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .form-acts .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .edit-avatar-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
