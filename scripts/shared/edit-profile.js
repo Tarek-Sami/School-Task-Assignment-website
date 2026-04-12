@@ -96,6 +96,7 @@ saveBtn.addEventListener("click", (e) => {
   } else if (userNameInput.value.trim() === "") {
     document.querySelector(".error-alert").textContent =
       "Username cannot be empty.";
+    return;
   }
   if (!emailRegex.test(emailInput.value)) {
     emailInput.classList.add("input-error");
