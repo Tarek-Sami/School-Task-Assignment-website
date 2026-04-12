@@ -63,6 +63,18 @@
   --glass-blur-md: 12px;
   --glass-blur-lg: 20px;
   --shadow-ambient: 0 20px 40px rgba(61, 87, 167, 0.06);
+
+  /* Shared breakpoints (for reference in comments / custom props only). */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
 }
 
 *,
@@ -72,6 +84,14 @@
   box-sizing: border-box;
 }
 
+/*
+ * Horizontal clip on html only. overflow-x: hidden on body forces overflow-y to compute to
+ * auto, so both html and body scroll — double scrollbar. Keep vertical overflow default on body.
+ */
+html {
+  overflow-x: hidden;
+}
+
 html,
 body {
   /* Remove default browser spacing so layout starts clean. */
@@ -79,6 +99,23 @@ body {
   padding: 0;
   padding-top: 50px;
 }
+
+body {
+  overflow: visible;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    overscroll-behavior-x: none;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -98,17 +135,21 @@ h6 {
   right: 0;
   z-index: 1000;
 }
-::-webkit-scrollbar {
-  width: 12px;
-}
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
+/* Custom scrollbar only on wider viewports — on small screens it stacked with the system bar. */
+@media (min-width: 769px) {
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: var(--gradient-primary);
-  border-radius: 2rem;
-  border: 3px solid transparent;
-  background-clip: content-box;
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+    border-radius: 2rem;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
 }

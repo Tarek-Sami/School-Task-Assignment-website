@@ -9,7 +9,6 @@ const phoneInput = document.getElementById("phone");
 const passwordInput = document.getElementById("password");
 const confirmPasswordInput = document.getElementById("confirm-password");
 const genderInputs = document.querySelectorAll('input[name="gender"]');
-const hashedPassword = CryptoJS.SHA256(password).toString();
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -145,7 +144,7 @@ if (signupForm && roleSelect) {
         username: user,
         email,
         phone,
-        password: hashedPassword,
+        password: CryptoJS.SHA256(password).toString(),
         role: selectedRole,
         department: departmentSelect.value,
         gender: selectedGender.id === "m" ? "male" : "female",

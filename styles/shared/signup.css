@@ -23,7 +23,7 @@ body {
   background: var(--surface);
   backdrop-filter: blur(var(--glass-blur-md));
   -webkit-backdrop-filter: blur(var(--glass-blur-md));
-  width: 370px;
+  width: min(100%, 370px);
   height: fit-content;
   padding: 1.6rem;
   border-radius: var(--radius-md);
@@ -95,10 +95,11 @@ button[type="submit"]:hover {
 }
 
 .error-alert {
-  position: absolute;
-  top: -75px;
-  left: 190px;
-  width: 350px;
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 100%;
+  max-width: 100%;
   padding: 1rem 1rem;
   background: linear-gradient(135deg, #ffe4e6 0%, #fee2e2 100%);
   border: 1px solid #fca5a5;
@@ -112,7 +113,8 @@ button[type="submit"]:hover {
   box-shadow: 0 12px 24px rgba(127, 29, 29, 0.18);
   opacity: 0;
   pointer-events: none;
-  transform: translateX(-50%) translateY(-10px);
+  transform: none;
+  margin: 0 0 0.75rem;
   transition:
     opacity 0.25s ease,
     transform 0.25s ease,
@@ -122,7 +124,6 @@ button[type="submit"]:hover {
 
 .error-alert:not(:empty) {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
   pointer-events: auto;
 }
 
@@ -151,4 +152,14 @@ button[type="submit"]:hover {
 
 .login-text a:hover {
   color: #4da6ff;
+}
+
+@media (max-width: 768px) {
+  .center {
+    padding: 1rem;
+  }
+
+  .gender-group {
+    flex-wrap: wrap;
+  }
 }

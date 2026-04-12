@@ -487,3 +487,58 @@ select {
   background: #b91c1c;
   transition: all 0.3s ease;
 }
+
+@media (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .panel-main {
+    grid-row: auto;
+  }
+
+  .tip-card {
+    width: min(100%, 400px);
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .task-page {
+    max-height: none;
+    padding: 0.65rem 0.75rem 1.5rem;
+  }
+
+  .heading-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .heading-row > div {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .btn-create,
+  .btn-cancel {
+    width: 100%;
+  }
+
+  .toolbar {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .modal-content {
+    width: min(100%, 24rem);
+    margin: 0.75rem;
+  }
+}

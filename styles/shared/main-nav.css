@@ -1,7 +1,6 @@
 body {
   font-family: var(--font-body);
   background-color: var(--surface);
-  overflow-x: hidden;
 }
 .nav {
   display: flex;
@@ -198,5 +197,32 @@ body {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .links-container {
+    width: min(320px, 100%);
+    max-width: calc(100% - 1rem);
+  }
+
+  .nav {
+    height: 72px;
+    min-height: 72px;
+  }
+
+  .nav .container {
+    padding: 0 0.75rem;
+  }
+
+  .nav .container .logo {
+    height: 44px;
+    margin-left: 0.35rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav .container .icon {
+    margin-right: 0.35rem;
   }
 }
