@@ -17,6 +17,36 @@ const creatorAvatar = document.querySelector(".creator-avatar");
 const closeBtn = document.getElementById("close-btn");
 const okBtn = document.getElementById("modal-ok");
 
+function populateTeacherSelect() {
+  let teachers = [];
+  try {
+    teachers = JSON.parse(localStorage.getItem("teachers")) || [];
+  } catch {
+    teachers = [];
+  }
+  const teacherNames = [
+    ...new Set(teachers.map((t) => t?.name).filter(Boolean)),
+  ];
+  teacherSelect.innerHTML = '<option value="">Select a teacher...</option>';
+
+  teacherNames.forEach((name) => {
+    const option = document.createElement("option");
+    option.value = name;
+    option.textContent = name;
+    teacherSelect.appendChild(option);
+  });
+
+  if (teacherNames.length === 0) {
+    const option = document.createElement("option");
+    option.value = "";
+    option.textContent = "No teachers available";
+    option.disabled = true;
+    teacherSelect.appendChild(option);
+  }
+}
+
+populateTeacherSelect();
+
 // button to edit the style of the description
 const boldBtn = document.querySelector(".bold-btn");
 const italicBtn = document.querySelector(".italic-btn");
@@ -110,7 +140,7 @@ createTaskBtn.addEventListener("click", (e) => {
     priority: document.querySelector('input[name="priority"]:checked').value,
     status: "pending",
     madeBy: currentUserName,
-    proggress: 0,
+    progress: 0,
   };
   console.log(newTask);
   tasks.push(newTask);
