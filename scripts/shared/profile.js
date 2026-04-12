@@ -1,4 +1,5 @@
 const profile = JSON.parse(localStorage.getItem("profile"));
+const teachers = JSON.parse(localStorage.getItem("teachers")) || [];
 const container = document.querySelector(".container");
 const title = document.querySelector("title");
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -7,6 +8,15 @@ const teacherTasks = tasks.filter((task) => task.teacher === profile.username);
 if (profile) {
   title.textContent = `${profile.username} - Profile`;
 }
+
+let adminCompeletedTasks = adminTasks.filter(
+  (task) => task.status.toLowerCase() === "completed",
+);
+let teacherCompeletedTasks = teacherTasks.filter(
+  (task) => task.status.toLowerCase() === "completed",
+);
+let completedTasks =
+  profile.role === "admin" ? adminCompeletedTasks : teacherCompeletedTasks;
 
 const priorityColors = {
   high: "red",
@@ -93,7 +103,7 @@ if (profile) {
             />
           </div>
           <div class="hero-details">
-            <h1>${profile.username}</h1>
+            <h1>${profile.name}</h1>
             <div class="tags">
               <span class="tag tag-purple">${profile.role}</span>
             </div>
@@ -130,7 +140,7 @@ if (profile) {
             <i class="fa-solid fa-circle-check text-blue"></i>
           </div>
           <div class="stat-values"> 
-            <h3><a href="/admin/manage-teachers.html">22 Teachers</a></h3>
+            <h3><a href="/admin/manage-teachers.html">$${teachers.length} Teachers</a></h3>
             <span class="stat-up">+2 today</span>
           </div>
         </div>`
@@ -143,10 +153,10 @@ if (profile) {
           <div class="prog-data">
             <div class="prog-head">
               <span>Completed Tasks</span>
-              <strong>80%</strong>
+              <strong>${Math.round((completedTasks.length / tasks.length) * 100)}%</strong>
             </div>
             <div class="prog-track">
-              <div class="prog-fill" style="width: 80%"></div>
+              <div class="prog-fill" style="width: ${Math.round((completedTasks.length / tasks.length) * 100)}%"></div>
             </div>
           </div>
         </div>
@@ -224,5 +234,5 @@ if (profile) {
 `;
 }
 console.log(teacherTasks);
-
+console.log(teacherCompeletedTasks);
 container.innerHTML = html;
