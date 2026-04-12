@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (profile) {
     profile.onclick = () => {
       if (!role) return (window.location.href = "/index.html");
-      window.location.href = `/${role}/profile.html`;
+      window.location.href = `/shared/profile.html`;
     };
   }
 });
