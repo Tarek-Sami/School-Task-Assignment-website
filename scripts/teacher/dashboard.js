@@ -27,7 +27,7 @@ tasks
           <div class="task-left">
             <input type="checkbox" class="task-checkbox" />
             <div class="task-info">
-              <h4 id="task-headline"><a href="task-details.html?id=${task.id}" class="task-headline-link">${task.headline}</a></h4>
+              <h4 id="task-headline"><a href="../../shared/task-details.html?id=${task.id}" class="task-headline-link">${task.headline}</a></h4>
               <p id="task-teacher">
                 <img
                   src="https://ui-avatars.com/api/?name=Aris&background=E5E7EB&color=374151&size=24&rounded=true"

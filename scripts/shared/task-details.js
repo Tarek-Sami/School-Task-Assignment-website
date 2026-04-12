@@ -7,6 +7,15 @@ let task = tasks.find((t) => t.id === taskId);
 let taskPage = document.querySelector(".task-page");
 let roleButton = "";
 let roleProgressControls = "";
+const parsedProgress = Number(task?.progress);
+const initialProgress =
+  Number.isFinite(parsedProgress) && parsedProgress >= 0
+    ? Math.min(parsedProgress, 100)
+    : 0;
+
+if (task) {
+  task.progress = initialProgress;
+}
 
 if (role === "admin") {
   roleProgressControls = "";
