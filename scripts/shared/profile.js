@@ -129,7 +129,7 @@ if (profile) {
           </div>
           <div class="stat-values">
             <h3><a href="/admin/tasks.html"> ${profile.role === "admin" ? adminTasks.length : teacherTasks.length} Tasks</a></h3>
-            <span class="stat-up">+6 today</span>
+
           </div>
         </div>
         ${
@@ -141,7 +141,6 @@ if (profile) {
           </div>
           <div class="stat-values"> 
             <h3><a href="/admin/manage-teachers.html">$${teachers.length} Teachers</a></h3>
-            <span class="stat-up">+2 today</span>
           </div>
         </div>`
             : ""
@@ -153,10 +152,10 @@ if (profile) {
           <div class="prog-data">
             <div class="prog-head">
               <span>Completed Tasks</span>
-              <strong>${Math.round((completedTasks.length / tasks.length) * 100)}%</strong>
+              <strong>${(completedTasks.length / (profile.role === "admin" ? adminTasks.length : teacherTasks.length)) * 100}%</strong>
             </div>
             <div class="prog-track">
-              <div class="prog-fill" style="width: ${Math.round((completedTasks.length / tasks.length) * 100)}%"></div>
+              <div class="prog-fill" style="width: ${(completedTasks.length / (profile.role === "admin" ? adminTasks.length : teacherTasks.length)) * 100}%"></div>
             </div>
           </div>
         </div>
