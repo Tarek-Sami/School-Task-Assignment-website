@@ -1,4 +1,5 @@
 let teachers = JSON.parse(localStorage.getItem("teachers")) || [];
+const profile = JSON.parse(localStorage.getItem("profile")) || {};
 const teachersCountElem = document.querySelector(".teachers-count");
 function updateTeachersCount() {
   teachersCountElem.textContent = teachers.length;

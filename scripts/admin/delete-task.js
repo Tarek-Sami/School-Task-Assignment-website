@@ -85,6 +85,9 @@ function animateDelete(id) {
   }, 300);
 }
 
+const totalTasks = document.getElementById("total-tasks");
+const compeletedTasks = document.getElementById("completed-tasks");
+const pendingTasks = document.getElementById("pending-tasks");
 //  confirm delete
 confirmDeleteBtn?.addEventListener("click", () => {
   if (!selectedTaskId) return;
@@ -94,6 +97,14 @@ confirmDeleteBtn?.addEventListener("click", () => {
   tasks = tasks.filter((task) => task.id !== selectedTaskId);
 
   localStorage.setItem("tasks", JSON.stringify(tasks));
+
+  totalTasks.textContent = parseInt(totalTasks.textContent) - 1;
+  if (tasks.find((t) => t.id === selectedTaskId)?.status === "completed") {
+    compeletedTasks.textContent = parseInt(compeletedTasks.textContent) - 1;
+  } else {
+    pendingTasks.textContent = parseInt(pendingTasks.textContent) - 1;
+  }
+
   animateDelete(selectedTaskId);
   closeDeleteModal();
 });
