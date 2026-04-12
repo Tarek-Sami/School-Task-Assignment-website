@@ -5,8 +5,7 @@ const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 function teacherDisplayName(teacherField) {
   const list = JSON.parse(localStorage.getItem("teachers")) || [];
   const t = list.find(
-    (x) =>
-      (x.username || x.user) === teacherField || x.name === teacherField,
+    (x) => (x.username || x.user) === teacherField || x.name === teacherField,
   );
   return t ? t.name : teacherField;
 }
@@ -79,4 +78,4 @@ const teachers = [...new Set(adminTasks.map((task) => task.teacher))].length;
 document.getElementById("total-tasks").textContent = total;
 document.getElementById("completed-tasks").textContent = completed;
 document.getElementById("pending-tasks").textContent = pending;
-document.getElementById("teachers-count").textContent = teachers;
+document.getElementById("teachers-count").textContent = list.length;
