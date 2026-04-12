@@ -122,3 +122,31 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 });
+
+const path = window.location.pathname;
+if (!path.includes("/error-pages/")) {
+  const role = localStorage.getItem("role");
+  if (
+    !role &&
+    (path.includes("/admin/") ||
+      path.includes("/teacher/") ||
+      path.includes("/task-details.html") ||
+      path.includes("/profile.html") ||
+      path.includes("/edit-profile.html"))
+  ) {
+    window.location.href = "/error-pages/unauthorized.html";
+  } else if (role === "teacher" && path.includes("/admin/")) {
+    window.location.href = "/error-pages/unauthorized.html";
+  } else if (role === "admin" && path.includes("/teacher/")) {
+    window.location.href = "/error-pages/not-found.html";
+  } else if (
+    // !document.documentElement.hasAttribute("data-app-not-found") &&
+    !path.includes("/teacher/") &&
+    !path.includes("/admin/") &&
+    !path.includes("/shared/") &&
+    !path.includes("/index.html") &&
+    path !== "/"
+  ) {
+    window.location.href = "/error-pages/not-found.html";
+  }
+}

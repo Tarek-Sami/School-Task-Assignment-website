@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Access denied — EduFlow</title>
+    <link rel="stylesheet" href="/styles/global/global.css" />
+    <link rel="stylesheet" href="/styles/global/components.css" />
+    <link rel="stylesheet" href="/styles/shared/main-nav.css" />
+    <link rel="stylesheet" href="/styles/shared/footer.css" />
+    <link rel="stylesheet" href="/styles/error-pages/error-pages.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <main class="error-page">
+      <div class="error-page-inner glass ghost-border">
+        <p class="error-code" aria-hidden="true">403</p>
+        <div class="error-icon error-icon--warning" aria-hidden="true">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <h1 class="error-title">Access denied</h1>
+        <p class="error-desc">
+          You do not have permission to view this page. Sign in with the right
+          account or return to the home page.
+        </p>
+        <div class="error-actions">
+          <a href="/index.html" class="btn btn-primary error-page-link">
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+            Back to home
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <div class="footer"></div>
+
+    <script src="/scripts/shared/nav.js" defer></script>
+    <script src="/scripts/shared/footer.js" defer></script>
+  </body>
+</html>
