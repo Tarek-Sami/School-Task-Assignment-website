@@ -4,8 +4,7 @@ const container = document.querySelector(".container");
 
 function teacherDisplayName(teacherField) {
   const t = teachers.find(
-    (x) =>
-      (x.username || x.user) === teacherField || x.name === teacherField,
+    (x) => (x.username || x.user) === teacherField || x.name === teacherField,
   );
   return t ? t.name : teacherField;
 }
@@ -240,6 +239,5 @@ if (profile) {
         </div>
 `;
 }
-console.log(teacherTasks);
-console.log(teacherCompeletedTasks);
+
 container.innerHTML = html;
