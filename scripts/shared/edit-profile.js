@@ -6,12 +6,12 @@ const teachers = JSON.parse(localStorage.getItem("teachers")) || [];
 let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 if (profile) {
   container.innerHTML = `
-     <div class="error-alert"></div>
        <div class="back-btn-box">
         <a href="profile.html" class="back-btn"
           ><i class="fa-solid fa-arrow-left"></i> Back to Profile</a
         >
       </div>
+     <div class="error-alert"></div>
       <div class="card edit-card">
         <div class="card-header">
           <i class="fa-solid fa-user-pen"></i>
