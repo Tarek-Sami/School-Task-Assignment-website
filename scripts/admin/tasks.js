@@ -6,8 +6,9 @@ const priorityFilterButtons = document.querySelectorAll(
 const completedFilterButtons = document.querySelectorAll(
   ".filter-pill[data-completed]",
 );
-
+const profile = JSON.parse(localStorage.getItem("profile"));
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+let adminTasks = [];
 let activePriority = "all";
 let activeCompleted = "all";
 let searchQuery = "";
@@ -48,9 +49,9 @@ function isTaskCompleted(task) {
 
   return status === "completed" || progress >= 100;
 }
-
+adminTasks = tasks.filter((task) => task.madeBy === profile.username);
 function getFilteredTasks() {
-  return tasks
+  return adminTasks
     .filter((task) => {
       const priorityMatches =
         activePriority === "all" || task.priority === activePriority;
@@ -113,9 +114,7 @@ function renderTasks() {
                 <a href="/admin/edit-task.html?id=${task.id}" class="task-menu-item">
                   Edit Task
                 </a>
-                <button type="button" class="task-menu-item">
-                  Mark As Completed
-                </button>
+  
               </div>
             </details>
           </div>

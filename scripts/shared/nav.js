@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (logout) {
     logout.onclick = () => {
       localStorage.removeItem("role");
+      localStorage.removeItem("profile");
       window.location.href = "/index.html";
     };
   }

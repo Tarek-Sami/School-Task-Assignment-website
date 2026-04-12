@@ -1,4 +1,5 @@
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+let teachers = JSON.parse(localStorage.getItem("teachers")) || [];
 
 const createTaskBtn = document.getElementById("btn-create");
 const cancelBtn = document.getElementById("btn-cancel");
@@ -16,33 +17,15 @@ const madeBy = document.getElementById("creator-name");
 const creatorAvatar = document.querySelector(".creator-avatar");
 const closeBtn = document.getElementById("close-btn");
 const okBtn = document.getElementById("modal-ok");
-
+const chooseTeacherSelect = document.getElementById("teacher");
 function populateTeacherSelect() {
-  let teachers = [];
-  try {
-    teachers = JSON.parse(localStorage.getItem("teachers")) || [];
-  } catch {
-    teachers = [];
-  }
-  const teacherNames = [
-    ...new Set(teachers.map((t) => t?.name).filter(Boolean)),
-  ];
-  teacherSelect.innerHTML = '<option value="">Select a teacher...</option>';
-
-  teacherNames.forEach((name) => {
+  const uniqueTeachers = [...new Set(teachers.map((t) => t.name))];
+  uniqueTeachers.forEach((teacher) => {
     const option = document.createElement("option");
-    option.value = name;
-    option.textContent = name;
-    teacherSelect.appendChild(option);
+    option.value = teacher;
+    option.textContent = teacher;
+    chooseTeacherSelect.appendChild(option);
   });
-
-  if (teacherNames.length === 0) {
-    const option = document.createElement("option");
-    option.value = "";
-    option.textContent = "No teachers available";
-    option.disabled = true;
-    teacherSelect.appendChild(option);
-  }
 }
 
 populateTeacherSelect();

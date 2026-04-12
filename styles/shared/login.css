@@ -10,9 +10,7 @@ body {
 .center {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 90vh;
   .card {
     background: rgba(248, 250, 252, 0.7);
     backdrop-filter: blur(var(--glass-blur-md));
@@ -97,10 +95,18 @@ button[type="submit"]:hover {
   transform: translateY(-5px);
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  height: 90vh;
+}
 .error-alert {
-  position: absolute;
+  /* position: absolute;
   top: 180px;
-  left: 835px;
+  left: 835px; */
   width: 330px;
   padding: 1rem 1rem;
   background: linear-gradient(135deg, #ffe4e6 0%, #fee2e2 100%);
@@ -115,7 +121,7 @@ button[type="submit"]:hover {
   box-shadow: 0 12px 24px rgba(127, 29, 29, 0.18);
   opacity: 0;
   pointer-events: none;
-  transform: translateX(-50%) translateY(-10px);
+  /* transform: translateX(-50%) translateY(-10px); */
   transition:
     opacity 0.25s ease,
     transform 0.25s ease,
@@ -125,7 +131,7 @@ button[type="submit"]:hover {
 
 .error-alert:not(:empty) {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  /* transform: translateX(-50%) translateY(0); */
   pointer-events: auto;
 }
 

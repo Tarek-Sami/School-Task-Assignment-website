@@ -1,60 +1,15 @@
-if (!localStorage.getItem("tasks")) {
-  const initialTasks = [
-    {
-      id: crypto.randomUUID(),
-      headline: "Prepare Midterm Exam",
-      title: "Math Exam Setup",
-      description: "Prepare questions and review topics",
-      priority: "high",
-      teacher: "Ahmed",
-      deadline: "2026-05-10",
-      status: "pending",
-      madeBy: "Ahmed Ali",
-      progress: 0,
-    },
-    {
-      id: crypto.randomUUID(),
-      headline: "Weekly Assignment",
-      title: "Physics Homework",
-      description: "Chapter 3 problems",
-      priority: "medium",
-      teacher: "Sara",
-      deadline: "2026-04-20",
-      status: "pending",
-      madeBy: "Alex Johnson",
-      progress: 0,
-    },
-    {
-      id: crypto.randomUUID(),
-      headline: "Project Review",
-      title: "AI Project",
-      description: "Review student submissions",
-      teacher: "Mohamed",
-      deadline: "2026-04-05",
-      priority: "low",
-      status: "pending",
-      madeBy: "Alex Johnson",
-      progress: 0,
-    },
-  ];
-
-  localStorage.setItem("tasks", JSON.stringify(initialTasks));
-}
-
-// start of the code
-
 const allTasks = document.querySelector(".task-list");
-
+const profile = JSON.parse(localStorage.getItem("profile"));
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+const adminTasks = tasks.filter((task) => task.madeBy === profile.username);
 const priorityOrder = {
   high: 0,
   medium: 1,
   low: 2,
 };
-
 let html = "";
 
-tasks
+adminTasks
   .slice()
   .sort((firstTask, secondTask) => {
     const priorityDifference =
@@ -68,7 +23,7 @@ tasks
     return (firstTask.headline || "").localeCompare(secondTask.headline || "");
   })
   .forEach((task) => {
-    html += `<div class="task" data-id="${task.id}">
+    html += `<div class="task ${task.status === "completed" ? "complete" : ""}" data-id="${task.id}">
           <div class="task-left">
             <div class="task-info">
 <h4 id="task-headline"><a href="../shared/task-details.html?id=${task.id}" class="task-headline-link">${task.headline}</a></h4>
@@ -97,12 +52,20 @@ tasks
         </div>`;
   });
 
+if (!html) {
+  html = `
+            <div class="task-card task-card-empty">
+        <h2 class="task-card-title">No tasks found</h2>
+      </div>`;
+}
 allTasks.innerHTML = html;
 
-const total = tasks.length;
-const completed = tasks.filter((task) => task.status === "completed").length;
-const pending = tasks.filter((task) => task.status === "pending").length;
-const teachers = [...new Set(tasks.map((task) => task.teacher))].length;
+const total = adminTasks.length;
+const completed = adminTasks.filter(
+  (task) => task.status === "completed",
+).length;
+const pending = adminTasks.filter((task) => task.status === "pending").length;
+const teachers = [...new Set(adminTasks.map((task) => task.teacher))].length;
 
 document.getElementById("total-tasks").textContent = total;
 document.getElementById("completed-tasks").textContent = completed;

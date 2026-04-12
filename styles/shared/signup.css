@@ -23,8 +23,8 @@ body {
   background: var(--surface);
   backdrop-filter: blur(var(--glass-blur-md));
   -webkit-backdrop-filter: blur(var(--glass-blur-md));
-  width:  370px;
-  height: 85vh;
+  width: 370px;
+  height: fit-content;
   padding: 1.6rem;
   border-radius: var(--radius-md);
   text-align: center;

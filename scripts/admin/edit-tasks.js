@@ -3,6 +3,7 @@ const params = new URLSearchParams(window.location.search);
 const taskId = params.get("id");
 
 // getting tasks from localStorage
+const teachers = JSON.parse(localStorage.getItem("teachers")) || [];
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 const task = tasks.find((t) => t.id === taskId);
 
@@ -22,6 +23,16 @@ const closeBtn = document.getElementById("close-btn");
 const okBtn = document.getElementById("modal-ok");
 const saveBtn = document.getElementById("save-btn");
 const cancelBtn = document.getElementById("cancel-btn");
+const chooseTeacherSelect = document.getElementById("teacher");
+
+// filling the teacher select options dynamically based on the teachers in tasks
+const uniqueTeachers = [...new Set(teachers.map((t) => t.name))];
+uniqueTeachers.forEach((teacher) => {
+  const option = document.createElement("option");
+  option.value = teacher;
+  option.textContent = teacher;
+  chooseTeacherSelect.appendChild(option);
+});
 
 // modal close function
 function closeModal() {
@@ -34,6 +45,12 @@ okBtn?.addEventListener("click", closeModal);
 // test if task exists
 if (!task) {
   modal.classList.add("show");
+  closeBtn?.addEventListener("click", () => {
+    window.location.href = "dashboard.html";
+  });
+  okBtn?.addEventListener("click", () => {
+    window.location.href = "dashboard.html";
+  });
 
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {

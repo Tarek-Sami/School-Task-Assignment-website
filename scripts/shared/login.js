@@ -2,9 +2,9 @@ const loginForm = document.getElementById("loginForm");
 const loginError = document.getElementById("loginError");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
-
+const hashedPassword = CryptoJS.SHA256(password).toString();
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
+const users = JSON.parse(localStorage.getItem("users")) || [];
 function setLoginError(message) {
   loginError.textContent = message;
 }
@@ -49,20 +49,28 @@ if (loginForm) {
       return;
     }
 
-    if (password.length < 6) {
-      setLoginError("Password must be at least 6 characters.");
+    const user = users.find(
+      (u) => u.email === email && u.password === hashedPassword,
+    );
+    if (!user) {
+      setLoginError("Invalid email or password.");
+      emailInput.classList.add("input-error");
       passwordInput.classList.add("input-error");
-      passwordInput.focus();
       return;
     }
+    let teachersLocal = JSON.parse(localStorage.getItem("teachers")) || [];
+    if (user.role === "teacher")
+      if (!teachersLocal.find((t) => t.id === user.id)) {
+        teachersLocal.push(user);
+        localStorage.setItem("teachers", JSON.stringify(teachersLocal));
+      }
+    {
+      clearLoginError();
+      clearLoginFieldState();
+      localStorage.setItem("profile", JSON.stringify(user));
+      localStorage.setItem("role", user.role);
 
-    const role = localStorage.getItem("role");
-
-    if (!role) {
-      window.location.href = "/shared/signup.html";
-      return;
+      window.location.href = `/${user.role}/dashboard.html`;
     }
-
-    window.location.href = `/${role}/dashboard.html`;
   });
 }

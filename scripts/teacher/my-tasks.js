@@ -6,8 +6,14 @@ const priorityFilterButtons = document.querySelectorAll(
 const completedFilterButtons = document.querySelectorAll(
   ".filter-pill[data-completed]",
 );
-
+const profile = JSON.parse(localStorage.getItem("profile"));
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+let teacherTasks = [];
+tasks.forEach((task) => {
+  if (task.teacher === profile.name) {
+    teacherTasks.push(task);
+  }
+});
 let activePriority = "all";
 let activeCompleted = "all";
 let searchQuery = "";
@@ -50,7 +56,7 @@ function isTaskCompleted(task) {
 }
 
 function getFilteredTasks() {
-  return tasks
+  return teacherTasks
     .filter((task) => {
       const priorityMatches =
         activePriority === "all" || task.priority === activePriority;
@@ -97,26 +103,16 @@ function renderTasks() {
     const priority = task.priority || "low";
 
     html += `
-        <article class="task-card">
+        <article class="task-card" data-id="${task.id}">
           <div class="task-card-top">
             <span class="priority-badge priority-badge-${priority}"
               >${priority.toUpperCase()} PRIORITY</span
             >
-            <details class="task-card-menu-wrap">
-              <summary class="task-card-menu" aria-label="Task options">
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </summary>
-              <div class="task-card-dropdown">
-                <a href="/shared/task-details.html?id=${task.id}" class="task-menu-item">
-                  View Task Details
-                </a>
-                <button type="button" class="task-menu-item">
-                  Mark As Completed
-                </button>
-              </div>
-            </details>
+            <button class= "mark-completed ${isTaskCompleted(task) ? "done" : ""}" data-id="${task.id}">${isTaskCompleted(task) ? "Mark as Pending" : "Mark as Completed"}</button>
           </div>
-          <h2 class="task-card-title">${task.headline}</h2>
+          <h2 class="task-card-title" data-id="${task.id}">
+            ${task.headline}
+          </h2>
           <p class="task-card-assignee">
             <i class="fa-regular fa-user" aria-hidden="true"></i>
             Prof. ${task.teacher}
@@ -177,3 +173,30 @@ searchInput?.addEventListener("input", () => {
 });
 
 renderTasks();
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("task-card-title")) {
+    const taskId = e.target.getAttribute("data-id");
+    window.location.href = `/shared/task-details.html?id=${taskId}`;
+  }
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("mark-completed")) {
+    const taskId = e.target.getAttribute("data-id");
+    const taskIndex = tasks.findIndex((t) => t.id === taskId);
+
+    if (taskIndex !== -1) {
+      if (tasks[taskIndex].status === "completed") {
+        tasks[taskIndex].status = "pending";
+        tasks[taskIndex].progress = 0;
+      } else {
+        tasks[taskIndex].status = "completed";
+        tasks[taskIndex].progress = 100;
+      }
+
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      renderTasks();
+    }
+  }
+});
