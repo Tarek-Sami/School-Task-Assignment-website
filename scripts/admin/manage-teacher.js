@@ -1,5 +1,9 @@
 let teachers = JSON.parse(localStorage.getItem("teachers")) || [];
-
+const teachersCountElem = document.querySelector(".teachers-count");
+function updateTeachersCount() {
+  teachersCountElem.textContent = teachers.length;
+}
+updateTeachersCount();
 let filterState = { department: "All", gender: "all" };
 let currentPage = 1;
 const teachersPerPage = 4;
@@ -121,6 +125,11 @@ function applyListFilter() {
 
   renderTeachers(filteredTeachers);
 }
+let avgTasks =
+  teachers.reduce((sum, t) => sum + t.numberOfTasks, 0) / teachers.length;
+
+const avgTasksElem = document.querySelector(".avg-tasks");
+avgTasksElem.textContent = avgTasks.toFixed(1);
 
 function openFilterModal() {
   const filterModal = document.getElementById("filterModal");

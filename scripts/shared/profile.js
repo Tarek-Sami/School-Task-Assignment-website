@@ -116,7 +116,7 @@ if (profile) {
           <a href="edit-profile.html" class="btn btn-primary"
             ><i class="fa-solid fa-pen"></i> Edit Profile</a
           >
-          <a href="dashboard.html" class="btn btn-secondary"
+          <a href="/${profile.role}/dashboard.html" class="btn btn-secondary"
             ><i class="fa-solid fa-house"></i> Home</a
           >
         </div>
@@ -140,7 +140,7 @@ if (profile) {
             <i class="fa-solid fa-circle-check text-blue"></i>
           </div>
           <div class="stat-values"> 
-            <h3><a href="/admin/manage-teachers.html">$${teachers.length} Teachers</a></h3>
+            <h3><a href="/admin/manage-teachers.html">${teachers.length} Teachers</a></h3>
           </div>
         </div>`
             : ""
