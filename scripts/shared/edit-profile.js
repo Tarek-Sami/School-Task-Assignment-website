@@ -104,10 +104,12 @@ saveBtn.addEventListener("click", (e) => {
   user.name = document.querySelector(".form-inp.name").value;
   user.email = document.querySelector(".form-inp.email").value;
   user.department = document.querySelector("select").value;
+  user.username = document.querySelector(".form-inp.username").value;
   localStorage.setItem("users", JSON.stringify(Allusers));
   profile.name = user.name;
   profile.email = user.email;
   profile.department = user.department;
+  profile.username = user.username;
   localStorage.setItem("profile", JSON.stringify(profile));
   if (profile.role === "teacher") {
     const teacherIndex = teachers.findIndex(
@@ -117,6 +119,7 @@ saveBtn.addEventListener("click", (e) => {
       teachers[teacherIndex].name = user.name;
       teachers[teacherIndex].email = user.email;
       teachers[teacherIndex].department = user.department;
+      teachers[teacherIndex].username = user.username;
       localStorage.setItem("teachers", JSON.stringify(teachers));
     }
   }
