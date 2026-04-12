@@ -1,12 +1,11 @@
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let teachers = JSON.parse(localStorage.getItem("teachers")) || [];
-
+const profile = JSON.parse(localStorage.getItem("profile"));
 const createTaskBtn = document.getElementById("btn-create");
 const cancelBtn = document.getElementById("btn-cancel");
 const radios = document.querySelectorAll('input[name="priority"]');
 const modal = document.querySelector(".modal");
-const currentUserName =
-  localStorage.getItem("currentUserName") || "Unknown User";
+let currentUserName = profile ? profile.username : "Unknown";
 // variables for the form inputs
 const headlineInput = document.getElementById("headline");
 const titleInput = document.getElementById("title");
@@ -108,6 +107,7 @@ modal.addEventListener("click", (e) => {
   }
 });
 
+madeBy.textContent = profile ? profile.name : "Unknown User";
 createTaskBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -125,6 +125,12 @@ createTaskBtn.addEventListener("click", (e) => {
     madeBy: currentUserName,
     progress: 0,
   };
+  teachers.forEach((teacher) => {
+    if (teacher.name === newTask.teacher) {
+      teacher.tasks = teacher.tasks + 1;
+    }
+  });
+
   console.log(newTask);
   tasks.push(newTask);
   localStorage.setItem("tasks", JSON.stringify(tasks));

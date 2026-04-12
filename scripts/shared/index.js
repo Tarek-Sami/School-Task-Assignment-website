@@ -9,7 +9,7 @@ if (!localStorage.getItem("tasks")) {
       teacher: "Ahmed",
       deadline: "2026-05-10",
       status: "pending",
-      madeBy: "Ahmed Ali",
+      madeBy: "Ahmed",
       progress: 0,
     },
     {
@@ -21,7 +21,7 @@ if (!localStorage.getItem("tasks")) {
       teacher: "Sara",
       deadline: "2026-04-20",
       status: "pending",
-      madeBy: "Alex Johnson",
+      madeBy: "Ahmed",
       progress: 0,
     },
     {
@@ -33,7 +33,7 @@ if (!localStorage.getItem("tasks")) {
       deadline: "2026-04-05",
       priority: "low",
       status: "pending",
-      madeBy: "Alex Johnson",
+      madeBy: "Ahmed",
       progress: 0,
     },
   ];

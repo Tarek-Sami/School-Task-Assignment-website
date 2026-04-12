@@ -111,7 +111,7 @@ function computeFilteredTeachers() {
 function applyListFilter() {
   const filteredTeachers = computeFilteredTeachers();
 
-  currentPage = 1; // 🔥 مهم جدًا
+  currentPage = 1;
 
   if (filteredTeachers.length === 0) {
     document.querySelector(".teacher-list").innerHTML =
