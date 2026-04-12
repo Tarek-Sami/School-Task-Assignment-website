@@ -1,7 +1,6 @@
 const allTasks = document.querySelector(".task-list");
 const profile = JSON.parse(localStorage.getItem("profile"));
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-
 function teacherDisplayName(teacherField) {
   const list = JSON.parse(localStorage.getItem("teachers")) || [];
   const t = list.find(
@@ -73,9 +72,9 @@ const completed = adminTasks.filter(
   (task) => task.status === "completed",
 ).length;
 const pending = adminTasks.filter((task) => task.status === "pending").length;
-const teachers = [...new Set(adminTasks.map((task) => task.teacher))].length;
+const teachers = JSON.parse(localStorage.getItem("teachers"))?.length || 0;
 
 document.getElementById("total-tasks").textContent = total;
 document.getElementById("completed-tasks").textContent = completed;
 document.getElementById("pending-tasks").textContent = pending;
-document.getElementById("teachers-count").textContent = list.length;
+document.getElementById("teachers-count").textContent = teachers;
