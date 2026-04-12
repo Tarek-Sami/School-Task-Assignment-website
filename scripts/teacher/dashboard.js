@@ -62,9 +62,13 @@ const completed = teacherTasks.filter(
 ).length;
 const pending = teacherTasks.filter((task) => task.status === "pending").length;
 
-document.getElementById("total-tasks").textContent = total;
-document.getElementById("completed-tasks").textContent = completed;
-document.getElementById("pending-tasks").textContent = pending;
+const totalTasks = document.getElementById("total-tasks");
+const completedTasks = document.getElementById("completed-tasks");
+const pendingTasks = document.getElementById("pending-tasks");
+
+totalTasks.textContent = total;
+completedTasks.textContent = completed;
+pendingTasks.textContent = pending;
 
 const checkboxes = document.querySelectorAll(".task-checkbox");
 checkboxes.forEach((checkbox) => {
@@ -73,6 +77,13 @@ checkboxes.forEach((checkbox) => {
     const taskId = task.getAttribute("data-id");
     const taskIndex = tasks.findIndex((t) => t.id === taskId);
     if (taskIndex !== -1) {
+      if (tasks[taskIndex].status === "pending") {
+        completedTasks.textContent = parseInt(completedTasks.textContent) + 1;
+        pendingTasks.textContent = parseInt(pendingTasks.textContent) - 1;
+      } else {
+        completedTasks.textContent = parseInt(completedTasks.textContent) - 1;
+        pendingTasks.textContent = parseInt(pendingTasks.textContent) + 1;
+      }
       tasks[taskIndex].status = e.target.checked ? "completed" : "pending";
       tasks[taskIndex].progress = e.target.checked ? 100 : 0;
       localStorage.setItem("tasks", JSON.stringify(tasks));
