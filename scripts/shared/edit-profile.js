@@ -67,8 +67,22 @@ if (profile) {
 
 const saveBtn = document.querySelector(".save-btn");
 const emailInput = document.querySelector(".form-inp.email");
+const userNameInput = document.querySelector(".form-inp.username");
 saveBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  if (Allusers.find((u) => u.email === emailInput.value)) {
+    document.querySelector(".error-alert").textContent =
+      "An account with this email already exists.";
+    emailInput.classList.add("input-error");
+    emailInput.focus();
+    return;
+  } else if (Allusers.find((u) => u.username === userNameInput.value)) {
+    document.querySelector(".error-alert").textContent =
+      "An account with this username already exists.";
+    userNameInput.classList.add("input-error");
+    userNameInput.focus();
+    return;
+  }
   if (!emailRegex.test(emailInput.value)) {
     emailInput.classList.add("input-error");
     document.querySelector(".error-alert").textContent =
