@@ -1,4 +1,4 @@
-const SEED_ADMIN_USERNAME = "schooladmin";
+const SEED_ADMIN_USERNAME = "Dr. Kareem Adel";
 
 const PASSWORD_HASH = {
   admin: "790f48e3ba51e2d0762e7d4a74d4076a62cfb34d44e3dfbc43798fe9ff399602",
@@ -60,7 +60,6 @@ if (!localStorage.getItem("teachers")) {
     {
       id: idFor("nadiahassan"),
       name: "Dr. Nadia Hassan",
-      user: "nadiahassan",
       username: "nadiahassan",
       email: "nadia.hassan@schooltask.local",
       department: "Mathematics",
@@ -72,7 +71,6 @@ if (!localStorage.getItem("teachers")) {
     {
       id: idFor("omarfarid"),
       name: "Dr. Omar Farid",
-      user: "omarfarid",
       username: "omarfarid",
       email: "omar.farid@schooltask.local",
       department: "Physics",
@@ -84,7 +82,6 @@ if (!localStorage.getItem("teachers")) {
     {
       id: crypto.randomUUID(),
       name: "Dr. Layla Mansour",
-      user: "laylamansour",
       username: "laylamansour",
       email: "layla.mansour@schooltask.local",
       department: "Computer Science",
@@ -96,62 +93,57 @@ if (!localStorage.getItem("teachers")) {
     {
       id: crypto.randomUUID(),
       name: "Dr. Youssef Kamal",
-      user: "youssefkamal",
       username: "youssefkamal",
       email: "youssef.kamal@schooltask.local",
       department: "Chemistry",
       phone: "01066667777",
       gender: "Male",
       status: "online",
-      numberOfTasks: 0,
+      numberOfTasks: 8,
     },
     {
       id: crypto.randomUUID(),
       name: "Dr. Hana Ibrahim",
-      user: "hanaibrahim",
       username: "hanaibrahim",
       email: "hana.ibrahim@schooltask.local",
       department: "Biology",
       phone: "01077778888",
       gender: "Female",
       status: "online",
-      numberOfTasks: 0,
+      numberOfTasks: 7,
     },
     {
       id: crypto.randomUUID(),
       name: "Dr. Karim Nasser",
-      user: "karimnasser",
       username: "karimnasser",
       email: "karim.nasser@schooltask.local",
       department: "English",
       phone: "01088889999",
       gender: "Male",
       status: "offline",
-      numberOfTasks: 0,
+      numberOfTasks: 12,
     },
     {
       id: crypto.randomUUID(),
       name: "Dr. Amira Fouad",
-      user: "amirafouad",
       username: "amirafouad",
       email: "amira.fouad@schooltask.local",
       department: "History",
       phone: "01099990000",
       gender: "Female",
       status: "online",
-      numberOfTasks: 0,
+      numberOfTasks: 15,
     },
     {
       id: crypto.randomUUID(),
       name: "Dr. Tarek Selim",
-      user: "tarekselim",
       username: "tarekselim",
       email: "tarek.selim@schooltask.local",
       department: "Art",
       phone: "01012121212",
       gender: "Male",
       status: "offline",
-      numberOfTasks: 0,
+      numberOfTasks: 21,
     },
   ];
   localStorage.setItem("teachers", JSON.stringify(initialTeachers));
@@ -163,7 +155,7 @@ if (!localStorage.getItem("tasks")) {
       id: crypto.randomUUID(),
       headline: "Midterm examination materials",
       title: "Calculus II midterm prep",
-      description: "Draft exam questions and a solution key for chapters 4–6.",
+      description: "Draft exam questions and a solution key for chapters 4-6.",
       priority: "high",
       teacher: "nadiahassan",
       deadline: "2026-05-10",
@@ -175,7 +167,8 @@ if (!localStorage.getItem("tasks")) {
       id: crypto.randomUUID(),
       headline: "Weekly problem set",
       title: "Mechanics homework set 7",
-      description: "Prepare problems on rotational motion and angular momentum.",
+      description:
+        "Prepare problems on rotational motion and angular momentum.",
       priority: "medium",
       teacher: "omarfarid",
       deadline: "2026-04-22",
@@ -187,7 +180,8 @@ if (!localStorage.getItem("tasks")) {
       id: crypto.randomUUID(),
       headline: "Lab session review",
       title: "Mathematics lab checklist",
-      description: "Verify software versions and worksheet copies for next lab.",
+      description:
+        "Verify software versions and worksheet copies for next lab.",
       priority: "low",
       teacher: "nadiahassan",
       deadline: "2026-04-08",
@@ -199,7 +193,8 @@ if (!localStorage.getItem("tasks")) {
       id: crypto.randomUUID(),
       headline: "Department meeting deck",
       title: "Math curriculum Q2 update",
-      description: "Slides summarizing syllabus changes and assessment weights.",
+      description:
+        "Slides summarizing syllabus changes and assessment weights.",
       priority: "medium",
       teacher: "nadiahassan",
       deadline: "2026-04-18",
@@ -211,7 +206,8 @@ if (!localStorage.getItem("tasks")) {
       id: crypto.randomUUID(),
       headline: "Student consultation hours",
       title: "Extra office hours April",
-      description: "Post the revised schedule on the portal and notify advisees.",
+      description:
+        "Post the revised schedule on the portal and notify advisees.",
       priority: "low",
       teacher: "nadiahassan",
       deadline: "2026-04-12",
@@ -235,7 +231,8 @@ if (!localStorage.getItem("tasks")) {
       id: crypto.randomUUID(),
       headline: "Exam proctoring",
       title: "Spring finals coverage",
-      description: "Confirm proctor slots and share the roster with the admin office.",
+      description:
+        "Confirm proctor slots and share the roster with the admin office.",
       priority: "high",
       teacher: "omarfarid",
       deadline: "2026-05-01",
@@ -247,7 +244,8 @@ if (!localStorage.getItem("tasks")) {
       id: crypto.randomUUID(),
       headline: "Thermodynamics unit",
       title: "Lecture notes refresh",
-      description: "Update PDF notes for entropy and heat engines to match the new textbook.",
+      description:
+        "Update PDF notes for entropy and heat engines to match the new textbook.",
       priority: "medium",
       teacher: "omarfarid",
       deadline: "2026-05-05",
@@ -259,7 +257,8 @@ if (!localStorage.getItem("tasks")) {
       id: crypto.randomUUID(),
       headline: "Intro programming project",
       title: "Final project rubric",
-      description: "Publish rubric and starter code for the data-structures mini project.",
+      description:
+        "Publish rubric and starter code for the data-structures mini project.",
       priority: "high",
       teacher: "laylamansour",
       deadline: "2026-04-30",
@@ -271,7 +270,8 @@ if (!localStorage.getItem("tasks")) {
       id: crypto.randomUUID(),
       headline: "Grading pipeline",
       title: "Autograder smoke tests",
-      description: "Run tests on the server and fix any failing assignment batches.",
+      description:
+        "Run tests on the server and fix any failing assignment batches.",
       priority: "medium",
       teacher: "laylamansour",
       deadline: "2026-04-15",
@@ -283,7 +283,8 @@ if (!localStorage.getItem("tasks")) {
       id: crypto.randomUUID(),
       headline: "Workshop announcement",
       title: "Git & GitHub refresher",
-      description: "Prepare announcement text and book the lab for the weekend session.",
+      description:
+        "Prepare announcement text and book the lab for the weekend session.",
       priority: "low",
       teacher: "laylamansour",
       deadline: "2026-04-28",
@@ -304,14 +305,14 @@ const p = document.querySelector(".words");
 
 if (!role) {
   heroButtons.innerHTML = `
-          <a href="/shared/login.html" class="btn btn-primary">Login</a>
+          <a href="/shared/login.html" class="btn btn-primary">Log in</a>
             <a href="/shared/signup.html" class="btn btn-outline text-primary"
-              >Sign Up</a
+              >Sign up</a
             >
   `;
   ctaButtons.innerHTML = `
-    <a href="/shared/login.html" class="btn btn-primary">Login</a>
-    <a href="/shared/signup.html" class="btn btn-outline text-primary">Sign Up</a>
+    <a href="/shared/login.html" class="btn btn-primary">Log in</a>
+    <a href="/shared/signup.html" class="btn btn-outline text-primary">Sign up</a>
   `;
 } else {
   heroButtons.innerHTML = `

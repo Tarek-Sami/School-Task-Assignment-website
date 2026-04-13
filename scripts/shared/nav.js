@@ -36,38 +36,36 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   }
 
-  if (
-    window.location.pathname.includes("/login.html") ||
-    window.location.pathname.includes("/signup.html")
-  ) {
+  if (role === "admin") {
     navLinks = `
-        <a href="/index.html" class="link">Home</a>
-        <a href="/shared/login.html" class="link">Log in</a>
-        <a href="/shared/signup.html" class="link">Sign up</a>
-    `;
-    profileContainer.innerHTML = "";
-  } else if (role === "admin") {
-    navLinks = `
-        <a href="/index.html" class="link">Home</a>
-        <a href="/admin/dashboard.html" class="link">Dashboard</a>
-        <a href="/admin/manage-teachers.html" class="link">Manage Teachers</a>
-        <a href="/admin/add-task.html" class="link">Add Task</a>
-        <a href="/admin/tasks.html" class="link">All Tasks</a>
-        <a href="#" class="link logout">Log out</a>
+        <h2 class="section-title">Main</h2>
+        <a href="/index.html" class="link">Home <i class="fa-solid fa-house"></i></a>
+        <a href="/admin/dashboard.html" class="link">Dashboard <i class="fa-solid fa-chart-bar"></i></a>
+        <h2 class="section-title">Tasks</h2>
+        <a href="/admin/add-task.html" class="link">Add Task <i class="fa-solid fa-plus"></i></a>
+        <a href="/admin/tasks.html" class="link">All Tasks <i class="fa-solid fa-list"></i></a>
+        <h2 class="section-title">Management</h2>
+        <a href="/admin/manage-teachers.html" class="link">Manage Teachers <i class="fa-solid fa-user-group"></i></a>
+        <h2 class="section-title">Profile</h2>
+        <a href="#" class="link logout">Log out <i class="fa-solid fa-sign-out"></i></a>
     `;
   } else if (role === "teacher") {
     navLinks = `
-  
-        <a href="/index.html" class="link">Home</a>
-        <a href="/teacher/dashboard.html" class="link">Dashboard</a>
-        <a href="/teacher/my-tasks.html" class="link">My Tasks</a>
-        <a href="#" class="link logout">Log out</a>
+        <h2 class="section-title">Main</h2>
+        <a href="/index.html" class="link">Home <i class="fa-solid fa-house"></i></a>
+        <a href="/teacher/dashboard.html" class="link">Dashboard <i class="fa-solid fa-chart-bar"></i></a>
+        <h2 class="section-title">Tasks</h2>
+        <a href="/teacher/my-tasks.html" class="link">My Tasks <i class="fa-solid fa-list"></i></a>
+        <h2 class="section-title">Profile</h2>
+        <a href="#" class="link logout">Log out <i class="fa-solid fa-sign-out"></i></a>
     `;
   } else {
     navLinks = `
-        <a href="/index.html" class="link">Home</a>
-        <a href="/shared/login.html" class="link">Log in</a>
-        <a href="/shared/signup.html" class="link">Sign up</a>
+        <h2 class="section-title">Main</h2>
+        <a href="/index.html" class="link">Home <i class="fa-solid fa-house"></i></a>
+        <h2 class="section-title">Account</h2>
+        <a href="/shared/login.html" class="link">Log in <i class="fa-solid fa-sign-in"></i></a>
+        <a href="/shared/signup.html" class="link">Sign up <i class="fa-solid fa-user-plus"></i></a>
     `;
   }
 
@@ -79,7 +77,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const logout = document.querySelector(".logout");
   const profile = document.getElementById("profile");
   const logo = document.querySelector(".logo");
+  const linkElemnets = document.querySelectorAll(".link");
+  console.log(linkElemnets);
+  const path = window.location.pathname;
 
+  linkElemnets.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (path.includes(href)) {
+      link.classList.add("link-active");
+    } else {
+      link.classList.remove("link-active");
+    }
+  });
   // logo
   if (logo) {
     logo.onclick = () => {
@@ -122,31 +131,3 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 });
-
-const path = window.location.pathname;
-if (!path.includes("/error-pages/")) {
-  const role = localStorage.getItem("role");
-  if (
-    !role &&
-    (path.includes("/admin/") ||
-      path.includes("/teacher/") ||
-      path.includes("/task-details.html") ||
-      path.includes("/profile.html") ||
-      path.includes("/edit-profile.html"))
-  ) {
-    window.location.href = "/error-pages/unauthorized.html";
-  } else if (role === "teacher" && path.includes("/admin/")) {
-    window.location.href = "/error-pages/unauthorized.html";
-  } else if (role === "admin" && path.includes("/teacher/")) {
-    window.location.href = "/error-pages/not-found.html";
-  } else if (
-    // !document.documentElement.hasAttribute("data-app-not-found") &&
-    !path.includes("/teacher/") &&
-    !path.includes("/admin/") &&
-    !path.includes("/shared/") &&
-    !path.includes("/index.html") &&
-    path !== "/"
-  ) {
-    window.location.href = "/error-pages/not-found.html";
-  }
-}

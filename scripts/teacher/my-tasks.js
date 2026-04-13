@@ -12,8 +12,7 @@ const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 function teacherDisplayName(teacherField) {
   const list = JSON.parse(localStorage.getItem("teachers")) || [];
   const t = list.find(
-    (x) =>
-      (x.username || x.user) === teacherField || x.name === teacherField,
+    (x) => (x.username || x.user) === teacherField || x.name === teacherField,
   );
   return t ? t.name : teacherField;
 }

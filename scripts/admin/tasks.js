@@ -12,8 +12,7 @@ const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 function teacherDisplayName(teacherField) {
   const list = JSON.parse(localStorage.getItem("teachers")) || [];
   const t = list.find(
-    (x) =>
-      (x.username || x.user) === teacherField || x.name === teacherField,
+    (x) => (x.username || x.user) === teacherField || x.name === teacherField,
   );
   return t ? t.name : teacherField;
 }
@@ -88,6 +87,12 @@ function getFilteredTasks() {
     });
 }
 
+function NameOfAdmin(username) {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const user = users.find((u) => u.username === username);
+  return user ? user.name : username;
+}
+
 function renderTasks() {
   const filteredTasks = getFilteredTasks();
 
@@ -134,7 +139,7 @@ function renderTasks() {
           </p>
           
         <p class="task-card-created">
-            Created by: ${task.madeBy || task.madeby || "Unknown"}
+            Created by: ${NameOfAdmin(task.madeBy) || "Unknown"}
           </p>
 
         <div class="task-card-progress">

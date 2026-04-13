@@ -108,7 +108,7 @@ modal.addEventListener("click", (e) => {
   }
 });
 
-madeBy.textContent = profile ? profile.name : "Unknown User";
+madeBy.textContent = profile ? profile.username : "Unknown User";
 createTaskBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -126,9 +126,7 @@ createTaskBtn.addEventListener("click", (e) => {
     madeBy: currentUserName,
     progress: 0,
   };
-  const assignee = teachers.find(
-    (t) => (t.username || t.user) === newTask.teacher,
-  );
+  const assignee = teachers.find((t) => t.username === newTask.teacher);
   if (assignee) {
     assignee.numberOfTasks = (assignee.numberOfTasks || 0) + 1;
     localStorage.setItem("teachers", JSON.stringify(teachers));
