@@ -93,7 +93,17 @@ confirmDeleteBtn?.addEventListener("click", () => {
   if (!selectedTaskId) return;
 
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  let task = tasks.find((t) => t.id === selectedTaskId);
+  let taskTeacher = task.teacher;
+  console.log(taskTeacher);
 
+  let teachers = JSON.parse(localStorage.getItem("teachers")) || [];
+  let teacher = teachers.find((t) => t.username === taskTeacher);
+  console.log(teacher);
+  if (teacher.username === taskTeacher) {
+    teacher.numberOfTasks = teacher.numberOfTasks - 1;
+  }
+  localStorage.setItem("teachers", JSON.stringify(teachers));
   totalTasks.textContent = parseInt(totalTasks.textContent) - 1;
   if (tasks.find((t) => t.id === selectedTaskId)?.status === "completed") {
     compeletedTasks.textContent = parseInt(compeletedTasks.textContent) - 1;

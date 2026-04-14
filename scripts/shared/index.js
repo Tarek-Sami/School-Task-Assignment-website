@@ -99,7 +99,7 @@ if (!localStorage.getItem("teachers")) {
       phone: "01066667777",
       gender: "Male",
       status: "online",
-      numberOfTasks: 8,
+      numberOfTasks: 0,
     },
     {
       id: crypto.randomUUID(),
@@ -110,7 +110,7 @@ if (!localStorage.getItem("teachers")) {
       phone: "01077778888",
       gender: "Female",
       status: "online",
-      numberOfTasks: 7,
+      numberOfTasks: 0,
     },
     {
       id: crypto.randomUUID(),
@@ -121,7 +121,7 @@ if (!localStorage.getItem("teachers")) {
       phone: "01088889999",
       gender: "Male",
       status: "offline",
-      numberOfTasks: 12,
+      numberOfTasks: 0,
     },
     {
       id: crypto.randomUUID(),
@@ -132,7 +132,7 @@ if (!localStorage.getItem("teachers")) {
       phone: "01099990000",
       gender: "Female",
       status: "online",
-      numberOfTasks: 15,
+      numberOfTasks: 0,
     },
     {
       id: crypto.randomUUID(),
@@ -143,7 +143,7 @@ if (!localStorage.getItem("teachers")) {
       phone: "01012121212",
       gender: "Male",
       status: "offline",
-      numberOfTasks: 21,
+      numberOfTasks: 0,
     },
   ];
   localStorage.setItem("teachers", JSON.stringify(initialTeachers));

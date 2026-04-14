@@ -85,6 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const href = link.getAttribute("href");
     if (path.includes(href)) {
       link.classList.add("link-active");
+    } else if (path === "/" && href === "/index.html") {
+      link.classList.add("link-active");
     } else {
       link.classList.remove("link-active");
     }
