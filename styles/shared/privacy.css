@@ -9,11 +9,10 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #f5f7fb;
-  color: #333;
+  /* color: #333; */
   line-height: 1.7;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   height: calc(100vh - 80px);
 }
 
