@@ -11,6 +11,10 @@ body {
   background: #f5f7fb;
   color: #333;
   line-height: 1.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
 }
 
 /* Container */
