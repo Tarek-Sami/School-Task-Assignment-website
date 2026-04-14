@@ -135,7 +135,7 @@ if (profile) {
             <i class="fa-solid fa-file-lines text-purple"></i>
           </div>
           <div class="stat-values">
-            <h3><a href="/admin/tasks.html"> ${profile.role === "admin" ? adminTasks.length : teacherTasks.length} Tasks</a></h3>
+            <h3><a href="${profile.role === "admin" ? "/admin/tasks.html" : "/teacher/my-tasks.html"}"> ${profile.role === "admin" ? adminTasks.length : teacherTasks.length} Tasks</a></h3>
 
           </div>
         </div>
