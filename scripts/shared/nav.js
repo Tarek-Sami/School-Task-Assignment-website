@@ -78,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const profile = document.getElementById("profile");
   const logo = document.querySelector(".logo");
   const linkElemnets = document.querySelectorAll(".link");
-  console.log(linkElemnets);
   const path = window.location.pathname;
 
   linkElemnets.forEach((link) => {
