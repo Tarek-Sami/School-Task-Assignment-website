@@ -1,6 +1,7 @@
 const allTasks = document.querySelector(".task-list");
 const profile = JSON.parse(localStorage.getItem("profile"));
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+const users = JSON.parse(localStorage.getItem("users")) || [];
 const teacherTasks = [];
 tasks.forEach((task) => {
   if (task.teacher === profile.username) {
@@ -41,7 +42,7 @@ teacherTasks
                   class="avatar"
                   alt="Avatar"
                 />
-                Assigned by ${task.madeBy || task.madeby || "Unknown"}
+                Assigned by ${users.find((t) => t.username === task.madeBy)?.name || task.madeby || "Unknown"}
               </p>
             </div>
           </div>

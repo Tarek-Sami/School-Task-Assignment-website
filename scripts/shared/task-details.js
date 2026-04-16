@@ -1,7 +1,7 @@
 let role = localStorage.getItem("role");
 const params = new URLSearchParams(window.location.search);
 let taskId = params.get("id");
-
+const users = JSON.parse(localStorage.getItem("users")) || [];
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let task = tasks.find((t) => t.id === taskId);
 let taskPage = document.querySelector(".task-page");
@@ -27,7 +27,6 @@ if (role === "admin") {
                 <button class="percent-btn " type="button">75%</button>
                 <button class="percent-btn" type="button">100%</button>
               </div>
-
               <input type="range" min="0" max="100" value="${task.progress}" />
             </div>`;
 }
@@ -60,7 +59,7 @@ taskPage.innerHTML = ` <section class="task-hero">
               </div>
               <div>
                 <p class="meta-label">Assigned By</p>
-                <p class="meta-value">${task.madeBy}</p>
+                <p class="meta-value">${users.find((u) => u.username === task.madeBy)?.name || task.madeby || "Unknown"}</p>
               </div>
             </div>
 
