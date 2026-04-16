@@ -1,5 +1,5 @@
+// get existing tasks from local storage or initialize an empty array
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-
 const createTaskBtn = document.getElementById("btn-create");
 const cancelBtn = document.getElementById("btn-cancel");
 const radios = document.querySelectorAll('input[name="priority"]');
@@ -17,6 +17,7 @@ const creatorAvatar = document.querySelector(".creator-avatar");
 const closeBtn = document.getElementById("close-btn");
 const okBtn = document.getElementById("modal-ok");
 
+//get all teacher names from local storage and populate the select input (assigned to)
 function populateTeacherSelect() {
   let teachers = [];
   try {
@@ -46,6 +47,7 @@ function populateTeacherSelect() {
 }
 
 populateTeacherSelect();
+
 
 // button to edit the style of the description
 const boldBtn = document.querySelector(".bold-btn");
@@ -81,6 +83,7 @@ bindToolbar(underlineBtn, "underline");
 bindToolbar(listBtn, "insertUnorderedList");
 bindToolbar(numberedListBtn, "insertOrderedList");
 
+// priority radio buttons
 radios.forEach((radio) => {
   radio.addEventListener("change", () => {
     document.querySelectorAll(".priority").forEach((label) => {
@@ -90,6 +93,7 @@ radios.forEach((radio) => {
   });
 });
 
+// form validation
 function validateForm() {
   const headline = headlineInput.value.trim();
   const title = titleInput.value.trim();
@@ -113,6 +117,7 @@ function validateForm() {
   return true;
 }
 
+// modal functionality
 function closeModal() {
   modal.classList.remove("show");
 }
@@ -125,6 +130,7 @@ modal.addEventListener("click", (e) => {
   }
 });
 
+// create task button functionality
 createTaskBtn.addEventListener("click", (e) => {
   e.preventDefault();
 

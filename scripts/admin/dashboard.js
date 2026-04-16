@@ -1,3 +1,4 @@
+// Check if tasks exist in local storage, if not initialize with default tasks
 if (!localStorage.getItem("tasks")) {
   const initialTasks = [
     {
