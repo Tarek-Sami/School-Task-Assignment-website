@@ -41,7 +41,7 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
   margin-bottom: 2rem;
 }
@@ -277,10 +277,12 @@
   box-shadow: var(--shadow-ambient);
 }
 
+/* Four grid children: avatar, info, workload, status — need four columns or the 4th item wraps under the avatar */
 @media (max-width: 900px) {
   .teacher-row {
-    grid-template-columns: auto 1fr auto;
-    align-items: start;
+    grid-template-columns: auto minmax(0, 1fr) minmax(120px, 1.35fr) auto;
+    align-items: center;
+    gap: 0.85rem 1rem;
   }
 }
 
@@ -312,6 +314,11 @@
     grid-row: 3;
     width: 100%;
   }
+}
+
+.teacher-row-info,
+.teacher-row-workload {
+  min-width: 0;
 }
 
 .teacher-row-avatar {
@@ -418,7 +425,7 @@
   background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%);
 }
 
-/* Status column: label + pill aligned to the start (left) */
+/* Status column: label above pill on large screens; inline on small screens */
 .teacher-row-status {
   display: flex;
   flex-direction: column;
@@ -436,6 +443,22 @@
   color: var(--on-surface-variant);
   text-align: left;
   width: 100%;
+}
+
+/* Inline label + pill only on narrow phones; tablets keep stacked label/pill */
+@media (max-width: 520px) {
+  .teacher-row-status {
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .teacher-row-status-label {
+    width: auto;
+    flex-shrink: 0;
+  }
 }
 
 .status-pill {
@@ -721,4 +744,26 @@
 .pagination button.active {
   background: #6c47ff;
   color: white;
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-actions {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+
+  .modal-btn {
+    width: 100%;
+  }
 }

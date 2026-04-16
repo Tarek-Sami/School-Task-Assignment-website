@@ -1,5 +1,6 @@
 const signupForm = document.getElementById("signupForm");
 const roleSelect = document.getElementById("role");
+const departmentSelect = document.getElementById("department");
 const signupError = document.getElementById("signupError");
 const nameInput = document.getElementById("name");
 const userInput = document.getElementById("user");
@@ -34,7 +35,6 @@ function clearSignupFieldState() {
 }
 
 if (signupForm && roleSelect) {
-
   signupForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -121,7 +121,38 @@ if (signupForm && roleSelect) {
       return;
     }
 
-    localStorage.setItem("role", selectedRole);
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    if (users.find((u) => u.username === user)) {
+      setSignupError("Username already exists. Please choose another.");
+      userInput.classList.add("input-error");
+      userInput.focus();
+      return;
+    } else if (users.find((u) => u.email === email)) {
+      setSignupError("Email already registered. Please use another.");
+      emailInput.classList.add("input-error");
+      emailInput.focus();
+      return;
+    } else if (users.find((u) => u.phone === phone)) {
+      setSignupError("Phone number already registered. Please use another.");
+      phoneInput.classList.add("input-error");
+      phoneInput.focus();
+      return;
+    } else {
+      users.push({
+        id: crypto.randomUUID(),
+        name: "Dr ." + name,
+        username: user,
+        email,
+        phone,
+        password: CryptoJS.SHA256(password).toString(),
+        role: selectedRole,
+        department: departmentSelect.value,
+        gender: selectedGender.id === "m" ? "male" : "female",
+        numberOfTasks: 0,
+        status: "online",
+      });
+      localStorage.setItem("users", JSON.stringify(users));
+    }
 
     setSignupError("Account created. Redirecting to login...");
     setTimeout(() => {

@@ -13,6 +13,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <script src="/scripts/route-restriction/route-restrict.js"></script>
+    <link
+      rel="shortcut icon"
+      href="/assets/media/logo/purpleLogo.ico"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <div id="navbar"></div>
@@ -52,8 +58,30 @@
 
             <label for="description">DESCRIPTION</label>
             <div class="editor-shell">
-              <div class="toolbar">B I U • • •</div>
-              <textarea id="description" cols="50" rows="5"></textarea>
+              <div class="toolbar">
+                <button type="button" class="toolbar-btn bold-btn">
+                  <i class="fa-solid fa-bold"></i>
+                </button>
+                <button type="button" class="toolbar-btn italic-btn">
+                  <i class="fa-solid fa-italic"></i>
+                </button>
+                <button type="button" class="toolbar-btn underline-btn">
+                  <i class="fa-solid fa-underline"></i>
+                </button>
+                <button type="button" class="toolbar-btn list-btn">
+                  <i class="fa-solid fa-list-ul"></i>
+                </button>
+                <button type="button" class="toolbar-btn numbered-list-btn">
+                  <i class="fa-solid fa-list-ol"></i>
+                </button>
+              </div>
+              <div
+                contenteditable="true"
+                id="description"
+                role="textbox"
+                aria-multiline="true"
+                placeholder="Describe the task in detail..."
+              ></div>
             </div>
 
             <div class="attach-head">
@@ -76,10 +104,6 @@
             <label for="teacher">ASSIGN TO TEACHER</label>
             <select id="teacher">
               <option value="">Select a teacher...</option>
-              <option value="Ahmed">Ahmed</option>
-              <option value="Sara">Sara</option>
-              <option value="Mohamed">Mohamed</option>
-              <option value="Tarek">Tarek</option>
             </select>
             <div class="side-title">PRIORITY LEVEL</div>
             <label class="priority high" for="priority-high">
@@ -150,7 +174,8 @@
       </div>
     </div>
     <div class="footer"></div>
-    <script src="../scripts/shared/nav.js" defer></script>
+    <script src="/scripts/shared/nav.js" defer></script>
+
     <script src="../scripts/shared/footer.js" defer></script>
     <script src="../scripts/admin/edit-tasks.js" defer></script>
   </body>

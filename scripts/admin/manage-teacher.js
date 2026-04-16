@@ -1,72 +1,10 @@
-let initialTeachers = [
-  {
-    id: crypto.randomUUID(),
-    name: "Dr. John Doe",
-    email: "john.doe@example.com",
-    department: "Mathematics",
-    phone: "123-456-7890",
-    gender: "Male",
-    status: "online",
-    numberOfTasks: 18,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Dr. Sarah Ahmed",
-    email: "sarah.ahmed@example.com",
-    department: "Physics",
-    phone: "010-1234-5678",
-    gender: "Female",
-    status: "online",
-    numberOfTasks: 15,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Dr. Michael Smith",
-    email: "michael.smith@example.com",
-    department: "Chemistry",
-    phone: "011-9876-5432",
-    gender: "Male",
-    status: "offline",
-    numberOfTasks: 20,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Dr. Emily Johnson",
-    email: "emily.johnson@example.com",
-    department: "Biology",
-    phone: "012-3456-7890",
-    gender: "Female",
-    status: "online",
-    numberOfTasks: 12,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Dr. Ahmed Hassan",
-    email: "ahmed.hassan@example.com",
-    department: "Computer Science",
-    phone: "015-2222-3333",
-    gender: "Male",
-    status: "online",
-    numberOfTasks: 25,
-  },
-  {
-    id: crypto.randomUUID(),
-    name: "Dr. Mona Ali",
-    email: "mona.ali@example.com",
-    department: "English",
-    phone: "010-4444-5555",
-    gender: "Female",
-    status: "offline",
-    numberOfTasks: 10,
-  },
-];
-
-if (!localStorage.getItem("teachers")) {
-  localStorage.setItem("teachers", JSON.stringify(initialTeachers));
-}
-
 let teachers = JSON.parse(localStorage.getItem("teachers")) || [];
-
+const profile = JSON.parse(localStorage.getItem("profile")) || {};
+const teachersCountElem = document.querySelector(".teachers-count");
+function updateTeachersCount() {
+  teachersCountElem.textContent = teachers.length;
+}
+updateTeachersCount();
 let filterState = { department: "All", gender: "all" };
 let currentPage = 1;
 const teachersPerPage = 4;
@@ -178,7 +116,7 @@ function computeFilteredTeachers() {
 function applyListFilter() {
   const filteredTeachers = computeFilteredTeachers();
 
-  currentPage = 1; // 🔥 مهم جدًا
+  currentPage = 1;
 
   if (filteredTeachers.length === 0) {
     document.querySelector(".teacher-list").innerHTML =
@@ -188,6 +126,11 @@ function applyListFilter() {
 
   renderTeachers(filteredTeachers);
 }
+let avgTasks =
+  teachers.reduce((sum, t) => sum + t.numberOfTasks, 0) / teachers.length;
+
+const avgTasksElem = document.querySelector(".avg-tasks");
+avgTasksElem.textContent = avgTasks.toFixed(1);
 
 function openFilterModal() {
   const filterModal = document.getElementById("filterModal");

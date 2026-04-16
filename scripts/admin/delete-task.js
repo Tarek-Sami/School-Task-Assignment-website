@@ -85,15 +85,33 @@ function animateDelete(id) {
   }, 300);
 }
 
+const totalTasks = document.getElementById("total-tasks");
+const compeletedTasks = document.getElementById("completed-tasks");
+const pendingTasks = document.getElementById("pending-tasks");
 //  confirm delete
 confirmDeleteBtn?.addEventListener("click", () => {
   if (!selectedTaskId) return;
 
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  let task = tasks.find((t) => t.id === selectedTaskId);
+  let taskTeacher = task.teacher;
+
+  let teachers = JSON.parse(localStorage.getItem("teachers")) || [];
+  let teacher = teachers.find((t) => t.username === taskTeacher);
+  if (teacher.username === taskTeacher) {
+    teacher.numberOfTasks = teacher.numberOfTasks - 1;
+  }
+  localStorage.setItem("teachers", JSON.stringify(teachers));
+  totalTasks.textContent = parseInt(totalTasks.textContent) - 1;
+  if (tasks.find((t) => t.id === selectedTaskId)?.status === "completed") {
+    compeletedTasks.textContent = parseInt(compeletedTasks.textContent) - 1;
+  } else {
+    pendingTasks.textContent = parseInt(pendingTasks.textContent) - 1;
+  }
 
   tasks = tasks.filter((task) => task.id !== selectedTaskId);
-
   localStorage.setItem("tasks", JSON.stringify(tasks));
+
   animateDelete(selectedTaskId);
   closeDeleteModal();
 });

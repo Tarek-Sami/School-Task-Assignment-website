@@ -11,70 +11,80 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <script src="/scripts/route-restriction/route-restrict.js"></script>
+    <link
+      rel="shortcut icon"
+      href="/assets/media/logo/purpleLogo.ico"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <div id="navbar"></div>
-    <div
-      id="loginError"
-      class="error-alert"
-      role="alert"
-      aria-live="polite"
-    ></div>
-    <form id="loginForm" novalidate>
-      <div class="center">
-        <div class="card">
-          <h1 class="headline">EduFlow</h1>
-          <p class="textp">
-            Please enter your credentials to access your dashboard. Whether
-            you're an admin or a teacher.
-          </p>
-          <label for="email">EMAIL ADDRESS</label>
-          <input
-            type="email"
-            id="email"
-            placeholder="Enter your email"
-            required
-          />
-          <label for="password">PASSWORD</label>
-          <!-- <p id="loginError" style="color:red; text-align:center;"></p> -->
+    <div class="flex-col">
+      <div
+        id="loginError"
+        class="error-alert"
+        role="alert"
+        aria-live="polite"
+      ></div>
+      <form id="loginForm" novalidate>
+        <div class="center">
+          <div class="card">
+            <h1 class="headline">EduFlow</h1>
+            <p class="textp">
+              Please enter your credentials to access your dashboard. Whether
+              you're an admin or a teacher.
+            </p>
+            <label for="email">EMAIL ADDRESS</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+            <label for="password">PASSWORD</label>
+            <!-- <p id="loginError" style="color:red; text-align:center;"></p> -->
 
-          <input
-            type="password"
-            id="password"
-            placeholder="Enter your password"
-            required
-            minlength="6"
-          />
-          <div class="password">
-            <div class="checkbox">
-              <input type="checkbox" id="c" />
-              <label for="c">Remember me</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+              minlength="6"
+            />
+            <div class="password">
+              <div class="checkbox">
+                <input type="checkbox" id="c" />
+                <label for="c">Remember me</label>
+              </div>
+              <a href="forgot-password.html" target="_top">Forgot Password?</a>
             </div>
-            <a href="forgot-password.html" target="_top">Forgot Password?</a>
+            <button type="submit" id="loginButton">Sign In</button>
+            <div class="divider">
+              <span>OR CONTINUE WITH</span>
+            </div>
+            <div class="social-buttons">
+              <button class="btn google" type="button">
+                <img src="../assets/media/icons/google.png" alt="Google" />
+                <a href="https://www.google.com/">GOOGLE</a>
+              </button>
+              <button class="btn github" type="button">
+                <img src="../assets/media/icons/social.png" alt="GitHub" />
+                <a href="https://github.com/">GITHUB</a>
+              </button>
+            </div>
           </div>
-          <button type="submit" id="loginButton">Sign In</button>
-          <div class="divider">
-            <span>OR CONTINUE WITH</span>
-          </div>
-          <div class="social-buttons">
-            <button class="btn google" type="button">
-              <img src="../assets/media/icons/google.png" alt="Google" />
-              <a href="https://www.google.com/">GOOGLE</a>
-            </button>
-            <button class="btn github" type="button">
-              <img src="../assets/media/icons/social.png" alt="GitHub" />
-              <a href="https://github.com/">GITHUB</a>
-            </button>
+          <div class="signup-text">
+            New to the library?
+            <a href="../shared/signup.html">Open an Account</a>
           </div>
         </div>
-        <div class="signup-text">
-          New to the library?
-          <a href="../shared/signup.html">Open an Account</a>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
     <div class="footer"></div>
-    <script src="../scripts/shared/nav.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
+    <script src="/scripts/shared/nav.js" defer></script>
+
     <script src="../scripts/shared/login.js" defer></script>
     <script src="../scripts/shared/footer.js" defer></script>
   </body>

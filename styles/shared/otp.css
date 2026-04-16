@@ -99,3 +99,15 @@ button[type="submit"]:hover {
 .help-text.secondary {
   margin-top: 8px;
 }
+
+.card {
+  width: min(100%, 380px);
+}
+
+@media (max-width: 768px) {
+  .center {
+    height: auto;
+    min-height: 85vh;
+    padding: 1rem;
+  }
+}

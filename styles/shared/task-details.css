@@ -431,3 +431,71 @@ input[type="range"]:hover {
     transform: scaleX(1);
   }
 }
+
+@media (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .task-hero {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  .task-page {
+    width: 100%;
+    max-width: 100%;
+    margin: 1.25rem auto 2rem;
+    padding: 0 0.75rem;
+    box-sizing: border-box;
+  }
+
+  .task-title {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    margin-top: 1rem;
+  }
+
+  .meta-row {
+    margin-top: 1.25rem;
+  }
+
+  .with-border {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--surface-variant);
+    padding-top: 0.75rem;
+    width: 100%;
+  }
+
+  .quick-select {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .complete-btn,
+  .edit-btn {
+    width: min(100%, 22rem);
+    padding: 0 1.5rem;
+  }
+
+  .progress-controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .badge-row {
+    flex-wrap: wrap;
+  }
+
+  .meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

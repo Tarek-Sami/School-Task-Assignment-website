@@ -1,6 +1,13 @@
 const allTasks = document.querySelector(".task-list");
-
+const profile = JSON.parse(localStorage.getItem("profile"));
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+const teacherTasks = [];
+tasks.forEach((task) => {
+  if (task.teacher === profile.username) {
+    teacherTasks.push(task);
+  }
+});
+
 const priorityOrder = {
   high: 0,
   medium: 1,
@@ -9,7 +16,7 @@ const priorityOrder = {
 
 let html = "";
 
-tasks
+teacherTasks
   .slice()
   .sort((firstTask, secondTask) => {
     const priorityDifference =
@@ -23,9 +30,9 @@ tasks
     return (firstTask.headline || "").localeCompare(secondTask.headline || "");
   })
   .forEach((task) => {
-    html += `<div class="task" data-id="${task.id}">
+    html += `<div class="task ${task.status === "completed" ? "complete" : ""}" data-id="${task.id}">
           <div class="task-left">
-            <input type="checkbox" class="task-checkbox" />
+            <input type="checkbox" class="task-checkbox" ${task.status === "completed" ? "checked" : ""}/>
             <div class="task-info">
               <h4 id="task-headline"><a href="../../shared/task-details.html?id=${task.id}" class="task-headline-link">${task.headline}</a></h4>
               <p id="task-teacher">
@@ -49,22 +56,38 @@ tasks
 
 allTasks.innerHTML = html;
 
-const total = tasks.length;
-const completed = tasks.filter((task) => task.status === "completed").length;
-const pending = tasks.filter((task) => task.status === "pending").length;
-const assignedBy = [
-  ...new Set(tasks.map((task) => task.madeBy || task.madeby)),
-].filter(Boolean).length;
+const total = teacherTasks.length;
+const completed = teacherTasks.filter(
+  (task) => task.status === "completed",
+).length;
+const pending = teacherTasks.filter((task) => task.status === "pending").length;
 
-document.getElementById("total-tasks").textContent = total;
-document.getElementById("completed-tasks").textContent = completed;
-document.getElementById("pending-tasks").textContent = pending;
-document.getElementById("assigned-by-count").textContent = assignedBy;
+const totalTasks = document.getElementById("total-tasks");
+const completedTasks = document.getElementById("completed-tasks");
+const pendingTasks = document.getElementById("pending-tasks");
+
+totalTasks.textContent = total;
+completedTasks.textContent = completed;
+pendingTasks.textContent = pending;
 
 const checkboxes = document.querySelectorAll(".task-checkbox");
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", (e) => {
     const task = e.target.closest(".task");
+    const taskId = task.getAttribute("data-id");
+    const taskIndex = tasks.findIndex((t) => t.id === taskId);
+    if (taskIndex !== -1) {
+      if (tasks[taskIndex].status === "pending") {
+        completedTasks.textContent = parseInt(completedTasks.textContent) + 1;
+        pendingTasks.textContent = parseInt(pendingTasks.textContent) - 1;
+      } else {
+        completedTasks.textContent = parseInt(completedTasks.textContent) - 1;
+        pendingTasks.textContent = parseInt(pendingTasks.textContent) + 1;
+      }
+      tasks[taskIndex].status = e.target.checked ? "completed" : "pending";
+      tasks[taskIndex].progress = e.target.checked ? 100 : 0;
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
     if (e.target.checked) {
       task.classList.add("complete");
     } else {

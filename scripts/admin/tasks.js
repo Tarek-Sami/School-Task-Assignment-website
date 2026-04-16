@@ -6,8 +6,17 @@ const priorityFilterButtons = document.querySelectorAll(
 const completedFilterButtons = document.querySelectorAll(
   ".filter-pill[data-completed]",
 );
-
+const profile = JSON.parse(localStorage.getItem("profile"));
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+function teacherDisplayName(teacherField) {
+  const list = JSON.parse(localStorage.getItem("teachers")) || [];
+  const t = list.find(
+    (x) => (x.username || x.user) === teacherField || x.name === teacherField,
+  );
+  return t ? t.name : teacherField;
+}
+let adminTasks = [];
 let activePriority = "all";
 let activeCompleted = "all";
 let searchQuery = "";
@@ -48,9 +57,9 @@ function isTaskCompleted(task) {
 
   return status === "completed" || progress >= 100;
 }
-
+adminTasks = tasks.filter((task) => task.madeBy === profile.username);
 function getFilteredTasks() {
-  return tasks
+  return adminTasks
     .filter((task) => {
       const priorityMatches =
         activePriority === "all" || task.priority === activePriority;
@@ -76,6 +85,12 @@ function getFilteredTasks() {
         secondTask.headline || "",
       );
     });
+}
+
+function NameOfAdmin(username) {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const user = users.find((u) => u.username === username);
+  return user ? user.name : username;
 }
 
 function renderTasks() {
@@ -113,20 +128,18 @@ function renderTasks() {
                 <a href="/admin/edit-task.html?id=${task.id}" class="task-menu-item">
                   Edit Task
                 </a>
-                <button type="button" class="task-menu-item">
-                  Mark As Completed
-                </button>
+  
               </div>
             </details>
           </div>
           <h2 class="task-card-title">${task.headline}</h2>
           <p class="task-card-assignee">
             <i class="fa-regular fa-user" aria-hidden="true"></i>
-            Prof. ${task.teacher}
+            Prof. ${teacherDisplayName(task.teacher)}
           </p>
           
         <p class="task-card-created">
-            Created by: ${task.madeBy || task.madeby || "Unknown"}
+            Created by: ${NameOfAdmin(task.madeBy) || "Unknown"}
           </p>
 
         <div class="task-card-progress">

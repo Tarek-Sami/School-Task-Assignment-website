@@ -2,6 +2,10 @@
 
 A web-based application designed to help school administrators manage tasks and assign them to teachers. This system streamlines the process of task delegation, tracking, and management within an educational institution.
 
+## Live demo
+
+Deployed build: [EduFlow on Netlify](https://eduflowfci.netlify.app/)
+
 ## 🚀 Features
 
 ### For Administrators
@@ -67,3 +71,18 @@ School-Task-Assignment-website/
 1.  Clone or download the repository to your local machine.
 2.  Navigate to the project folder.
 3.  Open `index.html` in your web browser to start the application.
+
+## Demo accounts
+
+The landing page script (`scripts/shared/index.js`) seeds **demo users**, **teachers**, and **tasks** in `localStorage` the first time you visit (when those keys are not set yet). To load the seed again, clear site data / local storage for this origin, then reload.
+
+Use these credentials on the **Login** page:
+
+| Role | Email | Password | Username |
+|------|--------|----------|----------|
+| Admin | `admin@schooltask.local` | `AdminPass123` | `schooladmin` |
+| Teacher | `nadia.hassan@schooltask.local` | `TeacherPass123` | `nadiahassan` |
+| Teacher | `omar.farid@schooltask.local` | `Teacher2Pass123` | `omarfarid` |
+
+Passwords are at least 9 characters to match the sign-up rules. These demo accounts are for local development and testing only—do not reuse these passwords in production.
+  

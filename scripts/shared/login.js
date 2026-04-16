@@ -2,9 +2,7 @@ const loginForm = document.getElementById("loginForm");
 const loginError = document.getElementById("loginError");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
-
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
 function setLoginError(message) {
   loginError.textContent = message;
 }
@@ -23,7 +21,9 @@ if (loginForm) {
     e.preventDefault();
 
     const email = emailInput.value.trim();
-    const password = passwordInput.value;
+    const password = passwordInput.value.trim();
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const passwordHash = CryptoJS.SHA256(password).toString();
 
     clearLoginError();
     clearLoginFieldState();
@@ -49,20 +49,28 @@ if (loginForm) {
       return;
     }
 
-    if (password.length < 6) {
-      setLoginError("Password must be at least 6 characters.");
+    const user = users.find(
+      (u) => u.email === email && u.password === passwordHash,
+    );
+    if (!user) {
+      setLoginError("Invalid email or password.");
+      emailInput.classList.add("input-error");
       passwordInput.classList.add("input-error");
-      passwordInput.focus();
       return;
     }
+    let teachersLocal = JSON.parse(localStorage.getItem("teachers")) || [];
+    if (user.role === "teacher")
+      if (!teachersLocal.find((t) => t.id === user.id)) {
+        teachersLocal.push(user);
+        localStorage.setItem("teachers", JSON.stringify(teachersLocal));
+      }
+    {
+      clearLoginError();
+      clearLoginFieldState();
+      localStorage.setItem("profile", JSON.stringify(user));
+      localStorage.setItem("role", user.role);
 
-    const role = localStorage.getItem("role");
-
-    if (!role) {
-      window.location.href = "/shared/signup.html";
-      return;
+      window.location.href = `/${user.role}/dashboard.html`;
     }
-
-    window.location.href = `/${role}/dashboard.html`;
   });
 }

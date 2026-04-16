@@ -14,6 +14,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <script src="/scripts/route-restriction/route-restrict.js"></script>
+    <link
+      rel="shortcut icon"
+      href="/assets/media/logo/purpleLogo.ico"
+      type="image/x-icon"
+    />
   </head>
   <body class="manage-teachers-page">
     <div id="navbar"></div>
@@ -25,7 +31,7 @@
       <div class="stats-grid">
         <div class="stat-title">
           <p class="stat-title-label">Total Active Faculty</p>
-          <p class="stat-title-value stat-title-value-blue">124</p>
+          <p class="stat-title-value stat-title-value-blue teachers-count"></p>
           <p class="stat-title-meta stat-title-meta-positive">
             <i class="fa-solid fa-arrow-trend-up"></i>
             +4 this month
@@ -33,18 +39,10 @@
         </div>
         <div class="stat-title">
           <p class="stat-title-label">Avg. Faculty Workload</p>
-          <p class="stat-title-value stat-title-value-teal">12.4</p>
+          <p class="stat-title-value stat-title-value-teal avg-tasks">12.4</p>
           <p class="stat-title-meta">
             <i class="fa-regular fa-clock"></i>
             Tasks per teacher
-          </p>
-        </div>
-        <div class="stat-title">
-          <p class="stat-title-label">Presence Index</p>
-          <p class="stat-title-value stat-title-value-purple">92%</p>
-          <p class="stat-title-meta stat-title-meta-accent">
-            <i class="fa-solid fa-bolt"></i>
-            Above benchmark
           </p>
         </div>
       </div>
@@ -146,6 +144,7 @@
     <div class="pagination" id="pagination"></div>
     <div class="footer"></div>
     <script src="/scripts/shared/nav.js" defer></script>
+
     <script src="/scripts/shared/footer.js" defer></script>
     <script src="/scripts/admin/manage-teacher.js"></script>
   </body>

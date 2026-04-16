@@ -13,6 +13,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <script src="/scripts/route-restriction/route-restrict.js"></script>
+    <link
+      rel="shortcut icon"
+      href="/assets/media/logo/purpleLogo.ico"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <div id="navbar"></div>
@@ -102,10 +108,6 @@
             <label for="teacher">ASSIGN TO TEACHER</label>
             <select id="teacher" required>
               <option value="">Select a teacher...</option>
-              <option value="Ahmed">Ahmed</option>
-              <option value="Sara">Sara</option>
-              <option value="Mohamed">Mohamed</option>
-              <option value="Tarek">Tarek</option>
             </select>
 
             <div class="side-title">PRIORITY LEVEL</div>
@@ -144,7 +146,7 @@
             <div class="creator">
               <div class="creator-avatar">AB</div>
               <div>
-                <strong id="creator-name">Alex Brown</strong>
+                <strong id="creator-name"></strong>
                 <p>You</p>
               </div>
             </div>
@@ -177,7 +179,8 @@
         </div>
       </div>
     </div>
-    <script src="../scripts/shared/nav.js" defer></script>
+    <script src="/scripts/shared/nav.js" defer></script>
+
     <script src="../scripts/shared/footer.js" defer></script>
     <script src="../scripts/admin/add-task.js" defer></script>
   </body>

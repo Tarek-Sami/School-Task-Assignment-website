@@ -11,6 +11,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <script src="/scripts/route-restriction/route-restrict.js"></script>
+    <link
+      rel="shortcut icon"
+      href="/assets/media/logo/purpleLogo.ico"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <div id="navbar"></div>
@@ -72,6 +78,13 @@
             <option value="teacher">Teacher</option>
             <option value="admin">Admin</option>
           </select>
+          <label for="department">DEPARTMENT</label>
+          <select id="department">
+            <option value="">Select your department</option>
+            <option value="computer-science">Computer Science</option>
+            <option value="mathematics">Mathematics</option>
+            <option value="physics">Physics</option>
+          </select>
 
           <div class="gender-title">GENDER</div>
           <div class="gender-group">
@@ -100,7 +113,9 @@
       </div>
     </form>
     <div class="footer"></div>
-    <script src="../scripts/shared/nav.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
+    <script src="/scripts/shared/nav.js" defer></script>
+
     <script src="../scripts/shared/footer.js" defer></script>
     <script src="../scripts/shared/signup.js" defer></script>
   </body>

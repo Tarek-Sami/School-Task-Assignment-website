@@ -1,0 +1,3 @@
+# Netlify: serve custom HTML for missing paths (HTTP 404, URL unchanged).
+# Only applied when you deploy to Netlify — not by Live Server or most local tools.
+/*    /error-pages/not-found.html   404

@@ -70,21 +70,27 @@ footer.innerHTML = `
             </ul>
           </div>
         </div>
-        <div class= "contactAndIcons">
-        <div class="icons">
-        
-            <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-            <a href="mailto:test@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-            <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-              </div>
-        <div>
-        <ul>
-            <li><a href="https://facebook.com">EduFlow</a></li>
-            <li><a href="mailto:test@gmail.com">test@gmail.com</a></li>
-            <li><a href="https://linkedin.com">EduFlow</a></li>
-        </ul>
-      
-        </div>
+        <div class="contactAndIcons">
+          <div class="contact-links">
+            <div class="contact-row">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="contact-text-link">EduFlow</a>
+            </div>
+            <div class="contact-row">
+              <a href="mailto:test@gmail.com" target="_blank" class="contact-icon-link" aria-label="Email">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a href="mailto:test@gmail.com" class="contact-text-link">test@gmail.com</a>
+            </div>
+            <div class="contact-row">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-text-link">EduFlow</a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

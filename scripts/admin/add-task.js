@@ -4,8 +4,7 @@ const createTaskBtn = document.getElementById("btn-create");
 const cancelBtn = document.getElementById("btn-cancel");
 const radios = document.querySelectorAll('input[name="priority"]');
 const modal = document.querySelector(".modal");
-const currentUserName =
-  localStorage.getItem("currentUserName") || "Unknown User";
+let currentUserName = profile ? profile.username : "Unknown";
 // variables for the form inputs
 const headlineInput = document.getElementById("headline");
 const titleInput = document.getElementById("title");
@@ -19,31 +18,14 @@ const okBtn = document.getElementById("modal-ok");
 
 //get all teacher names from local storage and populate the select input (assigned to)
 function populateTeacherSelect() {
-  let teachers = [];
-  try {
-    teachers = JSON.parse(localStorage.getItem("teachers")) || [];
-  } catch {
-    teachers = [];
-  }
-  const teacherNames = [
-    ...new Set(teachers.map((t) => t?.name).filter(Boolean)),
-  ];
-  teacherSelect.innerHTML = '<option value="">Select a teacher...</option>';
-
-  teacherNames.forEach((name) => {
+  teachers.forEach((t) => {
+    const value = t.username || t.user;
+    if (!value) return;
     const option = document.createElement("option");
-    option.value = name;
-    option.textContent = name;
-    teacherSelect.appendChild(option);
+    option.value = value;
+    option.textContent = t.name;
+    chooseTeacherSelect.appendChild(option);
   });
-
-  if (teacherNames.length === 0) {
-    const option = document.createElement("option");
-    option.value = "";
-    option.textContent = "No teachers available";
-    option.disabled = true;
-    teacherSelect.appendChild(option);
-  }
 }
 
 populateTeacherSelect();
@@ -148,7 +130,12 @@ createTaskBtn.addEventListener("click", (e) => {
     madeBy: currentUserName,
     progress: 0,
   };
-  console.log(newTask);
+  const assignee = teachers.find((t) => t.username === newTask.teacher);
+  if (assignee) {
+    assignee.numberOfTasks = (assignee.numberOfTasks || 0) + 1;
+    localStorage.setItem("teachers", JSON.stringify(teachers));
+  }
+
   tasks.push(newTask);
   localStorage.setItem("tasks", JSON.stringify(tasks));
   window.location.href = "/admin/tasks.html";

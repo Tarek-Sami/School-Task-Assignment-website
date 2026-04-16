@@ -22,6 +22,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <script src="/scripts/route-restriction/route-restrict.js"></script>
+    <link
+      rel="shortcut icon"
+      href="/assets/media/logo/purpleLogo.ico"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <div id="navbar"></div>
@@ -56,14 +62,6 @@
           <h3>PENDING</h3>
           <span id="pending-tasks">3</span>
         </div>
-
-        <div class="card">
-          <div class="card-icon-wrapper bg-blue">
-            <i class="fa-solid fa-graduation-cap card-icon text-blue"></i>
-          </div>
-          <h3>ASSIGNED BY</h3>
-          <span id="assigned-by-count">5</span>
-        </div>
       </div>
 
       <div class="tasks-header">
@@ -73,7 +71,8 @@
       <div class="task-list"></div>
     </div>
     <div class="footer"></div>
-    <script src="../scripts/shared/nav.js" defer></script>
+    <script src="/scripts/shared/nav.js" defer></script>
+
     <script src="../scripts/shared/footer.js" defer></script>
     <script src="../scripts/teacher/dashboard.js" defer></script>
   </body>
