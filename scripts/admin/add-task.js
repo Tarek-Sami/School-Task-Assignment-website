@@ -112,7 +112,7 @@ modal.addEventListener("click", (e) => {
   }
 });
 
-// create task button functionality
+madeBy.textContent = profile ? profile.name : "Unknown User";
 createTaskBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
