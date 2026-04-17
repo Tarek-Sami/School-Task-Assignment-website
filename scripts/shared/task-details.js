@@ -168,7 +168,7 @@ quickSelectButtons.forEach((button) => {
   });
 });
 
-rangeInput.addEventListener("input", () => {
+rangeInput?.addEventListener("input", () => {
   const percentage = parseInt(rangeInput.value);
   progressNumber.textContent = `${percentage}%`;
   progressFill.style.width = `${percentage}%`;

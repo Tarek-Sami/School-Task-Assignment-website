@@ -4,7 +4,9 @@ const createTaskBtn = document.getElementById("btn-create");
 const cancelBtn = document.getElementById("btn-cancel");
 const radios = document.querySelectorAll('input[name="priority"]');
 const modal = document.querySelector(".modal");
+const profile = JSON.parse(localStorage.getItem("profile"));
 let currentUserName = profile ? profile.username : "Unknown";
+const teachers = JSON.parse(localStorage.getItem("teachers")) || [];
 // variables for the form inputs
 const headlineInput = document.getElementById("headline");
 const titleInput = document.getElementById("title");
@@ -15,6 +17,7 @@ const madeBy = document.getElementById("creator-name");
 const creatorAvatar = document.querySelector(".creator-avatar");
 const closeBtn = document.getElementById("close-btn");
 const okBtn = document.getElementById("modal-ok");
+const chooseTeacherSelect = document.getElementById("teacher");
 
 //get all teacher names from local storage and populate the select input (assigned to)
 function populateTeacherSelect() {
@@ -29,7 +32,6 @@ function populateTeacherSelect() {
 }
 
 populateTeacherSelect();
-
 
 // button to edit the style of the description
 const boldBtn = document.querySelector(".bold-btn");
